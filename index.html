@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LushHaven Store</title>
+  <title>LushHaven</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,82 +12,123 @@
 <header>
   <div class="nav">
     <div class="logo">LushHaven</div>
+
     <div class="nav-links">
+      <a href="#home">Home</a>
       <a href="#store">Store</a>
       <a href="#discord">Discord</a>
     </div>
   </div>
 </header>
 
-<section class="hero-small">
-  <h1>Ranks Store</h1>
-  <p>Upgrade your journey through LushHaven</p>
+<!-- HOME -->
+<section id="home" class="hero">
+
+  <h1>Welcome to LushHaven</h1>
+
+  <p>
+    A premium Minecraft survival network built around progression, community, and exploration.
+  </p>
+
+  <div class="buttons">
+    <button class="btn primary" onclick="joinServer()">Join Server</button>
+    <a class="btn ghost" href="#store">View Store</a>
+    <a class="btn" href="https://discord.gg/rv7pc2DWWY" target="_blank">Discord</a>
+  </div>
+
+  <div class="ip">lushhaven.my.pebble.host</div>
+
 </section>
 
-<!-- STORE -->
-<section id="store" class="store-grid">
+<!-- ABOUT -->
+<section class="section">
 
-  <!-- EXPLORER -->
-  <div class="card rank explorer">
-    <h2>🌿 Explorer</h2>
-    <p>Entry-level adventurer rank</p>
+  <h2>About LushHaven</h2>
 
-    <div class="preview">
-      <h3>Explorer Rank</h3>
-      <p>The perfect starter rank for your journey.</p>
-      <span class="tag">Starter Rank</span>
-    </div>
+  <p>
+    LushHaven is a long-term survival experience focused on fair gameplay, progression,
+    and a strong community-driven world.
+  </p>
 
-    <a class="buy" href="https://lushhaven.tebex.io/package/7397952" target="_blank">
-      Buy Explorer
-    </a>
+</section>
+
+<!-- FEATURES -->
+<section class="grid">
+
+  <div class="card">
+    <h3>⚡ Performance</h3>
+    <p>Optimized servers for smooth gameplay.</p>
   </div>
 
-  <!-- TRAILBLAZER -->
-  <div class="card rank trailblazer">
-    <h2>🔥 TrailBlazer</h2>
-    <p>Mid-tier progression rank</p>
-
-    <div class="preview">
-      <h3>TrailBlazer Rank</h3>
-      <p>Unlock enhanced perks and progression boosts.</p>
-      <span class="tag">Best Value</span>
-    </div>
-
-    <a class="buy" href="https://lushhaven.tebex.io/package/7397986" target="_blank">
-      Buy TrailBlazer
-    </a>
+  <div class="card">
+    <h3>⚖️ Fair Play</h3>
+    <p>No pay-to-win mechanics.</p>
   </div>
 
-  <!-- TRAVELER -->
-  <div class="card rank traveler">
-    <h2>🌊 Traveler</h2>
-    <p>Top-tier exploration rank</p>
+  <div class="card">
+    <h3>🌌 Design</h3>
+    <p>Unique purple cosmic aesthetic.</p>
+  </div>
 
-    <div class="preview">
-      <h3>Traveler Rank</h3>
-      <p>Elite rank with premium server perks.</p>
-      <span class="tag">Premium</span>
+  <div class="card">
+    <h3>🤝 Community</h3>
+    <p>Player-driven updates.</p>
+  </div>
+
+</section>
+
+<!-- STORE (TAB SECTION) -->
+<section id="store" class="store-section">
+
+  <h2>Rank Store</h2>
+
+  <div class="store-grid">
+
+    <div class="card">
+      <h3>🌿 Explorer</h3>
+      <p>Starter rank with basic perks.</p>
+      <a class="buy" href="https://lushhaven.tebex.io/package/7397952" target="_blank">Buy Explorer</a>
     </div>
 
-    <a class="buy" href="https://lushhaven.tebex.io/package/7398374" target="_blank">
-      Buy Traveler
-    </a>
+    <div class="card">
+      <h3>🔥 TrailBlazer</h3>
+      <p>Mid-tier progression rank.</p>
+      <a class="buy" href="https://lushhaven.tebex.io/package/7397986" target="_blank">Buy TrailBlazer</a>
+    </div>
+
+    <div class="card">
+      <h3>🌊 Traveler</h3>
+      <p>Premium end-game rank.</p>
+      <a class="buy" href="https://lushhaven.tebex.io/package/7398374" target="_blank">Buy Traveler</a>
+    </div>
+
   </div>
 
 </section>
 
 <!-- DISCORD -->
-<section id="discord" class="discord">
+<section id="discord" class="section">
+
   <h2>Join Our Discord</h2>
-  <a class="discord-btn" href="https://discord.gg/rv7pc2DWWY" target="_blank">
-    Join Community
+
+  <a class="btn primary" href="https://discord.gg/rv7pc2DWWY" target="_blank">
+    Join Discord
   </a>
+
 </section>
 
 <footer>
   © LushHaven • Not affiliated with Mojang
 </footer>
+
+<script>
+  const IP = "lushhaven.my.pebble.host";
+
+  function joinServer() {
+    navigator.clipboard.writeText(IP);
+    window.location.href = `minecraft://?addExternalServer=LushHaven|${IP}`;
+  }
+</script>
 
 </body>
 </html>
