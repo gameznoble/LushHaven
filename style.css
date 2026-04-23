@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -5,17 +9,22 @@ body {
   color: white;
 }
 
-header {
+/* HEADER */
+.header {
   position: fixed;
   width: 100%;
-  background: rgba(0,0,0,0.6);
+  top: 0;
+  background: rgba(0,0,0,0.7);
   backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .logo {
@@ -23,45 +32,54 @@ header {
   font-weight: bold;
 }
 
-.nav-links a {
+.links a {
   color: white;
   margin-left: 15px;
   text-decoration: none;
   opacity: 0.7;
 }
 
-.nav-links a:hover {
+.links a:hover {
   opacity: 1;
 }
 
-.hero {
+/* SECTIONS */
+.section {
+  padding: 120px 20px;
   text-align: center;
-  padding: 160px 20px 60px;
+}
+
+/* HERO */
+.hero {
+  padding-top: 180px;
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 56px;
   color: #a855f7;
+  margin-bottom: 10px;
 }
 
 p {
   max-width: 700px;
   margin: auto;
   opacity: 0.8;
+  line-height: 1.5;
 }
 
+/* BUTTONS */
 .buttons {
   margin-top: 20px;
 }
 
 .btn {
+  display: inline-block;
   padding: 10px 15px;
+  margin: 5px;
   border-radius: 8px;
   background: rgba(255,255,255,0.1);
   color: white;
   text-decoration: none;
-  margin: 5px;
-  display: inline-block;
 }
 
 .primary {
@@ -72,30 +90,26 @@ p {
   border: 1px solid #a855f7;
 }
 
+/* IP */
 .ip {
-  margin-top: 10px;
+  margin-top: 15px;
   opacity: 0.5;
 }
 
-/* STORE */
-.store-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.store-grid {
+/* STORE GRID */
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 15px;
+  gap: 20px;
   max-width: 1000px;
-  margin: auto;
+  margin: 40px auto 0;
 }
 
 .card {
   background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(168,85,247,0.25);
   padding: 20px;
   border-radius: 12px;
-  border: 1px solid rgba(168,85,247,0.25);
 }
 
 .buy {
@@ -108,8 +122,9 @@ p {
   border-radius: 8px;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   opacity: 0.4;
 }
