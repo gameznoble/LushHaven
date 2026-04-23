@@ -9,65 +9,84 @@
 
 <body>
 
-  <div class="bg-glow"></div>
-
   <!-- HERO -->
-  <div class="hero">
+  <section class="hero">
 
-    <div class="logo">
-      ✦ LushHaven
-    </div>
+    <div class="glow"></div>
 
-    <h1>
-      A New Minecraft Experience
-    </h1>
+    <h1>LushHaven</h1>
 
-    <p>
-      Survival • Economy • PvP • Community  
-      Build, grind, and explore in a growing world made for players like you.
+    <p class="tagline">
+      A premium Minecraft experience built for community, creativity, and competition.
     </p>
 
     <div class="buttons">
-
-      <button class="btn primary" onclick="copyIP()">
-        Copy IP
-      </button>
-
-      <a class="btn secondary" href="https://your-tebex-link.com">
-        Store
-      </a>
-
-      <a class="btn ghost" href="https://discord.gg/yourlink">
-        Discord
-      </a>
-
+      <button onclick="copyIP()" class="btn primary">Copy IP</button>
+      <a href="https://your-tebex-link.com" class="btn">Store</a>
+      <a href="https://discord.gg/yourlink" class="btn ghost">Discord</a>
     </div>
 
-    <div class="ip" id="ip">
-      lushhaven.my.pebble.host
-    </div>
+    <div class="ip" id="ip">lushhaven.my.pebble.host</div>
 
-  </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section">
+
+    <h2>🌸 About LushHaven</h2>
+
+    <p>
+      LushHaven is built to feel like more than a server — it's a home.
+      We focus on smooth gameplay, fair progression, and a visually immersive world
+      where every player has a place.
+    </p>
+
+  </section>
 
   <!-- FEATURES -->
-  <div class="features">
+  <section class="features">
 
     <div class="card">
-      <h3>⚔ PvP</h3>
-      <p>Balanced combat with smooth mechanics and fair fights.</p>
+      <h3>🚀 Performance</h3>
+      <p>Optimized servers for smooth, stable gameplay with minimal lag.</p>
     </div>
 
     <div class="card">
-      <h3>💰 Economy</h3>
-      <p>Earn money, trade items, and build your empire.</p>
+      <h3>⚖️ Fair Play</h3>
+      <p>Balanced systems where skill matters more than pay-to-win.</p>
     </div>
 
     <div class="card">
-      <h3>🌿 Survival</h3>
-      <p>Classic survival enhanced with quality-of-life improvements.</p>
+      <h3>🎨 Design</h3>
+      <p>Custom visuals and purple cosmic aesthetic across the network.</p>
     </div>
 
-  </div>
+    <div class="card">
+      <h3>🤝 Community</h3>
+      <p>Player-driven updates shaped by feedback and Discord activity.</p>
+    </div>
+
+  </section>
+
+  <!-- SUPPORT -->
+  <section class="support">
+
+    <h2>✨ Support the Server</h2>
+
+    <p>
+      Purchases directly help improve LushHaven:
+    </p>
+
+    <div class="support-grid">
+      <div>Hosting & Performance</div>
+      <div>Custom Plugins</div>
+      <div>DDoS Protection</div>
+      <div>Development & Growth</div>
+    </div>
+
+    <p class="thanks">Thank you for being part of LushHaven.</p>
+
+  </section>
 
   <footer>
     © LushHaven • Not affiliated with Mojang
@@ -75,9 +94,8 @@
 
   <script>
     function copyIP() {
-      const ip = document.getElementById("ip").innerText;
-      navigator.clipboard.writeText(ip);
-      alert("LushHaven IP copied!");
+      navigator.clipboard.writeText("lushhaven.my.pebble.host");
+      alert("IP copied!");
     }
   </script>
 
