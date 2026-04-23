@@ -6,7 +6,7 @@ body {
   overflow-x: hidden;
 }
 
-/* PARTICLE CANVAS */
+/* BACKGROUND */
 #particles {
   position: fixed;
   width: 100%;
@@ -18,7 +18,7 @@ body {
   position: fixed;
   inset: 0;
   background: radial-gradient(circle at top, rgba(168,85,247,0.2), transparent 60%),
-              rgba(0,0,0,0.6);
+              rgba(0,0,0,0.65);
   z-index: -2;
 }
 
@@ -41,13 +41,12 @@ header {
 .logo {
   color: #a855f7;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
 .links a {
   margin-left: 15px;
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   opacity: 0.6;
   transition: 0.2s;
 }
@@ -64,23 +63,25 @@ header {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  animation: fadeIn 1s ease;
 }
 
-.glow-text {
+.glow {
   font-size: 72px;
-  margin: 0;
   color: #a855f7;
   text-shadow: 0 0 25px rgba(168,85,247,0.5);
+  animation: float 4s ease-in-out infinite;
 }
 
 .subtitle {
   max-width: 700px;
   margin: 10px auto;
   opacity: 0.8;
+  animation: fadeIn 1.2s ease;
 }
 
 /* BUTTONS */
-.buttons {
+.cta {
   margin-top: 20px;
 }
 
@@ -91,9 +92,13 @@ header {
   background: rgba(255,255,255,0.1);
   color: white;
   border: none;
-  text-decoration: none;
-  display: inline-block;
   cursor: pointer;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
 }
 
 .glow {
@@ -110,9 +115,10 @@ header {
 /* SECTIONS */
 .section {
   padding: 80px 20px;
+  animation: fadeIn 1s ease;
 }
 
-/* GRID SYSTEM */
+/* GRID */
 .grid, .store {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -121,29 +127,30 @@ header {
   margin: auto;
 }
 
-/* CARDS (PRO DEPTH) */
+/* CARDS */
 .card, .rank {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(168,85,247,0.25);
   border-radius: 14px;
   padding: 25px;
-  transition: 0.25s;
+  transition: 0.3s;
+  animation: fadeUp 1s ease;
 }
 
 .card:hover, .rank:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.02);
   box-shadow: 0 15px 40px rgba(168,85,247,0.25);
 }
 
-/* STORE */
+/* STORE BUTTON */
 .rank a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 14px;
   background: #a855f7;
-  border-radius: 8px;
   color: white;
   text-decoration: none;
+  border-radius: 8px;
 }
 
 /* INFO */
@@ -159,4 +166,21 @@ footer {
   text-align: center;
   padding: 40px;
   opacity: 0.3;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
