@@ -9,20 +9,18 @@
 
 <body>
 
-  <!-- BACKGROUND -->
-  <div class="stars"></div>
-  <div class="glow"></div>
+  <div class="bg"></div>
 
   <!-- HERO -->
   <section class="hero">
 
-    <div class="brand">✦ LushHaven</div>
+    <div class="brand">LushHaven</div>
 
-    <h1>Enter a New Minecraft Experience</h1>
+    <h1>Enter a Living Minecraft World</h1>
 
     <p>
       Survival • Economy • PvP • Community  
-      A growing world built for players who want more than just a server.
+      A refined multiplayer experience built for players who want depth, progression, and community.
     </p>
 
     <div class="buttons">
@@ -36,57 +34,56 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="section">
+  <section class="section reveal">
 
-    <h2>🌸 About LushHaven</h2>
+    <h2>About LushHaven</h2>
 
     <p>
-      LushHaven is built to feel like a living world, not just a server.
-      We focus on performance, fairness, and a community-driven experience
-      where every player matters.
+      LushHaven is designed to feel like a persistent world — not just a server.
+      Every system is built around performance, fairness, and long-term community growth.
     </p>
 
   </section>
 
   <!-- FEATURES -->
-  <section class="features">
+  <section class="features reveal">
 
     <div class="card">
-      <h3>🚀 Performance</h3>
-      <p>Optimized systems for smooth gameplay and stable TPS.</p>
+      <h3>⚡ Performance</h3>
+      <p>Optimized backend systems for smooth gameplay and stable TPS.</p>
     </div>
 
     <div class="card">
-      <h3>⚖️ Fair Play</h3>
-      <p>No pay-to-win mechanics — gameplay stays competitive and balanced.</p>
+      <h3>⚖️ Fair Progression</h3>
+      <p>No pay-to-win advantages — progression is earned, not bought.</p>
     </div>
 
     <div class="card">
-      <h3>🎨 Design</h3>
-      <p>Custom purple cosmic aesthetic across the entire network.</p>
+      <h3>🌌 Custom Experience</h3>
+      <p>Unique purple cosmic aesthetic and tailored gameplay systems.</p>
     </div>
 
     <div class="card">
-      <h3>🤝 Community</h3>
-      <p>Updates shaped directly by player feedback and Discord input.</p>
+      <h3>🤝 Community Driven</h3>
+      <p>Updates shaped directly by player feedback and community input.</p>
     </div>
 
   </section>
 
   <!-- SUPPORT -->
-  <section class="support">
+  <section class="support reveal">
 
-    <h2>✨ Support the Server</h2>
+    <h2>Support the Network</h2>
 
     <p>
-      Every purchase helps improve LushHaven:
+      Every contribution directly improves LushHaven’s infrastructure:
     </p>
 
     <div class="grid">
-      <div>Hosting</div>
-      <div>Custom Plugins</div>
+      <div>Hosting Infrastructure</div>
+      <div>Custom Development</div>
       <div>DDoS Protection</div>
-      <div>Development</div>
+      <div>Server Growth</div>
     </div>
 
     <p class="thanks">Thank you for being part of LushHaven.</p>
@@ -102,6 +99,19 @@
       navigator.clipboard.writeText("lushhaven.my.pebble.host");
       alert("Server IP copied!");
     }
+
+    // fade-in animation on scroll
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
   </script>
 
 </body>
