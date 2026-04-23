@@ -3,129 +3,130 @@ body {
   font-family: Arial, sans-serif;
   background: #0b0614;
   color: white;
-  overflow-x: hidden;
 }
 
-/* PURPLE GLOW BACKGROUND */
-.bg-glow {
-  position: fixed;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(168,85,247,0.45), transparent 70%);
-  top: -250px;
-  left: -250px;
-  filter: blur(90px);
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+.glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168,85,247,0.5), transparent 70%);
+  filter: blur(100px);
+  top: -150px;
+  left: -150px;
   z-index: -1;
 }
 
-.hero {
-  text-align: center;
-  padding: 120px 20px 60px;
-}
-
-.logo {
-  font-size: 14px;
-  letter-spacing: 4px;
-  color: #a855f7;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
 h1 {
-  font-size: 52px;
-  margin: 10px 0;
+  font-size: 60px;
+  margin: 0;
 }
 
-p {
-  max-width: 600px;
-  margin: 0 auto;
+.tagline {
   opacity: 0.8;
+  max-width: 600px;
+  margin: 10px auto;
   line-height: 1.6;
 }
 
 .buttons {
-  margin-top: 25px;
+  margin-top: 20px;
   display: flex;
+  gap: 10px;
   justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
 }
 
 .btn {
   padding: 12px 18px;
   border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
+  background: #a855f7;
+  color: white;
   text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.primary {
-  background: #a855f7;
-  color: white;
-}
-
-.primary:hover {
-  background: #9333ea;
-}
-
-.secondary {
-  background: transparent;
-  border: 1px solid #a855f7;
-  color: #a855f7;
-}
-
-.secondary:hover {
-  background: #a855f7;
-  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .ghost {
-  background: rgba(255,255,255,0.05);
-  color: white;
-}
-
-.ghost:hover {
-  background: rgba(255,255,255,0.1);
+  background: transparent;
+  border: 1px solid #a855f7;
 }
 
 .ip {
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 15px;
   opacity: 0.6;
+  font-size: 14px;
 }
 
+/* SECTIONS */
+.section {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.section h2 {
+  color: #a855f7;
+  margin-bottom: 15px;
+}
+
+/* FEATURES */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
+  gap: 15px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
 .card {
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(168,85,247,0.25);
+  border: 1px solid rgba(168,85,247,0.3);
   padding: 20px;
-  border-radius: 14px;
-  transition: 0.2s ease;
+  border-radius: 12px;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(168,85,247,0.7);
+/* SUPPORT */
+.support {
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.card h3 {
-  margin-top: 0;
-  color: #a855f7;
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
+.support-grid div {
+  background: rgba(255,255,255,0.05);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.thanks {
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 40px 20px;
-  font-size: 12px;
+  padding: 40px;
   opacity: 0.5;
+  font-size: 12px;
 }
