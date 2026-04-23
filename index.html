@@ -1,47 +1,164 @@
-<header>
-  <div class="nav">
-    <div class="logo">LUSH<span>HAVEN</span></div>
-    <div class="links">
-      <button id="btn-home" class="active" onclick="showTab('home')">Home</button>
-      <button id="btn-store" onclick="showTab('store')">Store</button>
-      <button id="btn-discord" onclick="showTab('discord')">Discord</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LushHaven</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+
+    <div class="logo">LushHaven</div>
+
+    <div class="nav-links">
+      <button onclick="show('home')">Home</button>
+      <button onclick="show('store')">Store</button>
+      <button onclick="show('info')">Info</button>
+      <button onclick="show('discord')">Discord</button>
     </div>
+
   </div>
 </header>
 
-<section id="home" class="tab active">
-  <h1 class="title">WELCOME TO LUSHHAVEN</h1>
-  <p class="subtitle">A premium survival network built for the community.</p>
-  <div style="display: flex; justify-content: center; gap: 15px;">
-    <button class="btn primary" onclick="joinServer()">Join Server</button>
-    <button class="btn" onclick="showTab('store')">View Store</button>
+<!-- HOME -->
+<section id="home" class="page active">
+
+  <div class="hero">
+
+    <h1>LushHaven</h1>
+
+    <p>
+      A premium Minecraft survival experience built around progression, economy, and community.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn primary" onclick="copyIP()">Copy IP</button>
+      <button class="btn" onclick="show('store')">View Store</button>
+    </div>
+
+    <div class="ip">lushhaven.my.pebble.host</div>
+
   </div>
-  <p style="margin-top: 30px; font-family: monospace; color: var(--lush-purple);">lushhaven.my.pebble.host</p>
+
+  <div class="features">
+
+    <div class="card">
+      <h3>⚡ Performance</h3>
+      <p>High TPS, optimized gameplay.</p>
+    </div>
+
+    <div class="card">
+      <h3>⚖️ Fair Play</h3>
+      <p>No pay-to-win mechanics.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌌 Design</h3>
+      <p>Clean purple cosmic aesthetic.</p>
+    </div>
+
+  </div>
+
 </section>
 
-<section id="store" class="tab">
-  <h2 class="title" style="font-size: 30px;">RANK STORE</h2>
-  <div class="grid">
-    <div class="card">
+<!-- STORE -->
+<section id="store" class="page">
+
+  <h2 class="title">Rank Store</h2>
+
+  <div class="store">
+
+    <div class="item">
       <h3>🌿 Explorer</h3>
       <p>Starter adventurer rank</p>
-      <a href="https://lushhaven.tebex.io/package/7397952" target="_blank" class="btn" style="display: block; margin-top: 15px;">Buy</a>
+      <a href="https://lushhaven.tebex.io/package/7397952" target="_blank">Buy</a>
     </div>
+
+    <div class="item">
+      <h3>🔥 TrailBlazer</h3>
+      <p>Mid-tier progression rank</p>
+      <a href="https://lushhaven.tebex.io/package/7397986" target="_blank">Buy</a>
     </div>
+
+    <div class="item">
+      <h3>🌊 Traveler</h3>
+      <p>Premium end-game rank</p>
+      <a href="https://lushhaven.tebex.io/package/7398374" target="_blank">Buy</a>
+    </div>
+
+  </div>
+
 </section>
 
+<!-- INFO -->
+<section id="info" class="page">
+
+  <h2 class="title">About LushHaven</h2>
+
+  <p class="text">
+    LushHaven is a survival-based Minecraft network focused on long-term progression,
+    fair economy systems, and a community-driven experience.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="card">
+      <h3>🎮 Gameplay</h3>
+      <p>Survival + progression systems.</p>
+    </div>
+
+    <div class="card">
+      <h3>🏗 Builds</h3>
+      <p>Custom worlds and terrain.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤝 Community</h3>
+      <p>Discord-driven updates.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DISCORD -->
+<section id="discord" class="page">
+
+  <div class="hero">
+
+    <h2>Join Our Discord</h2>
+
+    <p>Stay updated, chat, and get support.</p>
+
+    <a class="btn primary" href="https://discord.gg/rv7pc2DWWY" target="_blank">
+      Join Discord
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+  © LushHaven • Not affiliated with Mojang
+</footer>
+
 <script>
-  function showTab(id) {
-    // Hide all tabs
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    // Deactivate all buttons
-    document.querySelectorAll('.links button').forEach(b => b.classList.remove('active'));
-    
-    // Show current
-    document.getElementById(id).classList.add('active');
-    // We update the button by checking ID (optional but cleaner)
-    if(id === 'home') document.getElementById('btn-home').classList.add('active');
-    if(id === 'store') document.getElementById('btn-store').classList.add('active');
-    if(id === 'discord') document.getElementById('btn-discord').classList.add('active');
+  const IP = "lushhaven.my.pebble.host";
+
+  function show(id) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+  }
+
+  function copyIP() {
+    navigator.clipboard.writeText(IP);
+    alert("Server IP copied: " + IP);
   }
 </script>
+
+</body>
+</html>
