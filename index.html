@@ -1,86 +1,150 @@
-<section class="rules">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LushHaven</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-  <div class="rules-hero">
-    <h1>LushHaven Code of Conduct</h1>
-    <p>Effective: April 17, 2026 • Version 4.1</p>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="overlay"></div>
+
+<header>
+  <div class="nav">
+    <div class="logo">LushHaven</div>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#store">Store</a>
+      <a href="#rules">Rules</a>
+      <a href="https://discord.gg/rv7pc2DWWY" target="_blank">Discord</a>
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="hero">
+
+  <h1 class="glow-text">LushHaven</h1>
+
+  <p class="subtitle">
+    A premium Minecraft survival network built for progression, economy, and community.
+  </p>
+
+  <div class="cta">
+    <button class="btn glow" onclick="copyIP()">Copy IP</button>
+    <a class="btn" href="#store">Store</a>
   </div>
 
-  <div class="rules-note">
-    By joining LushHaven Network, you agree to follow all rules below.
-    Ignorance is not an excuse.
-  </div>
+  <div class="ip">lushhaven.my.pebble.host</div>
 
-  <!-- CHAT RULES -->
-  <div class="rule-block">
+</section>
 
-    <h2>💬 Chat & Community Rules</h2>
+<!-- ABOUT -->
+<section id="about" class="section">
 
-    <ul>
-      <li><strong>English Only:</strong> Public chat must be in English for clarity.</li>
-      <li><strong>Respectful Language:</strong> No excessive toxicity, hate speech, or harassment.</li>
-      <li><strong>Advertising:</strong> No promoting other servers or external links.</li>
-      <li><strong>Scamming (ZERO TOLERANCE):</strong> Any scam = severe punishment including bans.</li>
-      <li><strong>Evidence Based Action:</strong> Staff may restore items if clear proof is provided.</li>
-    </ul>
+  <div class="section-title">About LushHaven</div>
 
-  </div>
+  <div class="grid">
 
-  <!-- GAMEPLAY RULES -->
-  <div class="rule-block">
+    <div class="card">
+      <h3>🌸 Mission</h3>
+      <p>A premium, community-first Minecraft experience built for longevity.</p>
+    </div>
 
-    <h2>🎮 Gameplay Rules</h2>
+    <div class="card">
+      <h3>🚀 Performance</h3>
+      <p>Stable TPS and optimized server infrastructure.</p>
+    </div>
 
-    <ul>
-      <li><strong>Cheating:</strong> Hacked clients, macros, or unfair mods are not allowed.</li>
-      <li><strong>Exploiting:</strong> Bug abuse is strictly forbidden and must be reported.</li>
-      <li><strong>Account Responsibility:</strong> You are responsible for your account actions.</li>
-    </ul>
+    <div class="card">
+      <h3>⚖️ Fair Play</h3>
+      <p>No pay-to-win systems — progression stays balanced.</p>
+    </div>
 
-  </div>
-
-  <!-- ECONOMY -->
-  <div class="rule-block">
-
-    <h2>💰 Economy & Fair Play</h2>
-
-    <ul>
-      <li><strong>Duping:</strong> Any duplication exploit is permanent ban level offense.</li>
-      <li><strong>Trading:</strong> All trades are final unless proven scam.</li>
-      <li><strong>Economy Abuse:</strong> Exploiting systems is strictly forbidden.</li>
-    </ul>
-
-  </div>
-
-  <!-- PUNISHMENTS -->
-  <div class="punishments">
-
-    <h2>⚠️ Punishment System</h2>
-
-    <div class="punish-grid">
-
-      <div class="punish">
-        <h3>Minor Offenses</h3>
-        <p>Warnings • Temporary Mutes • Short Kicks</p>
-      </div>
-
-      <div class="punish">
-        <h3>Moderate Offenses</h3>
-        <p>Temporary Ban • Economy Reset • Item Removal</p>
-      </div>
-
-      <div class="punish">
-        <h3>Severe Offenses</h3>
-        <p>Permanent Ban • Blacklist • IP Ban (if needed)</p>
-      </div>
-
+    <div class="card">
+      <h3>🤝 Community</h3>
+      <p>Updates driven by player feedback through Discord.</p>
     </div>
 
   </div>
 
-  <div class="rules-footer">
-    Staff decisions are final. These rules exist to protect fairness and community integrity.
-    <br><br>
-    <strong>By playing on LushHaven, you agree to follow all rules above.</strong>
+</section>
+
+<!-- STORE -->
+<section id="store" class="section">
+
+  <div class="section-title">Rank Store</div>
+
+  <div class="store">
+
+    <div class="rank">
+      <h3>🌿 Explorer</h3>
+      <p>Starter rank</p>
+      <a href="https://lushhaven.tebex.io/package/7397952" target="_blank">Buy</a>
+    </div>
+
+    <div class="rank">
+      <h3>🔥 TrailBlazer</h3>
+      <p>Mid-tier progression</p>
+      <a href="https://lushhaven.tebex.io/package/7397986" target="_blank">Buy</a>
+    </div>
+
+    <div class="rank">
+      <h3>🌊 Traveler</h3>
+      <p>End-game rank</p>
+      <a href="https://lushhaven.tebex.io/package/7398374" target="_blank">Buy</a>
+    </div>
+
   </div>
 
 </section>
+
+<!-- RULES -->
+<section id="rules" class="section">
+
+  <div class="section-title">Rules & Punishments</div>
+
+  <div class="card">
+    <h3>💬 Chat Rules</h3>
+    <p>No hate speech, harassment, or advertising. English only in public chat.</p>
+  </div>
+
+  <div class="card">
+    <h3>🎮 Gameplay Rules</h3>
+    <p>No hacks, macros, or exploits. Bug abuse = punishment.</p>
+  </div>
+
+  <div class="card">
+    <h3>💰 Economy Rules</h3>
+    <p>No duping, scamming, or economy abuse of any kind.</p>
+  </div>
+
+  <div class="card">
+    <h3>⚠️ Punishments</h3>
+    <p>
+      • Warning / Mute<br>
+      • Temporary Ban<br>
+      • Permanent Ban<br>
+      • IP Ban (severe cases)
+    </p>
+  </div>
+
+</section>
+
+<footer>
+  © LushHaven • Not affiliated with Mojang
+</footer>
+
+<script>
+const IP = "lushhaven.my.pebble.host";
+function copyIP(){ navigator.clipboard.writeText(IP); }
+</script>
+
+<script src="particles.js"></script>
+
+</body>
+</html>
