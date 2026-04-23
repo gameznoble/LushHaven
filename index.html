@@ -2,32 +2,46 @@
   <div class="nav">
     <div class="logo">LUSH<span>HAVEN</span></div>
     <div class="links">
-      <button class="nav-btn active-nav" onclick="showTab('home', this)">Home</button>
-      <button class="nav-btn" onclick="showTab('store', this)">Store</button>
-      <button class="nav-btn" onclick="showTab('discord', this)">Discord</button>
+      <button id="btn-home" class="active" onclick="showTab('home')">Home</button>
+      <button id="btn-store" onclick="showTab('store')">Store</button>
+      <button id="btn-discord" onclick="showTab('discord')">Discord</button>
     </div>
   </div>
 </header>
 
 <section id="home" class="tab active">
-    <h1 class="title">Welcome to LushHaven</h1>
-    <p class="subtitle">A premium survival network built for the community.</p>
-
-    <div class="buttons">
-      <button class="btn primary" onclick="joinServer()">Join Server</button>
-      <button class="btn" onclick="showTab('store')">View Store</button>
-    </div>
-
-    <div class="ip">lushhaven.my.pebble.host</div>
+  <h1 class="title">WELCOME TO LUSHHAVEN</h1>
+  <p class="subtitle">A premium survival network built for the community.</p>
+  <div style="display: flex; justify-content: center; gap: 15px;">
+    <button class="btn primary" onclick="joinServer()">Join Server</button>
+    <button class="btn" onclick="showTab('store')">View Store</button>
+  </div>
+  <p style="margin-top: 30px; font-family: monospace; color: var(--lush-purple);">lushhaven.my.pebble.host</p>
 </section>
 
 <section id="store" class="tab">
-  <h2 class="title" style="font-size: 30px;">Rank Store</h2>
+  <h2 class="title" style="font-size: 30px;">RANK STORE</h2>
   <div class="grid">
     <div class="card">
       <h3>🌿 Explorer</h3>
       <p>Starter adventurer rank</p>
-      <a href="https://lushhaven.tebex.io/package/7397952" target="_blank" class="buy">Buy Package</a>
+      <a href="https://lushhaven.tebex.io/package/7397952" target="_blank" class="btn" style="display: block; margin-top: 15px;">Buy</a>
     </div>
     </div>
 </section>
+
+<script>
+  function showTab(id) {
+    // Hide all tabs
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    // Deactivate all buttons
+    document.querySelectorAll('.links button').forEach(b => b.classList.remove('active'));
+    
+    // Show current
+    document.getElementById(id).classList.add('active');
+    // We update the button by checking ID (optional but cleaner)
+    if(id === 'home') document.getElementById('btn-home').classList.add('active');
+    if(id === 'store') document.getElementById('btn-store').classList.add('active');
+    if(id === 'discord') document.getElementById('btn-discord').classList.add('active');
+  }
+</script>
