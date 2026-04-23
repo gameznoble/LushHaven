@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LushHaven</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="bg-glow"></div>
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <div class="logo">
+      ✦ LushHaven
+    </div>
+
+    <h1>
+      A New Minecraft Experience
+    </h1>
+
+    <p>
+      Survival • Economy • PvP • Community  
+      Build, grind, and explore in a growing world made for players like you.
+    </p>
+
+    <div class="buttons">
+
+      <button class="btn primary" onclick="copyIP()">
+        Copy IP
+      </button>
+
+      <a class="btn secondary" href="https://your-tebex-link.com">
+        Store
+      </a>
+
+      <a class="btn ghost" href="https://discord.gg/yourlink">
+        Discord
+      </a>
+
+    </div>
+
+    <div class="ip" id="ip">
+      lushhaven.my.pebble.host
+    </div>
+
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+
+    <div class="card">
+      <h3>⚔ PvP</h3>
+      <p>Balanced combat with smooth mechanics and fair fights.</p>
+    </div>
+
+    <div class="card">
+      <h3>💰 Economy</h3>
+      <p>Earn money, trade items, and build your empire.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌿 Survival</h3>
+      <p>Classic survival enhanced with quality-of-life improvements.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    © LushHaven • Not affiliated with Mojang
+  </footer>
+
+  <script>
+    function copyIP() {
+      const ip = document.getElementById("ip").innerText;
+      navigator.clipboard.writeText(ip);
+      alert("LushHaven IP copied!");
+    }
+  </script>
+
+</body>
+</html>
