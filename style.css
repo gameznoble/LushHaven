@@ -3,32 +3,23 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: #05030a;
   color: white;
+  overflow-x: hidden;
 }
 
-/* BACKGROUND DEPTH */
-.bg {
+/* PARTICLE CANVAS */
+#particles {
   position: fixed;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 20% 20%, #a855f7, transparent 40%),
-              radial-gradient(circle at 80% 60%, #4c1d95, transparent 40%),
-              radial-gradient(circle at 50% 90%, #7c3aed, transparent 40%);
-  opacity: 0.25;
-  animation: move 25s linear infinite;
-  z-index: -2;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
 }
 
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: -1;
-}
-
-@keyframes move {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(-10%, -10%); }
-  100% { transform: translate(0,0); }
+  background: radial-gradient(circle at top, rgba(168,85,247,0.2), transparent 60%),
+              rgba(0,0,0,0.6);
+  z-index: -2;
 }
 
 /* NAV */
@@ -36,72 +27,60 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
+  background: rgba(0,0,0,0.4);
   backdrop-filter: blur(12px);
-  background: rgba(0,0,0,0.5);
   z-index: 100;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 15px 25px;
+  padding: 15px 30px;
 }
 
 .logo {
   color: #a855f7;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
-.links button {
-  background: none;
-  border: none;
-  color: white;
+.links a {
   margin-left: 15px;
-  cursor: pointer;
+  text-decoration: none;
+  color: white;
   opacity: 0.6;
+  transition: 0.2s;
 }
 
-.links button:hover {
+.links a:hover {
   opacity: 1;
-}
-
-/* PAGE SYSTEM */
-.page {
-  display: none;
-  padding: 150px 20px 60px;
-  animation: fade 0.25s ease;
-}
-
-.page.active {
-  display: block;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  color: #a855f7;
 }
 
 /* HERO */
 .hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  max-width: 800px;
-  margin: auto;
 }
 
-h1 {
-  font-size: 64px;
+.glow-text {
+  font-size: 72px;
   margin: 0;
   color: #a855f7;
+  text-shadow: 0 0 25px rgba(168,85,247,0.5);
 }
 
-p {
-  opacity: 0.8;
+.subtitle {
   max-width: 700px;
   margin: 10px auto;
+  opacity: 0.8;
 }
 
 /* BUTTONS */
-.cta {
+.buttons {
   margin-top: 20px;
 }
 
@@ -112,45 +91,52 @@ p {
   background: rgba(255,255,255,0.1);
   color: white;
   border: none;
+  text-decoration: none;
+  display: inline-block;
   cursor: pointer;
 }
 
 .glow {
   background: #a855f7;
-  box-shadow: 0 0 25px rgba(168,85,247,0.4);
+  box-shadow: 0 0 25px rgba(168,85,247,0.5);
 }
 
 /* IP */
 .ip {
   margin-top: 10px;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-/* GRID */
+/* SECTIONS */
+.section {
+  padding: 80px 20px;
+}
+
+/* GRID SYSTEM */
 .grid, .store {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   max-width: 1000px;
-  margin: 40px auto;
+  margin: auto;
 }
 
-/* CARDS (FIXED DEPTH) */
-.card {
+/* CARDS (PRO DEPTH) */
+.card, .rank {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(168,85,247,0.25);
   border-radius: 14px;
-  padding: 20px;
-  transition: 0.2s;
+  padding: 25px;
+  transition: 0.25s;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(168,85,247,0.25);
+.card:hover, .rank:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(168,85,247,0.25);
 }
 
-/* STORE BUTTON */
-.card a {
+/* STORE */
+.rank a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 14px;
@@ -165,6 +151,7 @@ p {
   max-width: 700px;
   margin: auto;
   text-align: center;
+  opacity: 0.85;
 }
 
 /* FOOTER */
