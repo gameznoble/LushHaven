@@ -9,71 +9,83 @@
 
 <body>
 
-<header class="header">
+<header>
   <div class="nav">
     <div class="logo">LushHaven</div>
 
     <div class="links">
-      <a href="#home">Home</a>
-      <a href="#store">Store</a>
-      <a href="#discord">Discord</a>
+      <button onclick="showTab('home')">Home</button>
+      <button onclick="showTab('store')">Store</button>
+      <button onclick="showTab('discord')">Discord</button>
     </div>
   </div>
 </header>
 
-<!-- HOME -->
-<section id="home" class="section hero">
+<!-- HOME TAB -->
+<section id="home" class="tab active">
 
-  <h1>LushHaven</h1>
-  <p>A premium Minecraft survival network built for community, progression, and exploration.</p>
+  <div class="center">
 
-  <div class="buttons">
-    <button onclick="joinServer()" class="btn primary">Join Server</button>
-    <a href="#store" class="btn">View Store</a>
-    <a href="https://discord.gg/rv7pc2DWWY" target="_blank" class="btn ghost">Discord</a>
+    <h1 class="title">Welcome to LushHaven</h1>
+
+    <p class="subtitle">
+      A premium Minecraft survival network focused on progression, community, and exploration.
+    </p>
+
+    <div class="buttons">
+      <button class="btn primary" onclick="joinServer()">Join Server</button>
+      <button class="btn" onclick="showTab('store')">View Store</button>
+    </div>
+
+    <div class="ip">lushhaven.my.pebble.host</div>
+
   </div>
-
-  <div class="ip">lushhaven.my.pebble.host</div>
 
 </section>
 
-<!-- STORE -->
-<section id="store" class="section">
+<!-- STORE TAB -->
+<section id="store" class="tab">
 
-  <h2>Rank Store</h2>
+  <h2 class="section-title">Rank Store</h2>
 
   <div class="grid">
 
     <div class="card">
       <h3>🌿 Explorer</h3>
-      <p>Starter rank for new players</p>
-      <a class="buy" href="https://lushhaven.tebex.io/package/7397952" target="_blank">Buy</a>
+      <p>Starter adventurer rank</p>
+      <a href="https://lushhaven.tebex.io/package/7397952" target="_blank" class="buy">Buy Explorer</a>
     </div>
 
     <div class="card">
       <h3>🔥 TrailBlazer</h3>
       <p>Mid-tier progression rank</p>
-      <a class="buy" href="https://lushhaven.tebex.io/package/7397986" target="_blank">Buy</a>
+      <a href="https://lushhaven.tebex.io/package/7397986" target="_blank" class="buy">Buy TrailBlazer</a>
     </div>
 
     <div class="card">
       <h3>🌊 Traveler</h3>
-      <p>Premium end-game rank</p>
-      <a class="buy" href="https://lushhaven.tebex.io/package/7398374" target="_blank">Buy</a>
+      <p>Top-tier exploration rank</p>
+      <a href="https://lushhaven.tebex.io/package/7398374" target="_blank" class="buy">Buy Traveler</a>
     </div>
 
   </div>
 
 </section>
 
-<!-- DISCORD -->
-<section id="discord" class="section">
+<!-- DISCORD TAB -->
+<section id="discord" class="tab">
 
-  <h2>Discord</h2>
+  <div class="center">
 
-  <a class="btn primary" href="https://discord.gg/rv7pc2DWWY" target="_blank">
-    Join Community
-  </a>
+    <h2 class="section-title">Join Our Discord</h2>
+
+    <p class="subtitle">Connect with the LushHaven community</p>
+
+    <a class="btn primary" href="https://discord.gg/rv7pc2DWWY" target="_blank">
+      Join Discord
+    </a>
+
+  </div>
 
 </section>
 
@@ -87,6 +99,11 @@
   function joinServer() {
     navigator.clipboard.writeText(IP);
     window.location.href = `minecraft://?addExternalServer=LushHaven|${IP}`;
+  }
+
+  function showTab(id) {
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
   }
 </script>
 
