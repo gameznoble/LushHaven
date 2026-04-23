@@ -9,16 +9,18 @@
 
 <body>
 
+<div class="bg"></div>
+
 <header class="header">
-  <div class="container nav">
+  <div class="nav">
 
     <div class="logo">LushHaven</div>
 
     <div class="nav-links">
-      <button onclick="show('home')">Home</button>
-      <button onclick="show('store')">Store</button>
-      <button onclick="show('info')">Info</button>
-      <button onclick="show('discord')">Discord</button>
+      <button onclick="show('home')" id="nav-home" class="active">Home</button>
+      <button onclick="show('store')" id="nav-store">Store</button>
+      <button onclick="show('info')" id="nav-info">Info</button>
+      <button onclick="show('discord')" id="nav-discord">Discord</button>
     </div>
 
   </div>
@@ -27,16 +29,14 @@
 <!-- HOME -->
 <section id="home" class="page active">
 
-  <div class="hero">
+  <div class="hero glass">
 
     <h1>LushHaven</h1>
 
-    <p>
-      A premium Minecraft survival experience built around progression, economy, and community.
-    </p>
+    <p>A premium Minecraft survival network built for progression, economy, and community.</p>
 
-    <div class="hero-buttons">
-      <button class="btn primary" onclick="copyIP()">Copy IP</button>
+    <div class="buttons">
+      <button class="btn glow" onclick="copyIP()">Copy IP</button>
       <button class="btn" onclick="show('store')">View Store</button>
     </div>
 
@@ -44,21 +44,21 @@
 
   </div>
 
-  <div class="features">
+  <div class="grid">
 
-    <div class="card">
+    <div class="card hover">
       <h3>⚡ Performance</h3>
-      <p>High TPS, optimized gameplay.</p>
+      <p>Optimized low-lag gameplay.</p>
     </div>
 
-    <div class="card">
+    <div class="card hover">
       <h3>⚖️ Fair Play</h3>
       <p>No pay-to-win mechanics.</p>
     </div>
 
-    <div class="card">
-      <h3>🌌 Design</h3>
-      <p>Clean purple cosmic aesthetic.</p>
+    <div class="card hover">
+      <h3>🌌 Style</h3>
+      <p>Clean purple cosmic UI theme.</p>
     </div>
 
   </div>
@@ -72,21 +72,21 @@
 
   <div class="store">
 
-    <div class="item">
+    <div class="card rank hover">
       <h3>🌿 Explorer</h3>
       <p>Starter adventurer rank</p>
       <a href="https://lushhaven.tebex.io/package/7397952" target="_blank">Buy</a>
     </div>
 
-    <div class="item">
+    <div class="card rank hover">
       <h3>🔥 TrailBlazer</h3>
-      <p>Mid-tier progression rank</p>
+      <p>Mid progression rank</p>
       <a href="https://lushhaven.tebex.io/package/7397986" target="_blank">Buy</a>
     </div>
 
-    <div class="item">
+    <div class="card rank hover">
       <h3>🌊 Traveler</h3>
-      <p>Premium end-game rank</p>
+      <p>End-game premium rank</p>
       <a href="https://lushhaven.tebex.io/package/7398374" target="_blank">Buy</a>
     </div>
 
@@ -97,29 +97,14 @@
 <!-- INFO -->
 <section id="info" class="page">
 
-  <h2 class="title">About LushHaven</h2>
+  <div class="glass center">
 
-  <p class="text">
-    LushHaven is a survival-based Minecraft network focused on long-term progression,
-    fair economy systems, and a community-driven experience.
-  </p>
+    <h2>About LushHaven</h2>
 
-  <div class="info-grid">
-
-    <div class="card">
-      <h3>🎮 Gameplay</h3>
-      <p>Survival + progression systems.</p>
-    </div>
-
-    <div class="card">
-      <h3>🏗 Builds</h3>
-      <p>Custom worlds and terrain.</p>
-    </div>
-
-    <div class="card">
-      <h3>🤝 Community</h3>
-      <p>Discord-driven updates.</p>
-    </div>
+    <p>
+      A long-term survival experience focused on progression, community,
+      and balanced gameplay systems.
+    </p>
 
   </div>
 
@@ -128,14 +113,14 @@
 <!-- DISCORD -->
 <section id="discord" class="page">
 
-  <div class="hero">
+  <div class="glass center">
 
-    <h2>Join Our Discord</h2>
+    <h2>Join Discord</h2>
 
-    <p>Stay updated, chat, and get support.</p>
+    <p>Connect with the community & updates</p>
 
-    <a class="btn primary" href="https://discord.gg/rv7pc2DWWY" target="_blank">
-      Join Discord
+    <a class="btn glow" href="https://discord.gg/rv7pc2DWWY" target="_blank">
+      Join Server
     </a>
 
   </div>
@@ -152,11 +137,13 @@
   function show(id) {
     document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
     document.getElementById(id).classList.add("active");
+
+    document.querySelectorAll(".nav-links button").forEach(b => b.classList.remove("active"));
+    document.getElementById("nav-" + id).classList.add("active");
   }
 
   function copyIP() {
     navigator.clipboard.writeText(IP);
-    alert("Server IP copied: " + IP);
   }
 </script>
 
