@@ -24,35 +24,38 @@
 <div class="container">
     <div class="rules-header">
         <h1>Client <span>Modifications</span></h1>
-        <p>If it is not here, it is "Use at your own risk."</p>
+        <p>Allowed mods are Quality of Life. Prohibited mods are Cheats.</p>
         <div class="search-wrapper">
             <i class="fas fa-search"></i>
             <input type="text" id="modSearch" placeholder="Search mods..." onkeyup="filterMods()">
         </div>
     </div>
 
-    <h2 class="tier-title status-green">Permitted / Quality of Life</h2>
+    <h2 class="tier-title status-green">Permitted Modifications</h2>
     <div class="rule-grid">
-        <div class="rule-node status-green-bg" onclick="openMod('Performance', 'Sodium, Optifine, Lithium.', 'PERMITTED')">Performance Mods</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Inventory Tweaks', 'Sorting is ALLOWED. Auto-Armor/Auto-Pot is BANNED.', 'SORTING ONLY')">Inventory Tweaks</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Schematics', 'Litematica/Schematica allowed. No Printer.', 'PERMITTED')">Schematics</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Visuals', 'Shaders, Capes, and Blur.', 'PERMITTED')">Visuals & Shaders</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Performance', 'Sodium, Iris, Lithium, Starlight.', 'ALLOWED')">Performance Mods</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Inventory Tweaks', 'Sorting is ALLOWED. Auto-Armor and Auto-Pot are BANNED.', 'SORTING ONLY')">Inventory Tweaks</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Schematics', 'Litematica/Schematica allowed for visuals. Printer is BANNED.', 'VISUAL ONLY')">Schematics</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Mini-Maps', 'Must show surface only. No cave or player maps.', 'SURFACE ONLY')">Mini-Maps</div>
+        <div class="rule-node status-green-bg" onclick="openMod('PvP Clients', 'Badlion, Lunar, Feather. Keep cheat settings OFF.', 'ALLOWED')">PvP Clients</div>
     </div>
 
-    <h2 class="tier-title status-red">Prohibited / Cheats</h2>
+    <h2 class="tier-title status-red">Prohibited / Hacked Clients</h2>
     <div class="rule-grid">
-        <div class="rule-node status-red-bg" onclick="openMod('Combat Hacks', 'KillAura, Reach, Auto-Clickers.', 'PERM BAN')">Combat Cheats</div>
-        <div class="rule-node status-red-bg" onclick="openMod('World Hacks', 'X-Ray, ESP, Freecam, Baritone.', '30d ➔ PERM')">World Cheats</div>
-        <div class="rule-node status-red-bg" onclick="openMod('Movement Hacks', 'Fly, Speed, Step, Spider.', '7d ➔ PERM')">Movement Cheats</div>
+        <div class="rule-node status-red-bg" onclick="openMod('Combat Hacks', 'Reach, KillAura, TriggerBot, Velocity.', 'PERM BAN')">Combat Hacks</div>
+        <div class="rule-node status-red-bg" onclick="openMod('Movement Hacks', 'Fly, Speed, Jesus, Spider, Timer.', 'PERM BAN')">Movement Hacks</div>
+        <div class="rule-node status-red-bg" onclick="openMod('Automation', 'Baritone, Auto-Pathing, Scripts, Bots.', 'PERM BAN')">AI / Bots</div>
+        <div class="rule-node status-red-bg" onclick="openMod('Visual Cheats', 'X-Ray, ESP, Freecam, Tracers.', '30d ➔ PERM')">Visual Cheats</div>
+        <div class="rule-node status-red-bg" onclick="openMod('Packets', 'Packet manipulators or lag-simulation mods.', 'PERM BAN')">Packet Exploits</div>
     </div>
 </div>
 
 <div id="modModal" class="modal">
     <div class="modal-content">
         <h2 id="modalTitle">Mod Name</h2>
-        <p id="modalDesc" style="margin: 15px 0; color: #888;"></p>
+        <p id="modalDesc" style="margin: 20px 0; color: #888;"></p>
         <div id="statusBox" class="punishment-banner">
-            <span class="banner-label">STATUS</span>
+            <span class="banner-label">MOD STATUS</span>
             <span id="modalStatus" class="banner-steps">Steps</span>
         </div>
         <button class="btn-close" onclick="closeModal()">Close</button>
