@@ -17,39 +17,38 @@
             <a href="rules.html">Rules</a>
             <a href="mods.html">Allowed Mods</a>
             <a href="https://lushhaven.tebex.io/">Store</a>
-            <a href="https://discord.gg/yourlink" class="nav-discord" target="_blank">
-                <i class="fab fa-discord"></i>
+            <a href="https://discord.gg/uBe9tJNKxu" class="discord-btn-nav" target="_blank">
+                <i class="fab fa-discord"></i> Join
             </a>
         </div>
     </div>
 </header>
 
-<main class="hero-container">
-    <section class="hero-content">
-        <div class="badge">SERVER STATUS: ONLINE</div>
+<section class="hero">
+    <div class="hero-content">
+        <div class="status-badge"><i class="fas fa-circle"></i> Server Online</div>
         <h1>Enter the <span>Haven.</span></h1>
-        <p>Join the ultimate community-driven experience. Explore, build, and conquer with a custom economy and dedicated staff.</p>
+        <p>Experience the next generation of community gaming. High performance, custom features, and a dedicated staff team.</p>
         
-        <div class="hero-actions">
-            <a href="https://discord.gg/yourlink" class="btn-discord-main" target="_blank">
+        <div class="hero-btns">
+            <a href="https://discord.gg/uBe9tJNKxu" class="discord-btn-hero" target="_blank">
                 <i class="fab fa-discord"></i> Join Our Discord
             </a>
             
-            <button class="btn-copy-ip" onclick="copyIP()">
-                <i class="fas fa-server"></i>
-                <span id="ipText">play.lushhaven.com</span>
+            <button class="ip-btn" onclick="copyIP()">
+                <i class="fas fa-server"></i> <span id="ipText">play.lushhaven.com</span>
             </button>
         </div>
-    </section>
-</main>
+    </div>
+</section>
 
 <script>
     function copyIP() {
         const ip = "play.lushhaven.com";
         navigator.clipboard.writeText(ip);
-        const btnText = document.getElementById('ipText');
-        btnText.innerText = "IP Copied!";
-        setTimeout(() => { btnText.innerText = ip; }, 2000);
+        const text = document.getElementById('ipText');
+        text.innerText = "IP Copied!";
+        setTimeout(() => { text.innerText = ip; }, 2000);
     }
 </script>
 
