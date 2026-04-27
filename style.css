@@ -1,181 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
 :root {
-    --bg: #06040d;
-    --card: rgba(26, 20, 37, 0.6);
-    --purple-glow: rgba(167, 59, 179, 0.2);
+    --bg: #09070f;
+    --card-bg: #13101a;
     --accent: #a73bb3;
-    --t1: #a73bb3;
-    --t2: #00c2ff;
-    --t3: #ff9d00;
-    --t4: #ff4d4d;
-    --extra: #00ffaa;
+    --border: rgba(255, 255, 255, 0.08);
+    --text-dim: #94a3b8;
 }
 
 body {
-    margin: 0;
-    background: var(--bg);
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(93, 63, 211, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(167, 59, 179, 0.1) 0%, transparent 40%);
-    color: #e0e0e0;
+    margin: 0; background: var(--bg); color: #f1f5f9;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    line-height: 1.6;
 }
 
-/* Glassmorphism Nav */
 header {
-    background: rgba(6, 4, 13, 0.8);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background: rgba(9, 7, 15, 0.9); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
 }
 
-.nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
+.nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; padding: 20px; }
+.logo { font-weight: 800; font-size: 22px; color: #fff; }
+.logo span { color: var(--accent); }
+.links a { color: var(--text-dim); text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 14px; }
+.links a.active { color: var(--accent); }
 
-.logo {
-    font-weight: 800;
-    font-size: 26px;
-    letter-spacing: -1px;
-    text-shadow: 0 0 15px var(--accent);
-}
+/* Grid Layout */
+.rules-page-wrap { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+.rules-intro { text-align: center; margin-bottom: 60px; }
+.rules-intro h1 { font-size: 48px; margin: 0; }
+.rules-intro h1 span { color: var(--accent); }
 
-.links a {
-    color: #999;
-    text-decoration: none;
-    margin-left: 30px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+.rule-section { margin-bottom: 50px; }
+.section-heading { font-size: 14px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
 
-.links a:hover { color: var(--accent); }
-
-/* Containers */
-.rules-container {
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 0 20px;
-}
-
-.rules-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.rules-header h1 {
-    font-size: 56px;
-    margin: 0;
-    background: linear-gradient(to right, #fff, var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Tier Card Styling */
-.tier-card {
-    background: var(--card);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    margin-bottom: 25px;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.tier-card:hover {
-    border-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
-}
-
-summary {
-    padding: 30px;
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.tier-name {
-    font-size: 22px;
-    font-weight: 800;
-    color: #fff;
-}
-
-/* Ladders */
-.ladder-wrap {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
-    overflow: hidden;
-}
-
-.ladder-wrap::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 4px; height: 100%;
-}
-
-.t1 .ladder-wrap::before { background: var(--t1); box-shadow: 0 0 15px var(--t1); }
-.t2 .ladder-wrap::before { background: var(--t2); box-shadow: 0 0 15px var(--t2); }
-.t3 .ladder-wrap::before { background: var(--t3); box-shadow: 0 0 15px var(--t3); }
-
-.ladder-steps {
-    font-weight: 800;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Rule Items */
 .rule-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
 }
 
-.rule-box {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 3px solid rgba(255,255,255,0.1);
+/* Individual Rule Box */
+.rule-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, border-color 0.2s;
 }
 
-.rule-box h4 {
-    margin: 0 0 10px 0;
-    color: var(--accent);
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
+.rule-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
 }
 
-.rule-box p {
-    margin: 0;
+.rule-header {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.rule-desc {
     font-size: 14px;
-    color: #bbb;
+    color: var(--text-dim);
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 20px;
 }
 
-footer {
-    text-align: center;
-    padding: 80px 0;
-    opacity: 0.4;
+.rule-punishment {
     font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    background: rgba(167, 59, 179, 0.1);
+    color: var(--accent);
+    border-radius: 6px;
+    align-self: flex-start;
 }
+
+/* High Severity Variants */
+.high-severity .rule-punishment {
+    background: rgba(255, 77, 77, 0.1);
+    color: #ff4d4d;
+}
+
+.blacklist {
+    border: 1px solid rgba(255, 77, 77, 0.3);
+    background: linear-gradient(to bottom right, #1a1010, var(--card-bg));
+}
+
+footer { text-align: center; padding: 60px; color: #444; font-size: 12px; }
+
+@media (max-width: 768px) { .rule-grid { grid-template-columns: 1fr; } }
