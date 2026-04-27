@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LushHaven | Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <canvas id="particles"></canvas>
-    <div class="overlay"></div>
+<body class="home-bg">
 
-    <header>
-        <div class="nav">
-            <div class="logo">LushHaven</div>
-            <div class="links">
-                <a href="index.html">Home</a>
-                <a href="rules.html">Rules</a>
-                <a href="#store">Store</a>
-                <a href="https://discord.gg/rv7pc2DWWY" target="_blank">Discord</a>
-            </div>
+<header>
+    <div class="nav">
+        <div class="logo">LUSH<span>HAVEN</span></div>
+        <div class="links">
+            <a href="index.html" class="active">Home</a>
+            <a href="rules.html">Rules</a>
+            <a href="https://lushhaven.tebex.io/">Store</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <section id="home" class="hero">
-        <h1 class="glow-text">LushHaven</h1>
-        <p class="subtitle">A premium Minecraft survival network built for progression, economy, and community.</p>
-        <div class="cta">
-            <button class="btn glow" onclick="copyIP()">Copy IP</button>
-            <a class="btn" href="https://lushhaven.tebex.io/" target="_blank">Store</a>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to <span>LushHaven</span></h1>
+        <p>A premium Minecraft survival network designed for community and progression.</p>
+        <div class="hero-btns">
+            <button class="btn-main" onclick="copyIP()">Copy Server IP</button>
+            <a href="rules.html" class="btn-sub">View Rules</a>
         </div>
-        <div class="ip">lushhaven.my.pebble.host</div>
-    </section>
+        <div class="server-ip">lushhaven.my.pebble.host</div>
+    </div>
+</section>
 
-    <script>
-        const IP = "lushhaven.my.pebble.host";
-        function copyIP(){ 
-            navigator.clipboard.writeText(IP);
-            alert("IP Copied!");
-        }
-    </script>
-    <script src="particles.js"></script>
+<script>
+    function copyIP() {
+        navigator.clipboard.writeText("lushhaven.my.pebble.host");
+        alert("IP Copied! Join us on Minecraft.");
+    }
+</script>
+
 </body>
 </html>
