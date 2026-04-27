@@ -77,3 +77,58 @@ header {
 @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 .close { position: absolute; right: 20px; top: 15px; color: #555; font-size: 24px; cursor: pointer; }
 .modal-punishment { margin-top: 25px; padding: 20px; background: #000; border: 1px dashed var(--accent); border-radius: 10px; color: #fff; font-weight: 800; }
+/* Visible Punishment Banners */
+.punishment-banner {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+.banner-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.banner-steps {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Tier Specific Banner Backgrounds */
+.t1-bg { background: linear-gradient(90deg, #a73bb3 0%, #1a1421 100%); }
+.t2-bg { background: linear-gradient(90deg, #00c2ff 0%, #0d1621 100%); }
+.t3-bg { background: linear-gradient(90deg, #ff4d4d 0%, #210d0d 100%); }
+.blacklist-bg { background: #330000; border-left: 5px solid #ff0000; }
+
+/* Modal Content Adjustment */
+.modal-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+.btn-close {
+    margin-top: 25px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid var(--accent);
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-close:hover {
+    background: var(--accent);
+}
