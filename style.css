@@ -5,194 +5,85 @@
     --card: #120e1a;
     --accent: #a73bb3;
     --text: #e0e0e0;
-    --success: #2ecc71;
-    --warning: #f1c40f;
-    --danger: #e74c3c;
 }
 
-/* --- Global Reset --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Essential to prevent layout breaking */
-}
+* { box-sizing: border-box; } /* Prevents layout breaking */
 
 body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    overflow-x: hidden;
-    line-height: 1.6;
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden;
 }
 
-/* --- Navbar --- */
-header {
-    background: rgba(7, 5, 10, 0.95);
-    border-bottom: 1px solid #1f1a29;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(12px);
-}
-
-.nav {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 18px 25px;
-    align-items: center;
-}
-
-.logo { font-weight: 800; font-size: 24px; color: #fff; letter-spacing: -1px; }
+/* NAVIGATION */
+header { background: rgba(7,5,10,0.9); border-bottom: 1px solid #1f1a29; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+.nav { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; padding: 15px 20px; align-items: center; }
+.logo { font-weight: 800; font-size: 22px; color: #fff; }
 .logo span { color: var(--accent); }
-
-.links a { 
-    color: #888; 
-    text-decoration: none; 
-    margin-left: 25px; 
-    font-weight: 600; 
-    font-size: 13px; 
-    text-transform: uppercase; 
-    transition: 0.3s; 
-}
+.links a { color: #888; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 13px; text-transform: uppercase; }
 .links a.active, .links a:hover { color: var(--accent); }
 
-/* --- Main Layout Wrapper --- */
+/* LAYOUT CONTAINER */
 .main-wrapper {
-    max-width: 900px;
+    max-width: 800px; /* Kept it tighter so it stays centered */
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* --- Hero Section --- */
-.hero-section {
-    text-align: center;
-    padding: 80px 0;
-    width: 100%;
-}
-
-.hero-section h1 {
-    font-size: clamp(45px, 10vw, 80px);
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 15px 0;
-    color: #fff;
-}
+/* HERO SECTION */
+.hero-section { text-align: center; width: 100%; margin-bottom: 60px; }
+.hero-section h1 { font-size: clamp(40px, 10vw, 75px); margin: 15px 0; font-weight: 800; line-height: 1.1; color: #fff; }
 .hero-section h1 span { color: var(--accent); }
-
-.hero-section p {
-    color: #888;
-    font-size: 1.1rem;
-    max-width: 550px;
-    margin: 0 auto 35px;
-}
-
-.badge {
-    display: inline-block;
-    background: rgba(167, 59, 179, 0.1);
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
+.hero-section p { color: #888; margin: 0 auto 30px; line-height: 1.6; max-width: 500px; }
+.badge { display: inline-block; background: rgba(167, 59, 179, 0.1); border: 1px solid var(--accent); color: var(--accent); padding: 6px 16px; border-radius: 50px; font-size: 10px; font-weight: 800; }
 
 .btn-main {
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 16px 35px;
-    border-radius: 10px;
-    font-weight: 800;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--accent); color: #fff; border: none; padding: 16px 32px; border-radius: 10px;
+    font-weight: 800; cursor: pointer; transition: 0.3s; font-family: inherit;
 }
-.btn-main:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(167, 59, 179, 0.4); }
+.btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(167, 59, 179, 0.3); }
 
-/* --- Stats Grid --- */
+/* STATS SECTION */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;
-    max-width: 650px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
-
 .stat-card {
-    background: var(--card);
-    border: 1px solid #1f1a29;
-    padding: 30px;
-    border-radius: 18px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: var(--card); border: 1px solid #1f1a29; padding: 30px; border-radius: 15px;
+    text-align: center; display: flex; flex-direction: column; align-items: center;
 }
-.stat-card i { color: var(--accent); font-size: 24px; margin-bottom: 12px; }
-.stat-val { font-weight: 800; font-size: 20px; color: #fff; }
-.stat-lbl { font-size: 11px; text-transform: uppercase; color: #555; letter-spacing: 1px; }
+.stat-card i { color: var(--accent); margin-bottom: 12px; font-size: 22px; }
+.stat-val { font-weight: 800; font-size: 18px; color: #fff; }
+.stat-lbl { font-size: 10px; text-transform: uppercase; color: #555; letter-spacing: 1px; margin-top: 4px; }
 
-/* --- News Section --- */
+/* NEWS SECTION */
 .news-section { width: 100%; }
-.section-title { font-size: 26px; font-weight: 800; margin-bottom: 25px; text-align: left; }
-.section-title span { color: var(--accent); }
+.title-left { font-size: 24px; font-weight: 800; margin-bottom: 25px; text-align: left; width: 100%; }
+.title-left span { color: var(--accent); }
 
 .news-item {
-    background: var(--card);
-    border: 1px solid #1f1a29;
-    padding: 35px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.3s;
+    background: var(--card); border: 1px solid #1f1a29; padding: 30px; border-radius: 18px;
+    display: flex; justify-content: space-between; align-items: center; width: 100%;
 }
-.news-item:hover { border-color: var(--accent); transform: scale(1.01); }
+.tag { font-size: 9px; font-weight: 800; background: var(--accent); color: #fff; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; display: inline-block; }
+.news-item h3 { margin: 0 0 8px 0; font-size: 20px; color: #fff; }
+.news-item p { margin: 0; color: #888; font-size: 14px; line-height: 1.5; }
 
-.tag {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 4px 12px;
-    border-radius: 6px;
-    margin-bottom: 12px;
-}
-
-.news-info h3 { font-size: 22px; color: #fff; margin-bottom: 8px; }
-.news-info p { color: #888; font-size: 15px; max-width: 500px; }
-
-/* --- Mods Page Colors --- */
-.status-green-bg { background: rgba(46, 204, 113, 0.05) !important; border: 1px solid var(--success) !important; color: var(--success); }
-.status-yellow-bg { background: rgba(241, 196, 15, 0.05) !important; border: 1px solid var(--warning) !important; color: var(--warning); }
-.status-red-bg { background: rgba(231, 76, 60, 0.05) !important; border: 1px solid var(--danger) !important; color: var(--danger); }
-
-/* --- Animations & Background --- */
+/* BACKGROUND ANIMATION */
 .bg-animate {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 20%, rgba(167, 59, 179, 0.08) 0%, transparent 65%);
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(167, 59, 179, 0.08) 0%, transparent 60%);
     z-index: -1;
 }
 
-/* --- Responsive Fixes --- */
-@media (max-width: 700px) {
+/* MOBILE FIX */
+@media (max-width: 600px) {
     .stats-grid { grid-template-columns: 1fr; }
     .news-item { flex-direction: column; text-align: center; }
-    .news-item i { margin-top: 25px; font-size: 30px; }
-    .hero-section h1 { font-size: 45px; }
-    .nav { flex-direction: column; gap: 15px; }
-    .links a { margin: 0 10px; }
+    .news-item i { margin-top: 20px; }
 }
