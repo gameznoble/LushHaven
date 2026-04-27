@@ -5,8 +5,12 @@
     --card: #120e1a;
     --accent: #a73bb3;
     --text: #e0e0e0;
+    --success: #2ecc71;
+    --warning: #f1c40f;
+    --danger: #e74c3c;
 }
 
+/* --- Base Styles --- */
 body {
     margin: 0;
     background: var(--bg);
@@ -15,7 +19,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar */
+/* --- Navbar --- */
 header {
     background: rgba(7, 5, 10, 0.9);
     border-bottom: 1px solid #1f1a29;
@@ -24,6 +28,7 @@ header {
     z-index: 100;
     backdrop-filter: blur(10px);
 }
+
 .nav {
     max-width: 1000px;
     margin: 0 auto;
@@ -32,31 +37,68 @@ header {
     padding: 15px 20px;
     align-items: center;
 }
+
 .logo { font-weight: 800; font-size: 22px; color: #fff; }
 .logo span { color: var(--accent); }
-.links a { color: #888; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 13px; text-transform: uppercase; }
+.links a { color: #888; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 13px; text-transform: uppercase; transition: 0.3s; }
 .links a.active, .links a:hover { color: var(--accent); }
 
-/* Containers & Headers */
-.container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
-.rules-header { text-align: center; margin-bottom: 40px; }
-.rules-header h1 { font-size: 48px; font-weight: 800; margin-bottom: 10px; }
-.rules-header h1 span { color: var(--accent); }
-.tier-title { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin: 40px 0 15px; }
+/* --- Homepage / Hero Centering --- */
+.hero-wrapper {
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical Center */
+    align-items: center;     /* Horizontal Center */
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 
-/* Grid System */
-.rule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
-.rule-node { background: var(--card); border: 1px solid #1f1a29; padding: 25px; text-align: center; border-radius: 12px; cursor: pointer; font-weight: 700; transition: 0.2s; }
-.rule-node:hover { border-color: var(--accent); background: rgba(167, 59, 179, 0.05); transform: translateY(-3px); }
-.rule-node.danger:hover { border-color: #ff4d4d; background: rgba(255, 77, 77, 0.05); }
+.hero-content {
+    max-width: 700px;
+    width: 100%;
+}
 
-/* Search Bar Fix */
+.hero-content h1 {
+    font-size: clamp(48px, 10vw, 80px);
+    margin: 0;
+    font-weight: 800;
+}
+
+.hero-content h1 span { color: var(--accent); }
+
+.hero-content p {
+    color: #888;
+    font-size: 1.1rem;
+    margin: 20px 0 40px;
+    line-height: 1.5;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* --- Modals --- */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center;
+}
+
+.modal-content {
+    background: #181421; padding: 40px; border-radius: 20px; width: 90%; max-width: 500px;
+    border: 1px solid #2a2438; text-align: center; position: relative;
+}
+
+/* --- Search UI --- */
 .search-wrapper {
     position: relative;
     max-width: 500px;
     margin: 30px auto;
-    width: 100%;
 }
+
 .search-wrapper i {
     position: absolute;
     left: 20px;
@@ -64,8 +106,8 @@ header {
     transform: translateY(-50%);
     color: var(--accent);
     opacity: 0.7;
-    z-index: 5;
 }
+
 #ruleSearch, #modSearch {
     width: 100%;
     padding: 15px 15px 15px 50px;
@@ -74,81 +116,44 @@ header {
     border-radius: 50px;
     color: #fff;
     font-family: inherit;
-    font-size: 14px;
     outline: none;
     transition: 0.3s;
     box-sizing: border-box;
 }
-#ruleSearch:focus, #modSearch:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(167, 59, 179, 0.2);
-}
 
-/* Modals */
-.modal {
-    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center;
-}
-.modal-content {
-    background: #181421; padding: 40px; border-radius: 20px; width: 90%; max-width: 500px;
-    border: 1px solid #2a2438; text-align: center; position: relative;
-}
-.modal-divider { width: 40px; height: 3px; background: var(--accent); margin: 15px auto; border-radius: 10px; }
-.close { position: absolute; right: 20px; top: 15px; color: #555; font-size: 24px; cursor: pointer; }
+#ruleSearch:focus, #modSearch:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(167, 59, 179, 0.2); }
 
-/* Punishment Banners (Inside Modal) */
+/* --- Colored Mod Grid --- */
+.container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+.rule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+.rule-node { background: var(--card); border: 1px solid #1f1a29; padding: 25px; text-align: center; border-radius: 12px; cursor: pointer; font-weight: 700; transition: 0.2s; }
+
+/* Status Box Styles */
+.status-green-bg { background: rgba(46, 204, 113, 0.05) !important; border: 1px solid var(--success) !important; color: var(--success); }
+.status-yellow-bg { background: rgba(241, 196, 15, 0.05) !important; border: 1px solid var(--warning) !important; color: var(--warning); }
+.status-red-bg { background: rgba(231, 76, 60, 0.05) !important; border: 1px solid var(--danger) !important; color: var(--danger); }
+
+/* Hover effects for Colored Boxes */
+.status-green-bg:hover { background: rgba(46, 204, 113, 0.15) !important; transform: translateY(-3px); }
+.status-yellow-bg:hover { background: rgba(241, 196, 15, 0.15) !important; transform: translateY(-3px); }
+.status-red-bg:hover { background: rgba(231, 76, 60, 0.15) !important; transform: translateY(-3px); }
+
+/* Banner Styling for Modal Popups */
 .punishment-banner {
     display: flex; flex-direction: column; padding: 20px; border-radius: 12px; margin: 20px 0;
     text-align: center; border-left: 5px solid rgba(255, 255, 255, 0.2);
 }
-.banner-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; margin-bottom: 8px; color: #fff; opacity: 0.8; }
-.banner-steps { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.4; }
 
-.t1-bg { background: linear-gradient(135deg, #a73bb3 0%, #1a1421 100%); }
-.t2-bg { background: linear-gradient(135deg, #00c2ff 0%, #0d1621 100%); }
-.t3-bg { background: linear-gradient(135deg, #ff4d4d 0%, #210d0d 100%); }
-.blacklist-bg { background: #4b0000; border-left-color: #ff0000; }
-
-.btn-close {
-    margin-top: 10px; background: transparent; color: #fff; border: 1px solid var(--accent);
-    padding: 10px 30px; border-radius: 5px; font-weight: 800; cursor: pointer; transition: 0.3s;
-}
-.btn-close:hover { background: var(--accent); }
-
-/* Mods Page Layout */
-.mod-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
-.mod-grid { display: flex; flex-direction: column; gap: 10px; }
-.mod-grid .rule-node { text-align: left; padding: 15px 20px; }
-
-@media (max-width: 800px) { .mod-layout { grid-template-columns: 1fr; } }
-/* Color the actual boxes in the grid */
-.status-green-bg { 
-    background: rgba(46, 204, 113, 0.1) !important; 
-    border: 1px solid #2ecc71 !important; 
-    color: #2ecc71; 
-}
-.status-green-bg:hover { background: rgba(46, 204, 113, 0.2) !important; }
-
-.status-yellow-bg { 
-    background: rgba(241, 196, 15, 0.1) !important; 
-    border: 1px solid #f1c40f !important; 
-    color: #f1c40f; 
-}
-.status-yellow-bg:hover { background: rgba(241, 196, 15, 0.2) !important; }
-
-.status-red-bg { 
-    background: rgba(231, 76, 60, 0.1) !important; 
-    border: 1px solid #e74c3c !important; 
-    color: #e74c3c; 
-}
-.status-red-bg:hover { background: rgba(231, 76, 60, 0.2) !important; }
-
-/* Modal Backgrounds - Solid Gradients */
 .modal-content .status-green-bg { background: linear-gradient(135deg, #27ae60 0%, #120e1a 100%) !important; color: #fff; }
 .modal-content .status-yellow-bg { background: linear-gradient(135deg, #f39c12 0%, #120e1a 100%) !important; color: #fff; }
 .modal-content .status-red-bg { background: linear-gradient(135deg, #c0392b 0%, #120e1a 100%) !important; color: #fff; }
 
-/* Tier titles matching colors */
-.status-green { color: #2ecc71; font-weight: 800; }
-.status-yellow { color: #f1c40f; font-weight: 800; }
-.status-red { color: #e74c3c; font-weight: 800; }
+.status-green { color: var(--success); font-weight: 800; }
+.status-yellow { color: var(--warning); font-weight: 800; }
+.status-red { color: var(--danger); font-weight: 800; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .hero-btns { flex-direction: column; }
+    .hero-content h1 { font-size: 40px; }
+}
