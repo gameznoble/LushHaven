@@ -14,9 +14,12 @@
         <div class="logo"><span>LUSH</span>HAVEN</div>
         <div class="links">
             <a href="index.html">Home</a>
-            <a href="rules.html" class="active">Rules</a>
-            <a href="mods.html">Allowed Mods</a>
+            <a href="rules.html">Rules</a>
+            <a href="mods.html" class="active">Allowed Mods</a>
             <a href="https://lushhaven.tebex.io/">Store</a>
+            <a href="https://discord.gg/uBe9tJNKxu" class="discord-btn-nav" target="_blank">
+                <i class="fab fa-discord"></i> Join
+            </a>
         </div>
     </div>
 </header>
@@ -78,7 +81,6 @@
         document.getElementById('mD').innerText = d;
         document.getElementById('mS').innerText = s;
         
-        // Find which color to make the banner in the popup
         const source = event.currentTarget;
         const banner = document.getElementById('mB');
         banner.className = "punishment-banner " + (source.classList.contains('status-green-bg') ? 'status-green-bg' : source.classList.contains('status-yellow-bg') ? 'status-yellow-bg' : 'status-red-bg');
