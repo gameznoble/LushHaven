@@ -1,63 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>LushHaven | Rules</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LushHaven | Rules & Punishments</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <header>
-        <div class="nav">
-            <div class="logo">LushHaven</div>
-            <div class="links">
-                <a href="index.html">Home</a>
-                <a href="rules.html">Rules</a>
-                <a href="https://lushhaven.tebex.io/" target="_blank">Store</a>
-                <a href="https://discord.gg/rv7pc2DWWY" target="_blank">Discord</a>
-            </div>
+<body class="rules-page">
+
+<header>
+    <div class="nav">
+        <div class="logo">LUSH<span>HAVEN</span></div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="rules.html" class="active">Rules</a>
+            <a href="https://lushhaven.tebex.io/" target="_blank">Store</a>
+            <a href="https://discord.gg/rv7pc2DWWY" target="_blank">Discord</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <section class="section">
-        <div class="section-title">Rules & Punishments</div>
+<div class="rules-container">
+    <div class="rules-header">
+        <h1>Server <span>Regulations</span></h1>
+        <p>Last Updated: April 2026 • All players are expected to follow these guidelines.</p>
+    </div>
 
-        <details class="tier-card" open>
-            <summary class="tier-header">Tier 1: Mild Punishments <i class="fas fa-chevron-down"></i></summary>
-            <div class="tier-content">
-                <div class="ladder">Warn → 15m Mute → 30m Mute → 1h Mute → 3h Mute → 12h Mute</div>
-                <div class="rule-grid">
-                    <div class="rule-box">
-                        <p><strong>Spamming:</strong> Character, Similar, Unique, or Command spam (3+ times).</p>
-                        <p><strong>Foreign Languages:</strong> English only in main chat. (Punishments are Bans).</p>
-                    </div>
-                    <div class="rule-box">
-                        <p><strong>Politics/Religion:</strong> Disallowed to prevent drama.</p>
-                        <p><strong>Impersonation:</strong> Faking identity as staff or players.</p>
-                    </div>
+    <details class="tier-card t1" open>
+        <summary>
+            <div class="tier-info">
+                <span class="tier-label">Tier 1</span>
+                <span class="tier-name">Mild Punishments</span>
+            </div>
+            <i class="fas fa-chevron-down"></i>
+        </summary>
+        <div class="tier-content">
+            <div class="ladder-wrap">
+                <div class="ladder-title">Punishment Ladder</div>
+                <div class="ladder-steps">Warn ➔ 15m Mute ➔ 30m Mute ➔ 1h Mute ➔ 3h Mute ➔ 12h Mute</div>
+                <p class="ladder-note">Applies to public chat unless otherwise reported.</p>
+            </div>
+            <div class="rule-grid">
+                <div class="rule">
+                    <h4>Spamming</h4>
+                    <p>Character Spam, Similar Message Spam (3+), Unique Message Spam, or Command Spam (Bounties, /afk, etc).</p>
+                </div>
+                <div class="rule">
+                    <h4>Communication</h4>
+                    <p><strong>Foreign Languages:</strong> English only. <strong>Discussion:</strong> No Politics or Religion. <strong>Swearing:</strong> Indirect swearing only (WTF is okay).</p>
+                </div>
+                <div class="rule">
+                    <h4>Impersonation</h4>
+                    <p>Claiming to be a player, staff, dev, or ex-staff member through nicknames or alts.</p>
                 </div>
             </div>
-        </details>
+        </div>
+    </details>
 
-        <details class="tier-card">
-            <summary class="tier-header" style="border-left-color: #ff4d4d;">Tier 3: Serious Punishments <i class="fas fa-chevron-down"></i></summary>
-            <div class="tier-content">
-                <div class="ladder" style="border-color: #ff4d4d;">1d Ban → 3d Ban → 7d Ban → 14d Ban → Permanent Ban</div>
-                <p><strong>In-Game Scamming:</strong> Failure to deliver trades or misleading /ah items.</p>
-                <p><strong>Griefing:</strong> Malicious destruction of claims or trusted areas.</p>
-                <p><strong>TP Trapping:</strong> Killing players via warps or portal traps.</p>
+    <details class="tier-card t2">
+        <summary>
+            <div class="tier-info">
+                <span class="tier-label">Tier 2</span>
+                <span class="tier-name">Moderate Punishments</span>
             </div>
-        </details>
-
-        <details class="tier-card" style="border: 1px solid #ff0000; background: #200;">
-            <summary class="tier-header" style="color: #ff0000;">Blacklist Offenses <i class="fas fa-chevron-down"></i></summary>
-            <div class="tier-content">
-                <p>Non-appealable for 90 days. Reserved for Doxing, DDOS threats, sharing personal info, or extreme bug abuse.</p>
+            <i class="fas fa-chevron-down"></i>
+        </summary>
+        <div class="tier-content">
+            <div class="ladder-wrap">
+                <div class="ladder-title">Punishment Ladder</div>
+                <div class="ladder-steps">Warn ➔ 30m Mute ➔ 1h Mute ➔ 3h Mute ➔ 12h Mute ➔ 1d Mute</div>
             </div>
-        </details>
-    </section>
+            <div class="rule-grid">
+                <div class="rule">
+                    <h4>Inappropriate Conduct</h4>
+                    <p>Sexual, vulgar, or drug-related topics (UK Laws). Includes skins, capes, builds, or /ah items.</p>
+                </div>
+                <div class="rule">
+                    <h4>Targeting Staff</h4>
+                    <p>Maliciously attempting to expose staff in /vanish to cause disruption.</p>
+                </div>
+                <div class="rule">
+                    <h4>Trading & Economy</h4>
+                    <p><strong>Disallowed Trading:</strong> IRL trades or 'Lemon Loans' over 10. (Bans replace mutes for this offense).</p>
+                </div>
+            </div>
+        </div>
+    </details>
 
-    <footer>© LushHaven • Not affiliated with Mojang</footer>
+    <details class="tier-card t3">
+        <summary>
+            <div class="tier-info">
+                <span class="tier-label">Tier 3</span>
+                <span class="tier-name">Serious Punishments</span>
+            </div>
+            <i class="fas fa-chevron-down"></i>
+        </summary>
+        <div class="tier-content">
+            <div class="ladder-wrap">
+                <div class="ladder-title">Punishment Ladder</div>
+                <div class="ladder-steps">1d Ban ➔ 3d Ban ➔ 7d Ban ➔ 14d Ban ➔ Permanent Ban</div>
+            </div>
+            <div class="rule-grid">
+                <div class="rule"><h4>Harassment</h4><p>Bullying, drama, misinformation, or negative connotations about players.</p></div>
+                <div class="rule"><h4>Griefing & Trapping</h4><p>TP/Portal trapping or destroying/stealing in claims (Survival) or islands (Skyblock).</p></div>
+                <div class="rule"><h4>Scamming</h4><p>Failure to deliver trade deals or misleading auction house listings.</p></div>
+                <div class="rule"><h4>Dangerous Conduct</h4><p>IRL threats, encouraging self-harm, or non-malicious bug/mod abuse.</p></div>
+            </div>
+        </div>
+    </details>
+
+    <details class="tier-card t4">
+        <summary>
+            <div class="tier-info">
+                <span class="tier-label">Tier 4</span>
+                <span class="tier-name">Severe Punishments</span>
+            </div>
+            <i class="fas fa-chevron-down"></i>
+        </summary>
+        <div class="tier-content">
+            <div class="ladder-wrap">
+                <div class="ladder-title">Punishment Ladder</div>
+                <div class="ladder-steps">7d Ban ➔ 14d Ban ➔ 30d Ban ➔ Permanent Ban</div>
+            </div>
+            <div class="rule-grid">
+                <div class="rule"><h4>Discrimination</h4><p>Marginalization based on identity, race, or sexuality. Includes all slurs.</p></div>
+                <div class="rule"><h4>Malicious Bug/Mod Abuse</h4><p>Significant abuse impacting economy, server performance, or using Hacked Clients.</p></div>
+            </div>
+        </div>
+    </details>
+
+    <details class="tier-card extra">
+        <summary>
+            <div class="tier-info">
+                <span class="tier-label">Extra</span>
+                <span class="tier-name">Exceptions & Special Cases</span>
+            </div>
+            <i class="fas fa-chevron-down"></i>
+        </summary>
+        <div class="tier-content">
+            <div class="rule-grid">
+                <div class="rule"><h4>Advertising</h4><p>Non-malicious (IP sharing) = 6h Mute to P-Mute. Malicious = Permanent Mute.</p></div>
+                <div class="rule"><h4>Toxicity/Nuisance</h4><p>Direct server disrespect or being a general nuisance (1d Mute to P-Mute).</p></div>
+                <div class="rule"><h4>Alt Limits</h4><p>Bypassing 5-account limit via VPN (30d to P-Ban).</p></div>
+            </div>
+        </div>
+    </details>
+</div>
+
+<footer>© LushHaven Network • Not an official Minecraft product</footer>
+
 </body>
 </html>
