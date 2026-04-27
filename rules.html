@@ -1,201 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>LushHaven | Rules</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-dark: #0f0a1a;
-            --card-bg: #1a1425;
-            --accent-purple: #a73bb3;
-            --accent-blue: #00c2ff;
-            --accent-red: #ff4d4d;
-            --text-main: #e0e0e0;
-            --text-muted: #8a8a8a;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-        }
-
-        .container { max-width: 900px; margin: 0 auto; }
-
-        .header { text-align: center; margin-bottom: 50px; }
-        .header h1 { font-size: 42px; margin-bottom: 10px; }
-        .header h1 span { color: var(--accent-purple); }
-
-        /* Dropdown/Accordion */
-        .tier-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #332a44;
-            overflow: hidden;
-        }
-
-        .tier-header {
-            padding: 20px 25px;
-            background: rgba(167, 59, 179, 0.05);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-            font-size: 18px;
-            user-select: none;
-        }
-
-        .tier-header:hover { background: rgba(167, 59, 179, 0.1); }
-
-        .tier-content { 
-            padding: 0 30px; 
-            max-height: 0; 
-            overflow: hidden; 
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-        }
-
-        .tier-card.active .tier-content { 
-            max-height: 2500px; 
-            padding: 30px; 
-            border-top: 1px solid #332a44; 
-        }
-
-        /* Punishment Ladder */
-        .ladder-box {
-            background: rgba(0,0,0,0.3);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px dashed var(--accent-purple);
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .steps {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            font-weight: bold;
-            color: #fff;
-            margin-top: 10px;
-        }
-
-        .arrow { color: var(--accent-purple); }
-
-        /* Rule Layout */
-        .rule-section { margin-bottom: 20px; }
-        .rule-title { color: #cbb3ff; font-weight: bold; display: block; margin-bottom: 2px; }
-        .rule-desc { color: var(--text-muted); font-size: 14px; }
-
-        /* Color Themes */
-        .tier-2 { border-left: 5px solid var(--accent-blue); }
-        .tier-2 .arrow { color: var(--accent-blue); }
-        .tier-3 { border-left: 5px solid var(--accent-red); }
-        .tier-3 .arrow { color: var(--accent-red); }
-    </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
-        <h1>LushHaven <span>Rules</span></h1>
-        <p>Select a tier to view enforcement details.</p>
-    </div>
-
-    <div class="tier-card">
-        <div class="tier-header">TIER 1: MILD PUNISHMENTS <i class="fas fa-chevron-down"></i></div>
-        <div class="tier-content">
-            <div class="ladder-box">
-                <small style="color: var(--accent-purple); font-weight: bold;">PUNISHMENT LADDER</small>
-                <div class="steps">
-                    Warn <span class="arrow">→</span> 15m Mute <span class="arrow">→</span> 30m Mute <span class="arrow">→</span> 1h Mute <span class="arrow">→</span> 3h Mute <span class="arrow">→</span> 12h Mute
-                </div>
-            </div>
-            
-            <div class="rule-section">
-                <span class="rule-title">Spamming - Character/Message/Command</span>
-                <span class="rule-desc">Repetitive messages, character mashing, or command spamming 3+ times.</span>
-            </div>
-
-            <div class="rule-section">
-                <span class="rule-title">Foreign Languages</span>
-                <span class="rule-desc">LushHaven is an English-speaking server. Refrain from other languages in main chat. (Bans replace mutes).</span>
-            </div>
-
-            <div class="rule-section">
-                <span class="rule-title">Political or Religious Discussion</span>
-                <span class="rule-desc">Disallowed to prevent unnecessary drama and arguments.</span>
+    <header>
+        <div class="nav">
+            <div class="logo">LushHaven</div>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="rules.html">Rules</a>
+                <a href="https://lushhaven.tebex.io/" target="_blank">Store</a>
+                <a href="https://discord.gg/rv7pc2DWWY" target="_blank">Discord</a>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="tier-card tier-2">
-        <div class="tier-header">TIER 2: MODERATE PUNISHMENTS <i class="fas fa-chevron-down"></i></div>
-        <div class="tier-content">
-            <div class="ladder-box" style="border-color: var(--accent-blue);">
-                <small style="color: var(--accent-blue); font-weight: bold;">PUNISHMENT LADDER</small>
-                <div class="steps">
-                    Warn <span class="arrow">→</span> 30m Mute <span class="arrow">→</span> 1h Mute <span class="arrow">→</span> 3h Mute <span class="arrow">→</span> 12h Mute <span class="arrow">→</span> 1d Mute
+    <section class="section">
+        <div class="section-title">Rules & Punishments</div>
+
+        <details class="tier-card" open>
+            <summary class="tier-header">Tier 1: Mild Punishments <i class="fas fa-chevron-down"></i></summary>
+            <div class="tier-content">
+                <div class="ladder">Warn → 15m Mute → 30m Mute → 1h Mute → 3h Mute → 12h Mute</div>
+                <div class="rule-grid">
+                    <div class="rule-box">
+                        <p><strong>Spamming:</strong> Character, Similar, Unique, or Command spam (3+ times).</p>
+                        <p><strong>Foreign Languages:</strong> English only in main chat. (Punishments are Bans).</p>
+                    </div>
+                    <div class="rule-box">
+                        <p><strong>Politics/Religion:</strong> Disallowed to prevent drama.</p>
+                        <p><strong>Impersonation:</strong> Faking identity as staff or players.</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="rule-section">
-                <span class="rule-title">Inappropriate Chat/Display</span>
-                <span class="rule-desc">Sexual, vulgar, or illegal topics. Includes skins, builds, and items.</span>
+        </details>
+
+        <details class="tier-card">
+            <summary class="tier-header" style="border-left-color: #ff4d4d;">Tier 3: Serious Punishments <i class="fas fa-chevron-down"></i></summary>
+            <div class="tier-content">
+                <div class="ladder" style="border-color: #ff4d4d;">1d Ban → 3d Ban → 7d Ban → 14d Ban → Permanent Ban</div>
+                <p><strong>In-Game Scamming:</strong> Failure to deliver trades or misleading /ah items.</p>
+                <p><strong>Griefing:</strong> Malicious destruction of claims or trusted areas.</p>
+                <p><strong>TP Trapping:</strong> Killing players via warps or portal traps.</p>
             </div>
+        </details>
 
-            <div class="rule-section">
-                <span class="rule-title">Direct Swearing</span>
-                <span class="rule-desc">Swearing directly at others. Filter bypassing is punishable.</span>
+        <details class="tier-card" style="border: 1px solid #ff0000; background: #200;">
+            <summary class="tier-header" style="color: #ff0000;">Blacklist Offenses <i class="fas fa-chevron-down"></i></summary>
+            <div class="tier-content">
+                <p>Non-appealable for 90 days. Reserved for Doxing, DDOS threats, sharing personal info, or extreme bug abuse.</p>
             </div>
-        </div>
-    </div>
+        </details>
+    </section>
 
-    <div class="tier-card tier-3">
-        <div class="tier-header">TIER 3: SERIOUS PUNISHMENTS <i class="fas fa-chevron-down"></i></div>
-        <div class="tier-content">
-            <div class="ladder-box" style="border-color: var(--accent-red);">
-                <small style="color: var(--accent-red); font-weight: bold;">PUNISHMENT LADDER</small>
-                <div class="steps">
-                    1d Ban <span class="arrow">→</span> 3d Ban <span class="arrow">→</span> 7d Ban <span class="arrow">→</span> 14d Ban <span class="arrow">→</span> Permanent Ban
-                </div>
-            </div>
-            
-            <div class="rule-section">
-                <span class="rule-title">In-Game Scamming</span>
-                <span class="rule-desc">Deceiving players in trades or auction listings. Zero tolerance.</span>
-            </div>
-
-            <div class="rule-section">
-                <span class="rule-title">Griefing & TP Trapping</span>
-                <span class="rule-desc">Malicious destruction of property or trapping players to kill them.</span>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    document.querySelectorAll('.tier-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const card = header.parentElement;
-            card.classList.toggle('active');
-            
-            // Close other cards (Optional)
-            document.querySelectorAll('.tier-card').forEach(otherCard => {
-                if (otherCard !== card) otherCard.classList.remove('active');
-            });
-        });
-    });
-</script>
-
+    <footer>© LushHaven • Not affiliated with Mojang</footer>
 </body>
 </html>
