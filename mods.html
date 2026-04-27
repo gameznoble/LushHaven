@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LushHaven | Allowed Mods</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">LUSH<span>HAVEN</span></div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="rules.html">Rules</a>
+            <a href="mods.html" class="active">Allowed Mods</a>
+            <a href="https://lushhaven.tebex.io/">Store</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="rules-header">
+        <h1>Client <span>Modifications</span></h1>
+        <p>If a mod is not on the allowed list, use it at your own risk. When in doubt, ask staff.</p>
+        
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="modSearch" placeholder="Search modifications (e.g. 'Optifine')..." onkeyup="filterMods()">
+        </div>
+    </div>
+
+    <div class="mod-layout">
+        <div class="mod-column">
+            <h2 class="tier-title t2-text"><i class="fas fa-check-circle"></i> Allowed Modifications</h2>
+            <div class="mod-grid" id="allowedGrid">
+                <div class="rule-node" onclick="openModModal('Performance Mods', 'Includes Optifine, Sodium, Lithium, and Phosphor. These are highly encouraged.', 'ALLOWED')">Performance Enhancers</div>
+                <div class="rule-node" onclick="openModModal('Aesthetic Mods', 'Shaders, Resource Packs (Non-Xray), and Clear Skies.', 'ALLOWED')">Shaders & Graphics</div>
+                <div class="rule-node" onclick="openModModal('HUD & UI', 'ArmorStatus, StatusEffect, Keystrokes, and Mini-maps (No entities).', 'ALLOWED')">Interface / HUD</div>
+                <div class="rule-node" onclick="openModModal('Replay Mod', 'Used for recording gameplay or creating cinematics.', 'ALLOWED')">Replay Mod</div>
+                <div class="rule-node" onclick="openModModal('Brightness', 'Fullbright mods or gamma adjustments in config files.', 'ALLOWED')">Fullbright</div>
+            </div>
+        </div>
+
+        <div class="mod-column">
+            <h2 class="tier-title t3-text"><i class="fas fa-times-circle"></i> Disallowed Modifications</h2>
+            <div class="mod-grid" id="disallowedGrid">
+                <div class="rule-node danger" onclick="openModModal('Hacked Clients', 'Any client providing an unfair advantage (Vape, Future, Meteor, etc).', 'PERMANENT BAN')">Hacked Clients</div>
+                <div class="rule-node danger" onclick="openModModal('Automation', 'Autoclickers, macros, or hardware-based automation scripts.', 'TIER 2 LADDER')">Autoclickers / Macros</div>
+                <div class="rule-node danger" onclick="openModModal('X-Ray', 'X-Ray texture packs, mods, or specialized cave-finders.', '7d BAN ➔ PERM')">X-Ray / Cave Finders</div>
+                <div class="rule-node danger" onclick="openModModal('Movement Hacks', 'Fly, Speed, Step, Spider, or No-Fall modifications.', 'PERMANENT BAN')">Movement / Fly</div>
+                <div class="rule-node danger" onclick="openModModal('Combat Hacks', 'Killaura, Reach, Triggerbot, or Auto-Clicking software.', 'PERMANENT BAN')">Combat Enhancements</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModModal()">&times;</span>
+        <h2 id="modTitle">Mod Category</h2>
+        <div class="modal-divider"></div>
+        <p id="modDesc">Detailed information about this mod category.</p>
+        
+        <div id="statusContainer" class="punishment-banner">
+            <span class="banner-label">SERVER STATUS</span>
+            <span id="modStatus" class="banner-steps">STATUS</span>
+        </div>
+
+        <button class="btn-close" onclick="closeModModal()">Close</button>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById("modModal");
+    const sContainer = document.getElementById("statusContainer");
+
+    function openModModal(title, desc, status) {
+        document.getElementById("modTitle").innerText = title;
+        document.getElementById("modDesc").innerText = desc;
+        document.getElementById("modStatus").innerText = status;
+        
+        // Color the status box based on the status text
+        if(status === 'ALLOWED') {
+            sContainer.className = "punishment-banner t2-bg";
+        } else {
+            sContainer.className = "punishment-banner t3-bg";
+        }
+        
+        modal.style.display = "flex";
+    }
+
+    function closeModModal() {
+        modal.style.display = "none";
+    }
+
+    function filterMods() {
+        let input = document.getElementById('modSearch').value.toLowerCase();
+        let nodes = document.getElementsByClassName('rule-node');
+        for (let i = 0; i < nodes.length; i++) {
+            let modName = nodes[i].innerText.toLowerCase();
+            nodes[i].style.display = modName.includes(input) ? "block" : "none";
+        }
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) closeModModal();
+    }
+</script>
+
+</body>
+</html>
