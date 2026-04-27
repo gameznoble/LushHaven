@@ -22,9 +22,25 @@
     <section class="hero-section">
         <div class="badge">SEASON ONE IS LIVE</div>
         <h1>Enter the <span>Haven.</span></h1>
-        <p>Experience the ultimate Skyblock adventure with a custom economy.</p>
-        <a href="https://lushhaven.tebex.io/" class="btn-main">Visit the Store</a>
+        <p>Experience the ultimate Skyblock adventure with a custom economy, balanced gameplay, and a community that actually matters.</p>
+        <div class="hero-btns">
+            <a href="rules.html" class="btn-main">Visit Rules</a>
+            <button class="btn-ip" onclick="copyIP()">
+                <i class="fas fa-copy"></i>
+                <span id="ipDisplay">play.lushhaven.com</span>
+            </button>
+        </div>
     </section>
 </main>
+
+<script>
+    function copyIP() {
+        const ip = "play.lushhaven.com";
+        navigator.clipboard.writeText(ip);
+        const display = document.getElementById('ipDisplay');
+        display.innerText = "Copied!";
+        setTimeout(() => { display.innerText = ip; }, 2000);
+    }
+</script>
 </body>
 </html>
