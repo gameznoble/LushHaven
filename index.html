@@ -9,8 +9,6 @@
 </head>
 <body>
 
-<div class="bg-animate"></div>
-
 <header>
     <div class="nav">
         <div class="logo">LUSH<span>HAVEN</span></div>
@@ -24,53 +22,26 @@
 </header>
 
 <main class="main-wrapper">
-    
     <section class="hero-section">
-        <div class="badge">DEVELOPMENT PHASE</div>
-        <h1>Lush<span>Haven</span></h1>
-        <p>A custom Skyblock experience built for community and competition. Start your island journey today.</p>
-        <button class="btn-main" onclick="copyIP()">
-            <i class="fas fa-copy"></i> lushhaven.my.pebble.host
-        </button>
+        <div class="badge">SEASON ONE IS LIVE</div>
+        <h1>Enter the <span>Haven.</span></h1>
+        <p>Experience the ultimate Skyblock adventure with a custom economy, balanced gameplay, and a community that actually matters.</p>
+        <a href="https://lushhaven.tebex.io/" class="btn-main">Visit the Store</a>
     </section>
 
-    <section class="stats-grid">
+    <div class="stats-grid">
         <div class="stat-card">
             <i class="fas fa-signal"></i>
-            <span class="stat-val">ONLINE</span>
-            <span class="stat-lbl">Status</span>
+            <span class="stat-val">Online</span>
+            <span class="stat-lbl">Server Status</span>
         </div>
         <div class="stat-card">
-            <i class="fas fa-cloud"></i>
-            <span class="stat-val">SKYBLOCK</span>
-            <span class="stat-lbl">Gamemode</span>
+            <i class="fas fa-cubes"></i>
+            <span class="stat-val">Skyblock</span>
+            <span class="stat-lbl">Current Mode</span>
         </div>
-    </section>
-
-    <section class="news-section">
-        <h2 class="title-left">Latest <span>Updates</span></h2>
-        <div class="news-item">
-            <div class="news-info">
-                <span class="tag">BIG NEWS</span>
-                <h3>Grand Opening</h3>
-                <p>LushHaven is officially entering its public phase! Join us now to claim your island and start your adventure.</p>
-            </div>
-            <i class="fas fa-star" style="color: var(--accent); font-size: 24px;"></i>
-        </div>
-    </section>
-
+    </div>
 </main>
-
-<script>
-    function copyIP() {
-        navigator.clipboard.writeText("lushhaven.my.pebble.host");
-        const btn = document.querySelector('.btn-main');
-        btn.innerHTML = "<i class='fas fa-check'></i> Copied!";
-        setTimeout(() => { 
-            btn.innerHTML = "<i class='fas fa-copy'></i> lushhaven.my.pebble.host"; 
-        }, 2000);
-    }
-</script>
 
 </body>
 </html>
