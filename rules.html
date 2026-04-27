@@ -24,43 +24,48 @@
 <div class="container">
     <div class="rules-header">
         <h1>Server <span>Regulations</span></h1>
-        <p>Comprehensive guidelines. Click any card to view detailed punishment ladders.</p>
+        <p>The definitive guide to LushHaven. Rule breaking results in manual or automated punishment.</p>
         <div class="search-wrapper">
             <i class="fas fa-search"></i>
-            <input type="text" id="ruleSearch" placeholder="Search rules..." onkeyup="filterRules()">
+            <input type="text" id="ruleSearch" placeholder="Search for a specific rule..." onkeyup="filterRules()">
         </div>
     </div>
 
-    <h2 class="tier-title status-green">Tier 1: Community</h2>
+    <h2 class="tier-title status-green">Tier 1: Social & Communication</h2>
     <div class="rule-grid">
-        <div class="rule-node status-green-bg" onclick="openModal('Spamming', 'Flooding chat with messages, symbols, or nonsense.', 'Warn ➔ 1h Mute ➔ 12h Mute ➔ 1d Ban')">Spamming</div>
-        <div class="rule-node status-green-bg" onclick="openModal('Toxicity', 'Being rude, starting drama, or targeted harassment.', 'Warn ➔ 6h Mute ➔ 1d Mute ➔ 3d Ban')">General Toxicity</div>
-        <div class="rule-node status-green-bg" onclick="openModal('Advertising', 'Posting other server IPs or Discord links.', 'Immediate Permanent Ban')">Advertising</div>
-        <div class="rule-node status-green-bg" onclick="openModal('Staff Impersonation', 'Pretending to be staff or using fake [Admin] tags.', '1d Ban ➔ 7d Ban ➔ Perm Ban')">Staff Impersonation</div>
+        <div class="rule-node status-green-bg" onclick="openModal('Chat Offenses', 'Spamming, flooding, character drag, or excessive caps.', 'Warn ➔ 1h Mute ➔ 12h Mute ➔ 1d Ban')">Chat Disruptions</div>
+        <div class="rule-node status-green-bg" onclick="openModal('Staff Disrespect', 'Arguing with staff, harassing helpers, or public staff bashing.', '6h Mute ➔ 1d Mute ➔ 3d Ban')">Staff Disrespect</div>
+        <div class="rule-node status-green-bg" onclick="openModal('Mini-Modding', 'Telling others what to do as if you are staff.', 'Warn ➔ Kick')">Mini-Modding</div>
+        <div class="rule-node status-green-bg" onclick="openModal('Language', 'All public chat must be English.', 'Warning ➔ Kick')">English Only</div>
+        <div class="rule-node status-green-bg" onclick="openModal('Misleading Players', 'Giving fake info to trick new players (e.g. Alt+F4 for money).', 'Warn ➔ 12h Mute ➔ 1d Ban')">Misinformation</div>
     </div>
 
     <h2 class="tier-title status-yellow">Tier 2: Gameplay & Economy</h2>
     <div class="rule-grid">
-        <div class="rule-node status-yellow-bg" onclick="openModal('AFK Farming', 'Using macros, weights, or autoclickers to farm while away.', 'Warn ➔ 12h Ban ➔ 3d Ban ➔ 7d Ban')">AFK Farming</div>
-        <div class="rule-node status-yellow-bg" onclick="openModal('Alt Boosting', 'Using extra accounts to bypass limits or rewards.', 'Alt Wipe ➔ 7d Ban ➔ Perm Ban')">Alt Boosting</div>
-        <div class="rule-node status-yellow-bg" onclick="openModal('Scamming', 'Deceiving players in trades or the AH.', '7d Ban ➔ Perm Ban + Wipe')">Player Scamming</div>
-        <div class="rule-node status-yellow-bg" onclick="openModal('Island Trapping', 'Using /is warp to trap or kill players.', '3d Ban ➔ 7d Ban ➔ Wipe')">Island Trapping</div>
-        <div class="rule-node status-yellow-bg" onclick="openModal('Lag Machines', 'Redstone loops designed to lag the server TPS.', 'Island Wipe ➔ Perm Ban')">Lag Machines</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('AFK Bypassing', 'Anti-AFK pools, tape, or macros to stay online.', 'Kick ➔ 1d Ban ➔ 7d Ban')">AFK Bypassing</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Alt Boosting', 'Using secondary accounts to farm island top or rewards.', 'Alt Wipe ➔ 7d Ban ➔ Perm Ban')">Alt Boosting</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Scamming', 'AH manipulation or dishonest item trades.', '7d Ban ➔ Perm Ban + Item Wipe')">Scamming</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Island Sabotage', 'Inviting players just to kill/trap them.', '3d Ban ➔ 14d Ban ➔ Wipe')">Island Trapping</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Payout Manipulation', 'Trying to fake island value for payouts.', 'Immediate Disqualification + Wipe')">IS-Top Cheating</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Griefing', 'Destroying builds of island members.', '3d Ban ➔ 7d Ban ➔ Wipe')">Co-op Griefing</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Lag Machines', 'Entities or Redstone built to drop TPS.', 'Island Wipe ➔ Permanent Ban')">TPS Sabotage</div>
     </div>
 
-    <h2 class="tier-title status-red">Tier 3: Blacklist</h2>
+    <h2 class="tier-title status-red">Tier 3: Permanent Removal</h2>
     <div class="rule-grid">
-        <div class="rule-node status-red-bg" onclick="openModal('Hacking', 'KillAura, Fly, Speed, or any cheat client.', '7d Ban ➔ 30d Ban ➔ Perm Ban')">Hacked Clients</div>
-        <div class="rule-node status-red-bg" onclick="openModal('Exploiting', 'Using bugs to dupe items or bypass mechanics.', 'Immediate Permanent Ban')">Duping & Exploits</div>
-        <div class="rule-node status-red-bg" onclick="openModal('RMT', 'Selling items/cash for real world money.', 'Immediate Blacklist')">Real Money Trading</div>
-        <div class="rule-node status-red-bg" onclick="openModal('Chargebacks', 'Refunding store purchases.', 'Automatic Blacklist')">Store Chargebacks</div>
+        <div class="rule-node status-red-bg" onclick="openModal('Hacking', 'KillAura, Reach, Fly, Speed, or any cheat client.', '7d Ban ➔ 30d Ban ➔ Perm Ban')">Hacked Clients</div>
+        <div class="rule-node status-red-bg" onclick="openModal('Exploiting', 'Duping items or glitching through world borders.', 'Immediate Permanent Ban')">Duping & Borders</div>
+        <div class="rule-node status-red-bg" onclick="openModal('Social Engineering', 'Phishing for passwords or staff credentials.', 'Permanent Blacklist')">Social Engineering</div>
+        <div class="rule-node status-red-bg" onclick="openModal('RMT', 'Selling items/money for PayPal or IRL cash.', 'Permanent Blacklist')">Real Money Trading</div>
+        <div class="rule-node status-red-bg" onclick="openModal('Chargebacks', 'Refunding any donation or store purchase.', 'Automatic IP Blacklist')">Store Fraud</div>
+        <div class="rule-node status-red-bg" onclick="openModal('Doxing', 'Leaking or threatening to leak IRL info.', 'Permanent IP Blacklist')">Doxing / IRL Threats</div>
     </div>
 </div>
 
 <div id="ruleModal" class="modal">
     <div class="modal-content">
         <h2 id="modalTitle">Rule Name</h2>
-        <p id="modalDesc" style="margin: 15px 0; color: #888;"></p>
+        <p id="modalDesc" style="margin: 20px 0; color: #888;"></p>
         <div id="pContainer" class="punishment-banner">
             <span class="banner-label">PUNISHMENT LADDER</span>
             <span id="modalPunishment" class="banner-steps">Steps</span>
