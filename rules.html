@@ -15,171 +15,82 @@
         <div class="links">
             <a href="index.html">Home</a>
             <a href="rules.html" class="active">Rules</a>
+            <a href="mods.html">Allowed Mods</a>
             <a href="https://lushhaven.tebex.io/">Store</a>
-            <a href="https://discord.gg/rv7pc2DWWY">Discord</a>
         </div>
     </div>
 </header>
 
-<div class="rules-container">
+<div class="container">
     <div class="rules-header">
-        <h1>Server <span>Rules</span></h1>
-        <p>Click a tier to view categories, then click a rule to see punishments.</p>
+        <h1>Server <span>Regulations</span></h1>
+        <p>Click any rule to view descriptions and punishment ladders.</p>
     </div>
 
-    <details class="tier-card t1">
-        <summary class="tier-main-header">
-            <span>Tier One: General Conduct</span>
-            <i class="fas fa-chevron-down"></i>
-        </summary>
-        <div class="tier-inner">
-            <details class="rule-item">
-                <summary>Spamming</summary>
-                <div class="rule-content">
-                    <p>Includes character, message, or command spam.</p>
-                    <div class="punishment-box">Warning ➔ 1h Mute ➔ 24h Mute ➔ 24h Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Excessive Swearing</summary>
-                <div class="rule-content">
-                    <p>Bypassing filters or targeted toxicity.</p>
-                    <div class="punishment-box">Warning ➔ 6h Mute ➔ 12h Mute ➔ 1d Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Foreign Languages</summary>
-                <div class="rule-content">
-                    <p>Please keep public chat to English only.</p>
-                    <div class="punishment-box">Warning ➔ 12h Mute ➔ 24h Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Advertising</summary>
-                <div class="rule-content">
-                    <p>Posting other server IPs or external links.</p>
-                    <div class="punishment-box">Warning ➔ 12h Mute ➔ 24h Mute</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Political or Religious Discussion</summary>
-                <div class="rule-content">
-                    <p>To avoid drama, these topics are restricted.</p>
-                    <div class="punishment-box">Follow Spamming Punishments</div>
-                </div>
-            </details>
-        </div>
-    </details>
+    <h2 class="tier-title t1-text">Tier One: Community</h2>
+    <div class="rule-grid">
+        <div class="rule-node" onclick="openModal('Spamming', 'Includes character spam, message spam, or command spam.', 'Warning ➔ 1h Mute ➔ 24h Mute ➔ 24h Ban')">Spamming</div>
+        <div class="rule-node" onclick="openModal('Excessive Swearing', 'Bypassing filters or targeted toxicity toward others.', 'Warning ➔ 6h Mute ➔ 12h Mute ➔ 1d Ban')">Excessive Swearing</div>
+        <div class="rule-node" onclick="openModal('Foreign Languages', 'Please keep public chat to English only. Use /msg for others.', 'Warning ➔ 12h Mute ➔ 24h Ban')">Foreign Languages</div>
+        <div class="rule-node" onclick="openModal('Advertising', 'Posting other server IPs or external links.', 'Warning ➔ 12h Mute ➔ 24h Mute')">Advertising</div>
+        <div class="rule-node" onclick="openModal('Political/Religious Discussion', 'Restricted topics to maintain a friendly environment.', 'Follow Spamming Punishments')">Politics & Religion</div>
+    </div>
 
-    <details class="tier-card t2">
-        <summary class="tier-main-header">
-            <span>Tier Two: Gameplay & Respect</span>
-            <i class="fas fa-chevron-down"></i>
-        </summary>
-        <div class="tier-inner">
-            <details class="rule-item">
-                <summary>Harassment</summary>
-                <div class="rule-content">
-                    <p>Targeted bullying or making players feel unwelcome.</p>
-                    <div class="punishment-box">Warning ➔ 24h Mute ➔ 24d Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Griefing</summary>
-                <div class="rule-content">
-                    <p>Destroying builds or property within or near claims.</p>
-                    <div class="punishment-box">24h Ban ➔ 48h Ban ➔ Perm Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Scamming</summary>
-                <div class="rule-content">
-                    <p>Dishonest trading or misleading auction listings.</p>
-                    <div class="punishment-box">12h Ban ➔ 24h Ban ➔ Perm Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Threats / Disrespect</summary>
-                <div class="rule-content">
-                    <p>Aggression toward players or staff members.</p>
-                    <div class="punishment-box">12h Mute ➔ 24h Mute ➔ Perma Mute/Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Non-Malicious Bug Abuse / Modifications</summary>
-                <div class="rule-content">
-                    <p>Using minor bugs or <a href="mods.html" style="color:var(--t2)">unapproved modifications</a> without malicious intent.</p>
-                    <div class="punishment-box">Warn ➔ 12h Ban ➔ 24h Ban ➔ 48h Ban</div>
-                </div>
-            </details>
-        </div>
-    </details>
+    <h2 class="tier-title t2-text">Tier Two: Gameplay</h2>
+    <div class="rule-grid">
+        <div class="rule-node" onclick="openModal('Harassment', 'Targeted bullying or making players feel unwelcome.', 'Warning ➔ 24h Mute ➔ 24d Ban')">Harassment</div>
+        <div class="rule-node" onclick="openModal('Griefing', 'Destroying builds or property within or near claims.', '24h Ban ➔ 48h Ban ➔ Perm Ban')">Griefing</div>
+        <div class="rule-node" onclick="openModal('Scamming', 'Dishonest trading or misleading auction listings.', '12h Ban ➔ 24h Ban ➔ Perm Ban')">Scamming</div>
+        <div class="rule-node" onclick="openModal('Threats', 'Aggression toward players or staff members.', '12h Mute ➔ 24h Mute ➔ Perma Mute')">Threats</div>
+        <div class="rule-node" onclick="openModal('Disrespect', 'General disrespect toward the community or staff.', '12h Mute ➔ 24h Mute ➔ 24h Ban')">Disrespect</div>
+        <div class="rule-node" onclick="openModal('Non-Malicious Abuse', 'Using minor bugs or mods without intent to harm.', 'Warn ➔ 12h Ban ➔ 24h Ban ➔ 48h Ban')">Minor Bug/Mod Abuse</div>
+    </div>
 
-    <details class="tier-card t3">
-        <summary class="tier-main-header">
-            <span>Tier Three: Severe Violations</span>
-            <i class="fas fa-chevron-down"></i>
-        </summary>
-        <div class="tier-inner">
-            <details class="rule-item">
-                <summary>Discrimination / Encouraging Self-Harm</summary>
-                <div class="rule-content">
-                    <p>Zero tolerance for slurs or promoting injury.</p>
-                    <div class="punishment-box">7d Ban ➔ 14d Ban ➔ 30d Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Malicious Bug/Mod Abuse</summary>
-                <div class="rule-content">
-                    <p>Using <a href="mods.html" style="color:var(--t3)">hacked clients</a> or major exploits to harm the server.</p>
-                    <div class="punishment-box">7d Ban ➔ 14d Ban ➔ 30d Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Ban/Mute Evasion</summary>
-                <div class="rule-content">
-                    <p>Using alts to bypass active punishments.</p>
-                    <div class="punishment-box">Perm IP Ban / Perm Mute</div>
-                </div>
-            </details>
-        </div>
-    </details>
+    <h2 class="tier-title t3-text">Tier Three: Severe</h2>
+    <div class="rule-grid">
+        <div class="rule-node" onclick="openModal('Discrimination', 'Slurs or marginalization based on identity/race.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Discrimination</div>
+        <div class="rule-node" onclick="openModal('Malicious Abuse', 'Using hacked clients or major exploits.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Malicious Bug/Mod Abuse</div>
+        <div class="rule-node" onclick="openModal('Evasion', 'Using alts to bypass active punishments.', 'Perm IP Ban / Perm Mute')">Ban/Mute Evasion</div>
+    </div>
 
-    <details class="tier-card extra">
-        <summary class="tier-main-header">
-            <span>Extras & Identity</span>
-            <i class="fas fa-chevron-down"></i>
-        </summary>
-        <div class="tier-inner">
-            <details class="rule-item">
-                <summary>Alt Account Limits</summary>
-                <div class="rule-content">
-                    <p>Limit is 3 per household. Verify shared IPs with staff.</p>
-                    <div class="punishment-box">Warn ➔ 30d Ban ➔ Perm Ban</div>
-                </div>
-            </details>
-            <details class="rule-item">
-                <summary>Inappropriate Username</summary>
-                <div class="rule-content">
-                    <p>Ban will be lifted once the name is changed and appealed.</p>
-                    <div class="punishment-box">Ban (Appealable)</div>
-                </div>
-            </details>
-        </div>
-    </details>
-
-    <div class="blacklist-box">
-        <h3><i class="fas fa-skull"></i> Global Blacklist</h3>
-        <p>The following result in an immediate and permanent removal:</p>
-        <ul>
-            <li>Doxing, DDOSing, or Blackmailing</li>
-            <li>Sharing personal info / Malicious links</li>
-            <li>Extreme abuse of game-breaking bugs</li>
-        </ul>
+    <h2 class="tier-title blacklist-text">Global Blacklist</h2>
+    <div class="rule-grid">
+        <div class="rule-node danger" onclick="openModal('Blacklist Offenses', 'Doxing, DDOSing, Blackmail, Malicious Links, or Extreme Bug Abuse.', 'Permanent Removal (No Appeal)')">Blacklist Actions</div>
     </div>
 </div>
 
-<footer>LushHaven Network • 2026</footer>
+<div id="ruleModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Rule Name</h2>
+        <p id="modalDesc">Description goes here.</p>
+        <div class="modal-punishment">
+            <small>PUNISHMENT LADDER</small>
+            <div id="modalPunishment">Punishment steps...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById("ruleModal");
+
+    function openModal(title, desc, punishment) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalDesc").innerText = desc;
+        document.getElementById("modalPunishment").innerText = punishment;
+        modal.style.display = "flex";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 
 </body>
 </html>
