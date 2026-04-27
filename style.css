@@ -132,3 +132,35 @@ header {
 .btn-close:hover {
     background: var(--accent);
 }
+.search-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    opacity: 0.7;
+}
+
+#ruleSearch {
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+    background: #120e1a;
+    border: 1px solid #1f1a29;
+    border-radius: 50px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#ruleSearch:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(167, 59, 179, 0.2);
+}
