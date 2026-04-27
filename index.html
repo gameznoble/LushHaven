@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="home-bg">
+<body>
 
 <div class="bg-animate"></div>
 
@@ -23,17 +23,15 @@
     </div>
 </header>
 
-<div class="main-wrapper">
+<main class="main-wrapper">
     
     <section class="hero-section">
         <div class="badge">DEVELOPMENT PHASE</div>
         <h1>Lush<span>Haven</span></h1>
         <p>A custom Skyblock experience built for community and competition. Start your island journey today.</p>
-        <div class="hero-btns">
-            <button class="btn-main" onclick="copyIP()">
-                <i class="fas fa-copy"></i> lushhaven.my.pebble.host
-            </button>
-        </div>
+        <button class="btn-main" onclick="copyIP()">
+            <i class="fas fa-copy"></i> lushhaven.my.pebble.host
+        </button>
     </section>
 
     <section class="stats-grid">
@@ -51,26 +49,26 @@
 
     <section class="news-section">
         <h2 class="title-left">Latest <span>Updates</span></h2>
-        <div class="news-list">
-            <div class="news-item">
-                <div class="news-info">
-                    <span class="tag">BIG NEWS</span>
-                    <h3>Grand Opening</h3>
-                    <p>LushHaven is officially entering its public phase! Join us now to claim your island and start your adventure.</p>
-                </div>
-                <i class="fas fa-star" style="color: var(--accent); font-size: 20px;"></i>
+        <div class="news-item">
+            <div class="news-info">
+                <span class="tag">BIG NEWS</span>
+                <h3>Grand Opening</h3>
+                <p>LushHaven is officially entering its public phase! Join us now to claim your island and start your adventure.</p>
             </div>
+            <i class="fas fa-star" style="color: var(--accent); font-size: 24px;"></i>
         </div>
     </section>
 
-</div>
+</main>
 
 <script>
     function copyIP() {
         navigator.clipboard.writeText("lushhaven.my.pebble.host");
         const btn = document.querySelector('.btn-main');
         btn.innerHTML = "<i class='fas fa-check'></i> Copied!";
-        setTimeout(() => { btn.innerHTML = "<i class='fas fa-copy'></i> lushhaven.my.pebble.host"; }, 2000);
+        setTimeout(() => { 
+            btn.innerHTML = "<i class='fas fa-copy'></i> lushhaven.my.pebble.host"; 
+        }, 2000);
     }
 </script>
 
