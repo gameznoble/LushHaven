@@ -25,6 +25,11 @@
     <div class="rules-header">
         <h1>Server <span>Regulations</span></h1>
         <p>Click any rule to view its description and the associated punishment ladder.</p>
+        
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="ruleSearch" placeholder="Search rules (e.g. 'AFK' or 'Griefing')..." onkeyup="filterRules()">
+        </div>
     </div>
 
     <h2 class="tier-title t1-text">Tier One: Community</h2>
@@ -33,7 +38,7 @@
         <div class="rule-node" onclick="openModal('Excessive Swearing', 'Bypassing filters or targeted toxicity toward others.', 'Warning ➔ 6h Mute ➔ 12h Mute ➔ 1d Ban', 't1-bg')">Excessive Swearing</div>
         <div class="rule-node" onclick="openModal('Foreign Languages', 'Please keep public chat to English only. Use /msg for others.', 'Warning ➔ 12h Mute ➔ 1d Ban', 't1-bg')">Foreign Languages</div>
         <div class="rule-node" onclick="openModal('Advertising', 'Posting other server IPs or external links.', 'Warning ➔ 12h Mute ➔ 24h Mute', 't1-bg')">Advertising</div>
-        <div class="rule-node" onclick="openModal('Politics & Religion', 'Restricted topics to maintain a friendly environment.', 'Follows Spamming Punishments', 't1-bg')">Politics & Religion</div>
+        <div class="rule-node" onclick="openModal('Politics & Religion', 'Discussion of sensitive political or religious topics that may cause toxicity.', 'Warning ➔ 1h Mute ➔ 24h Mute ➔ 1d Ban', 't1-bg')">Politics & Religion</div>
     </div>
 
     <h2 class="tier-title t2-text">Tier Two: Gameplay</h2>
@@ -43,23 +48,23 @@
         <div class="rule-node" onclick="openModal('Scamming', 'Dishonest trading or misleading auction listings.', '12h Ban ➔ 1d Ban ➔ Perm Ban', 't2-bg')">Scamming</div>
         <div class="rule-node" onclick="openModal('Threats', 'Aggression toward players or staff members.', '12h Mute ➔ 24h Mute ➔ Perma Mute', 't2-bg')">Threats</div>
         <div class="rule-node" onclick="openModal('Disrespect', 'General disrespect toward the community or staff.', '12h Mute ➔ 24h Mute ➔ 1d Ban', 't2-bg')">Disrespect</div>
-        <div class="rule-node" onclick="openModal('AFK Farming', 'Using Autoclickers or macros to bypass AFK timers.', 'Warning ➔ 12h Ban ➔ 1d Ban ➔ 2d Ban', 't2-bg')">Autoclicker / AFK</div>
-        <div class="rule-node" onclick="openModal('Minor Abuse', 'Using minor bugs or mods without intent to harm.', 'Warn ➔ 12h Ban ➔ 1d Ban ➔ 2d Ban', 't2-bg')">Minor Bug/Mod Abuse</div>
+        <div class="rule-node" onclick="openModal('AFK Farming', 'Using autoclickers, macros, or machines to bypass AFK timers to farm items or XP.', 'Warning ➔ 12h Ban ➔ 1d Ban ➔ 2d Ban', 't2-bg')">AFK Farming</div>
+        <div class="rule-node" onclick="openModal('Non-Malicious Abuse', 'Using minor bugs or disallowed modifications without intent to harm the economy or server.', 'Warn ➔ 12h Ban ➔ 1d Ban ➔ 2d Ban', 't2-bg')">Minor Bug/Mod Abuse</div>
     </div>
 
     <h2 class="tier-title t3-text">Tier Three: Severe</h2>
     <div class="rule-grid">
         <div class="rule-node" onclick="openModal('Discrimination', 'Slurs or marginalization based on identity, race, or sexuality.', '7d Ban ➔ 14d Ban ➔ 30d Ban', 't3-bg')">Discrimination</div>
-        <div class="rule-node" onclick="openModal('Encouraging Self Harm', 'Zero tolerance for promoting self injury.', '7d Ban ➔ 14d Ban ➔ 30d Ban', 't3-bg')">Self Harm</div>
-        <div class="rule-node" onclick="openModal('Malicious Abuse', 'Using hacked clients or major exploits to harm the server.', '7d Ban ➔ 14d Ban ➔ 30d Ban', 't3-bg')">Malicious Bug/Mod Abuse</div>
-        <div class="rule-node" onclick="openModal('Evasion', 'Using alts to bypass active punishments.', 'Perm IP Ban / Perm Mute', 't3-bg')">Ban/Mute Evasion</div>
+        <div class="rule-node" onclick="openModal('Encouraging Self Harm', 'Promoting or suggesting self-injury to other players.', '7d Ban ➔ 14d Ban ➔ 30d Ban', 't3-bg')">Self Harm</div>
+        <div class="rule-node" onclick="openModal('Malicious Abuse', 'Using hacked clients, major exploits, or malicious mods to harm the server.', '7d Ban ➔ 14d Ban ➔ 30d Ban', 't3-bg')">Malicious Bug/Mod Abuse</div>
+        <div class="rule-node" onclick="openModal('Ban/Mute Evasion', 'Using alt accounts to bypass active server punishments.', 'Perm IP Ban / Perm Mute', 't3-bg')">Evasion</div>
     </div>
 
     <h2 class="tier-title blacklist-text">Global Blacklist & Extras</h2>
     <div class="rule-grid">
-        <div class="rule-node" onclick="openModal('Alt Account Limits', 'Limit is 3 per household. Beyond this requires verification.', 'Warn ➔ 30d Ban ➔ Perm Ban', 't1-bg')">Alt Limit</div>
-        <div class="rule-node" onclick="openModal('Inappropriate Username', 'Ban will be lifted once the name is changed.', 'Ban (Appealable)', 't1-bg')">Usernames</div>
-        <div class="rule-node danger" onclick="openModal('Blacklist Offenses', 'Doxing, DDOSing, Blackmail, Malicious Links, or Extreme Bug Abuse.', 'Immediate Permanent Removal (No Appeal)', 'blacklist-bg')">Blacklist Actions</div>
+        <div class="rule-node" onclick="openModal('Alt Account Limits', 'Limit is 3 per household. Players on the same IP must verify with staff.', 'Warn ➔ 30d Ban ➔ Perm Ban', 't1-bg')">Alt Limit</div>
+        <div class="rule-node" onclick="openModal('Inappropriate Username', 'Using offensive or disallowed names.', 'Ban (Appealable once name is changed)', 't1-bg')">Usernames</div>
+        <div class="rule-node danger" onclick="openModal('Blacklist Offenses', 'Doxing, DDOSing, Blackmail, Sharing personal info, Malicious Links, or Extreme Bug Abuse.', 'Immediate Permanent Removal (No Appeal)', 'blacklist-bg')">Blacklist Actions</div>
     </div>
 </div>
 
@@ -69,12 +74,10 @@
         <h2 id="modalTitle">Rule Name</h2>
         <div class="modal-divider"></div>
         <p id="modalDesc">Description goes here.</p>
-        
         <div id="punishmentContainer" class="punishment-banner">
             <span class="banner-label">PUNISHMENT LADDER</span>
             <span id="modalPunishment" class="banner-steps">Steps...</span>
         </div>
-
         <button class="btn-close" onclick="closeModal()">Close Details</button>
     </div>
 </div>
@@ -87,21 +90,29 @@
         document.getElementById("modalTitle").innerText = title;
         document.getElementById("modalDesc").innerText = desc;
         document.getElementById("modalPunishment").innerText = punishment;
-        
-        // Remove old theme classes and add the new one
         pContainer.className = "punishment-banner " + themeClass;
-        
         modal.style.display = "flex";
     }
 
-    function closeModal() {
-        modal.style.display = "none";
+    function closeModal() { modal.style.display = "none"; }
+
+    // SEARCH LOGIC
+    function filterRules() {
+        let input = document.getElementById('ruleSearch').value.toLowerCase();
+        let nodes = document.getElementsByClassName('rule-node');
+        
+        for (let i = 0; i < nodes.length; i++) {
+            let ruleName = nodes[i].innerText.toLowerCase();
+            if (ruleName.includes(input)) {
+                nodes[i].style.display = "block";
+            } else {
+                nodes[i].style.display = "none";
+            }
+        }
     }
 
     window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
-        }
+        if (event.target == modal) closeModal();
     }
 </script>
 
