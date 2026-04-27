@@ -1,63 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
 :root {
-    --bg: #06040d;
-    --card: #110c1d;
+    --bg: #07050a;
+    --card: #120e1a;
     --accent: #a73bb3;
     --t1: #a73bb3;
     --t2: #00c2ff;
     --t3: #ff4d4d;
-    --extra: #00ffaa;
 }
 
-body {
-    margin: 0; background: var(--bg); color: #e0e0e0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
+body { margin: 0; background: var(--bg); color: #e0e0e0; font-family: 'Plus Jakarta Sans', sans-serif; }
 
-/* Header & Nav */
-header { background: rgba(6, 4, 13, 0.95); border-bottom: 1px solid #221a30; position: sticky; top: 0; z-index: 10; }
-.nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; padding: 20px; }
-.logo { font-weight: 800; font-size: 24px; color: #fff; }
+/* Header */
+header { background: rgba(7, 5, 10, 0.9); border-bottom: 1px solid #1f1a29; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+.nav { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; padding: 15px 20px; align-items: center; }
+.logo { font-weight: 800; font-size: 22px; color: #fff; }
 .logo span { color: var(--accent); }
-.links a { color: #888; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 14px; }
+.links a { color: #888; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 13px; text-transform: uppercase; }
 .links a.active { color: var(--accent); }
 
-/* Rules Layout */
-.rules-container { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+/* Grid layout */
+.container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
 .rules-header { text-align: center; margin-bottom: 50px; }
-.rules-header h1 { font-size: 48px; margin: 0; }
-.rules-header h1 span { color: var(--accent); }
+.tier-title { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin: 40px 0 20px; border-bottom: 1px solid #1f1a29; padding-bottom: 10px; }
 
-/* Tier Cards */
-.tier-card { background: var(--card); border-radius: 12px; border: 1px solid #221a30; margin-bottom: 20px; overflow: hidden; }
-.tier-main-header { padding: 25px; cursor: pointer; font-weight: 800; font-size: 18px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-.tier-main-header::-webkit-details-marker { display: none; }
+.rule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
 
-.t1 { border-left: 5px solid var(--t1); }
-.t2 { border-left: 5px solid var(--t2); }
-.t3 { border-left: 5px solid var(--t3); }
-.extra { border-left: 5px solid var(--extra); }
-
-/* Inner Rule Accordion */
-.tier-inner { padding: 0 20px 20px 20px; }
-.rule-item { background: rgba(255,255,255,0.03); border-radius: 8px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.05); }
-.rule-item summary { padding: 15px; cursor: pointer; font-weight: 600; font-size: 15px; color: #fff; }
-.rule-content { padding: 0 15px 15px 15px; font-size: 14px; color: #aaa; }
-
-.punishment-box {
-    margin-top: 10px; padding: 10px; background: rgba(0,0,0,0.3);
-    border: 1px dashed var(--accent); border-radius: 6px;
-    color: #fff; font-weight: 800; text-align: center; font-size: 13px;
+.rule-node {
+    background: var(--card); border: 1px solid #1f1a29; padding: 20px; text-align: center;
+    border-radius: 10px; cursor: pointer; font-weight: 700; transition: 0.2s; color: #fff;
 }
 
-.t2 .punishment-box { border-color: var(--t2); }
-.t3 .punishment-box { border-color: var(--t3); }
+.rule-node:hover { border-color: var(--accent); transform: scale(1.05); background: rgba(167, 59, 179, 0.05); }
+.rule-node.danger { border-color: #ff4d4d; color: #ff4d4d; }
 
-/* Blacklist Box */
-.blacklist-box { background: #1a0808; border: 2px solid #ff4d4d; border-radius: 12px; padding: 30px; margin-top: 40px; }
-.blacklist-box h3 { color: #ff4d4d; margin-top: 0; text-transform: uppercase; letter-spacing: 2px; }
-.blacklist-box ul { padding-left: 20px; }
-.blacklist-box li { margin-bottom: 10px; font-weight: 600; }
+/* Modal Background */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); justify-content: center; align-items: center;
+}
 
-footer { text-align: center; padding: 50px; opacity: 0.3; font-size: 12px; }
+/* Modal Box */
+.modal-content {
+    background: #181421; padding: 40px; border-radius: 20px; width: 90%; max-width: 500px;
+    border: 1px solid #2a2438; position: relative; text-align: center;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.close { position: absolute; right: 20px; top: 15px; color: #666; font-size: 28px; cursor: pointer; }
+.close:hover { color: #fff; }
+
+.modal-content h2 { color: var(--accent); margin-top: 0; font-size: 28px; }
+.modal-content p { color: #aaa; margin-bottom: 30px; line-height: 1.6; }
+
+.modal-punishment {
+    background: #000; padding: 20px; border-radius: 12px; border: 1px dashed var(--accent);
+}
+
+.modal-punishment small { display: block; color: var(--accent); font-weight: 800; margin-bottom: 8px; letter-spacing: 1px; }
+.modal-punishment div { color: #fff; font-weight: 800; font-size: 14px; }
+
+/* Tier Colors */
+.t1-text { color: var(--t1); }
+.t2-text { color: var(--t2); }
+.t3-text { color: var(--t3); }
+.blacklist-text { color: #ff4d4d; }
