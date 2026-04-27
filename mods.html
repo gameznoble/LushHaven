@@ -2,97 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LushHaven | Client Modifications</title>
+    <title>LushHaven | Mods</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
 <header>
     <div class="nav">
         <div class="logo"><span>LUSH</span>HAVEN</div>
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="rules.html">Rules</a>
-            <a href="mods.html" class="active">Allowed Mods</a>
-            <a href="https://lushhaven.tebex.io/">Store</a>
-        </div>
+        <div class="links"><a href="index.html">Home</a><a href="rules.html">Rules</a><a href="mods.html" class="active">Allowed Mods</a><a href="https://lushhaven.tebex.io/">Store</a></div>
     </div>
 </header>
-
 <div class="container">
-    <div class="rules-header">
-        <h1>Client <span>Modifications</span></h1>
-        <p>If a mod is not listed, use at your own risk. Click any card for the punishment ladder.</p>
-        <div class="search-wrapper">
-            <i class="fas fa-search"></i>
-            <input type="text" id="modSearch" placeholder="Search mods..." onkeyup="filterMods()">
-        </div>
-    </div>
-
-    <h2 class="tier-title status-green">Permitted Modifications</h2>
+    <div class="rules-header"><h1>Client <span>Mods</span></h1></div>
+    <h2 class="tier-title status-green">Allowed</h2>
     <div class="rule-grid">
-        <div class="rule-node status-green-bg" onclick="openMod('Vivecraft', 'Minecraft VR modifications.', 'PERMITTED')">Vivecraft (VR)</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Performance', 'Optifine, Sodium, Lithium, and Starlight.', 'PERMITTED')">Optifine / Sodium</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Toggle Sprint', 'Built-in or modded toggle sprint.', 'PERMITTED')">Toggle Sprint</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Minimaps', 'Surface terrain only. Players, mobs, and caves must be DISABLED.', 'PERMITTED')">Minimaps and Maps</div>
-        <div class="rule-node status-green-bg" onclick="openMod('PvP Clients', 'Badlion, Lunar, Cosmic, 5zig, and LabyMod.', 'PERMITTED')">PvP Clients</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Vanilla Clickers', 'Includes F3+T and built-in toggles. Disallowed for AFK/PvP.', 'PERMITTED')">Vanilla Auto-Clickers</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Performance', 'Optifine/Sodium.', 'PERMITTED')">Optifine/Sodium</div>
     </div>
-
-    <h2 class="tier-title status-yellow">Disallowed (Non-Malicious)</h2>
+    <h2 class="tier-title status-red">Banned</h2>
     <div class="rule-grid">
-        <div class="rule-node status-yellow-bg" onclick="openMod('Macros/Keybinds', 'Includes hotkeys. Disallowed for AFK usage.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Macros / Keybinds</div>
-        <div class="rule-node status-yellow-bg" onclick="openMod('Printer', 'Easy Place / Safe Place behavior. Only allowed on Creative.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Printer / Build Assist</div>
-        <div class="rule-node status-yellow-bg" onclick="openMod('Freecam', 'Looking through walls via camera detaching.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Freecam</div>
-    </div>
-
-    <h2 class="tier-title status-red">Strictly Prohibited (Malicious)</h2>
-    <div class="rule-grid">
-        <div class="rule-node status-red-bg" onclick="openMod('Hacked Clients', 'Vape, Future, Meteor, Impact, etc.', '7d ➔ 14d ➔ 30d ➔ PERM')">Hacked Clients</div>
-        <div class="rule-node status-red-bg" onclick="openMod('X-Ray', 'Texture packs, mods, or cave-finders.', '7d ➔ 14d ➔ 30d ➔ PERM')">X-Ray</div>
-        <div class="rule-node status-red-bg" onclick="openMod('Auto-Clickers', 'External software used for PvP or AFK grinding.', '7d ➔ 14d ➔ 30d ➔ PERM')">External Clickers</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Hacks', 'KillAura, Fly, etc.', '7d ➔ 14d ➔ PERM')">Hacked Clients</div>
     </div>
 </div>
-
-<div id="modModal" class="modal">
-    <div class="modal-content">
-        <h2 id="modalTitle">Mod Name</h2>
-        <p id="modalDesc" style="margin: 20px 0; color: #888;"></p>
-        <div id="statusBox" class="punishment-banner">
-            <span class="banner-label">PUNISHMENT LADDER / STATUS</span>
-            <span id="modalStatus" class="banner-steps">Steps</span>
-        </div>
-        <button class="btn-close" onclick="closeModal()">Close</button>
-    </div>
-</div>
-
+<div id="m" class="modal"><div class="modal-content"><h2 id="mT"></h2><p id="mD" style="margin:20px 0; color:#888"></p><div id="mB" class="punishment-banner"><span class="banner-label">STATUS</span><span id="mS" class="banner-steps"></span></div><button class="btn-close" onclick="closePop()">Close</button></div></div>
 <script>
-    const modal = document.getElementById("modModal");
-    function openMod(t, d, s) {
-        document.getElementById("modalTitle").innerText = t;
-        document.getElementById("modalDesc").innerText = d;
-        document.getElementById("modalStatus").innerText = s;
-        const sourceNode = event.currentTarget;
-        const statusBox = document.getElementById("statusBox");
-        
-        let colorClass = 'status-red-bg';
-        if (sourceNode.classList.contains('status-green-bg')) colorClass = 'status-green-bg';
-        if (sourceNode.classList.contains('status-yellow-bg')) colorClass = 'status-yellow-bg';
-        
-        statusBox.className = "punishment-banner " + colorClass;
-        modal.style.display = "flex";
-    }
-    function closeModal() { modal.style.display = "none"; }
-    function filterMods() {
-        let input = document.getElementById('modSearch').value.toLowerCase();
-        let nodes = document.getElementsByClassName('rule-node');
-        for (let i = 0; i < nodes.length; i++) {
-            nodes[i].style.display = nodes[i].innerText.toLowerCase().includes(input) ? "block" : "none";
-        }
-    }
-    window.onclick = (e) => { if (e.target == modal) closeModal(); }
+    function openPop(t,d,s){document.getElementById('mT').innerText=t;document.getElementById('mD').innerText=d;document.getElementById('mS').innerText=s;document.getElementById('m').style.display='flex';}
+    function closePop(){document.getElementById('m').style.display='none';}
 </script>
 </body>
 </html>
