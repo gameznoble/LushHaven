@@ -25,20 +25,55 @@
 
 <main class="hero-wrapper">
     <div class="hero-content">
-        <div class="badge">UNDER DEVELOPMENT</div>
+        <div class="badge">BETA PHASE</div>
         <h1>Lush<span>Haven</span></h1>
-        <p>A custom Minecraft survival project focused on community and fair play. Join us and help build the foundation.</p>
+        <p>Experience a refined survival environment built for the community. Professional moderation, balanced gameplay, and custom features.</p>
         
         <div class="hero-btns">
             <button class="btn-main" onclick="copyIP()">
-                <i class="fas fa-copy"></i> Copy IP
+                <i class="fas fa-copy"></i> Copy IP: lushhaven.my.pebble.host
             </button>
-            <a href="rules.html" class="btn-sub">Read Rules</a>
         </div>
-        
-        <div class="server-status">
-            <div class="status-dot"></div>
-            <span class="ip-text">lushhaven.my.pebble.host</span>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-value">ONLINE</span>
+            <span class="stat-label">Server Status</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-value">1.20.x</span>
+            <span class="stat-label">Version</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-value">SURVIVAL</span>
+            <span class="stat-label">Gamemode</span>
+        </div>
+    </div>
+
+    <div class="announcements-container">
+        <h2 class="section-title">Latest <span>Announcements</span></h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-tag">Update</div>
+                <h3>Rules Revision</h3>
+                <p>We have officially updated our regulations regarding AFK farming and client mods. Please review the new tiers.</p>
+                <span class="news-date">April 26, 2026</span>
+            </div>
+            <div class="news-card">
+                <div class="news-tag">Event</div>
+                <h3>Grand Opening</h3>
+                <p>LushHaven is officially entering its public beta phase. Join us today and help shape our future!</p>
+                <span class="news-date">April 20, 2026</span>
+            </div>
+            <div class="news-card">
+                <div class="news-tag highlight">Store</div>
+                <h3>Supporter Ranks</h3>
+                <p>Our community store is now live. Support the server and unlock exclusive cosmetic perks.</p>
+                <span class="news-date">April 15, 2026</span>
+            </div>
         </div>
     </div>
 </main>
@@ -47,9 +82,9 @@
     function copyIP() {
         navigator.clipboard.writeText("lushhaven.my.pebble.host");
         const btn = document.querySelector('.btn-main');
-        btn.innerHTML = "<i class='fas fa-check'></i> Copied!";
+        btn.innerHTML = "<i class='fas fa-check'></i> IP Copied!";
         setTimeout(() => {
-            btn.innerHTML = "<i class='fas fa-copy'></i> Copy IP";
+            btn.innerHTML = "<i class='fas fa-copy'></i> Copy IP: lushhaven.my.pebble.host";
         }, 2000);
     }
 </script>
