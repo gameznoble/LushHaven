@@ -24,38 +24,31 @@
 <div class="container">
     <div class="rules-header">
         <h1>Client <span>Modifications</span></h1>
-        <p>Click any modification to see its allowed status and punishment ladder.</p>
         <div class="search-wrapper">
             <i class="fas fa-search"></i>
-            <input type="text" id="modSearch" placeholder="Search mods (e.g. 'Lunar' or 'X-Ray')..." onkeyup="filterMods()">
+            <input type="text" id="modSearch" placeholder="Search mods..." onkeyup="filterMods()">
         </div>
     </div>
 
-    <h2 class="tier-title status-green">Permitted Modifications</h2>
+    <h2 class="tier-title status-green">Permitted</h2>
     <div class="rule-grid">
-        <div class="rule-node" onclick="openMod('Vivecraft', 'Minecraft VR modifications.', 'PERMITTED', 'status-green-bg')">Vivecraft</div>
-        <div class="rule-node" onclick="openMod('Optifine', 'Performance and shaders.', 'PERMITTED', 'status-green-bg')">Optifine</div>
-        <div class="rule-node" onclick="openMod('PvP Clients', 'Badlion, Lunar, and Cosmic Client. Must have no unfair advantage.', 'PERMITTED', 'status-green-bg')">PvP Clients</div>
-        <div class="rule-node" onclick="openMod('Minimaps', 'Players, mobs, caves, entities and radar must be DISABLED. Only above ground terrain.', 'PERMITTED', 'status-green-bg')">Minimaps</div>
-        <div class="rule-node" onclick="openMod('Schematics', 'Printer is strictly forbidden.', 'PERMITTED', 'status-green-bg')">Schematics</div>
-        <div class="rule-node" onclick="openMod('Inventory Tweaks', 'Auto-Potting and Auto-Armor are NOT allowed.', 'PERMITTED', 'status-green-bg')">Inventory Tweaks</div>
-        <div class="rule-node" onclick="openMod('HUD Mods', 'Armor and Potion HUDs, Coordinates, Saturation.', 'PERMITTED', 'status-green-bg')">HUD Mods</div>
-        <div class="rule-node" onclick="openMod('Vanilla Clickers', 'Disallowed for AFK Grinding and PvP usage. Includes F3+T.', 'PERMITTED', 'status-green-bg')">Vanilla Auto-Clickers</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Vivecraft', 'Minecraft VR modifications.', 'PERMITTED', 'status-green-bg', 'STATUS')">Vivecraft</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Optifine', 'Performance and shaders.', 'PERMITTED', 'status-green-bg', 'STATUS')">Optifine</div>
+        <div class="rule-node status-green-bg" onclick="openMod('PvP Clients', 'Badlion, Lunar, and Cosmic Client.', 'PERMITTED', 'status-green-bg', 'STATUS')">PvP Clients</div>
+        <div class="rule-node status-green-bg" onclick="openMod('HUD Mods', 'ArmorStatus, Saturation, Co-ordinates.', 'PERMITTED', 'status-green-bg', 'STATUS')">HUD Mods</div>
     </div>
 
-    <h2 class="tier-title status-red">Disallowed / Malicious</h2>
+    <h2 class="tier-title status-yellow">Non-Malicious</h2>
     <div class="rule-grid">
-        <div class="rule-node danger" onclick="openMod('X-Ray', 'Texture packs or mods that see through blocks.', '1: 7d | 2: 14d | 3: 30d | 4: PERM', 'status-red-bg')">X-Ray</div>
-        <div class="rule-node danger" onclick="openMod('Hacked Clients', 'Vape, Future, Meteor, etc.', '1: 7d | 2: 14d | 3: 30d | 4: PERM', 'status-red-bg')">Hacked Clients</div>
-        <div class="rule-node danger" onclick="openMod('Fly/Boosts', 'Movement hacks or speed boosts.', '1: 7d | 2: 14d | 3: 30d | 4: PERM', 'status-red-bg')">Fly Hacks</div>
-        <div class="rule-node danger" onclick="openMod('Radar / ESP', 'Seeing players or entities through walls.', '1: 7d | 2: 14d | 3: 30d | 4: PERM', 'status-red-bg')">Radar / ESP</div>
-        <div class="rule-node danger" onclick="openMod('External Clickers', 'Includes weights on keys for AFK grinding.', '1: 7d | 2: 14d | 3: 30d | 4: PERM', 'status-red-bg')">External Clickers</div>
+        <div class="rule-node status-yellow-bg" onclick="openMod('Printer', 'Easy Place / Safe Place behavior.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM', 'status-yellow-bg', 'PUNISHMENT LADDER')">Printer</div>
+        <div class="rule-node status-yellow-bg" onclick="openMod('Auto-Clickers', 'Using weights or minor scripts for AFK.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM', 'status-yellow-bg', 'PUNISHMENT LADDER')">AFK Auto-Clickers</div>
     </div>
 
-    <h2 class="tier-title status-yellow">Non-Malicious Offenses</h2>
+    <h2 class="tier-title status-red">Malicious</h2>
     <div class="rule-grid">
-        <div class="rule-node" onclick="openMod('Non-Malicious', 'Using disallowed mods without intent to harm.', '1: 1d | 2: 3d | 3: 7d | 4: 14d | 5: PERM', 'status-yellow-bg')">Non-Malicious Tier</div>
-        <div class="rule-node" onclick="openMod('Printer / Easy Place', 'Anything that modifies placing behavior beyond vanilla.', '1: 1d | 2: 3d | 3: 7d | 4: 14d | 5: PERM', 'status-yellow-bg')">Printer / Easy Place</div>
+        <div class="rule-node status-red-bg" onclick="openMod('X-Ray', 'Texture packs or mods that see through blocks.', '7d ➔ 14d ➔ 30d ➔ PERM', 'status-red-bg', 'PUNISHMENT LADDER')">X-Ray</div>
+        <div class="rule-node status-red-bg" onclick="openMod('Hacked Clients', 'Vape, Future, Meteor, etc.', '7d ➔ 14d ➔ 30d ➔ PERM', 'status-red-bg', 'PUNISHMENT LADDER')">Hacked Clients</div>
+        <div class="rule-node status-red-bg" onclick="openMod('Fly / Boosts', 'Movement hacks or speed boosts.', '7d ➔ 14d ➔ 30d ➔ PERM', 'status-red-bg', 'PUNISHMENT LADDER')">Fly Hacks</div>
     </div>
 </div>
 
@@ -64,11 +57,11 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <h2 id="modalTitle">Mod Name</h2>
         <div class="modal-divider"></div>
-        <p id="modalDesc" style="margin-bottom: 20px; color: #bbb;"></p>
+        <p id="modalDesc"></p>
         
         <div id="statusBox" class="punishment-banner">
-            <span class="banner-label">PUNISHMENT LADDER / STATUS</span>
-            <span id="modalLadder" class="banner-steps">LADDER</span>
+            <span id="modalLabel" class="banner-label">LABEL</span>
+            <span id="modalValue" class="banner-steps">VALUE</span>
         </div>
 
         <button class="btn-close" onclick="closeModal()">Close</button>
@@ -77,10 +70,11 @@
 
 <script>
     const modal = document.getElementById("modModal");
-    function openMod(title, desc, ladder, bgClass) {
+    function openMod(title, desc, value, bgClass, label) {
         document.getElementById("modalTitle").innerText = title;
         document.getElementById("modalDesc").innerText = desc;
-        document.getElementById("modalLadder").innerText = ladder;
+        document.getElementById("modalLabel").innerText = label;
+        document.getElementById("modalValue").innerText = value;
         document.getElementById("statusBox").className = "punishment-banner " + bgClass;
         modal.style.display = "flex";
     }
