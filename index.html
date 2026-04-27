@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LushHaven | Home</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -22,48 +20,13 @@
 </header>
 
 <main class="main-wrapper">
-    <section class="hero-section">
+    <div class="hero-section">
         <div class="badge">SEASON ONE IS LIVE</div>
         <h1>Enter the <span>Haven.</span></h1>
-        <p>Experience the ultimate Skyblock adventure with a custom economy, balanced gameplay, and a community that actually matters.</p>
-        
-        <div class="hero-btns">
-            <a href="https://lushhaven.tebex.io/" class="btn-main">Visit the Store</a>
-            <div class="ip-box" onclick="copyIP()">
-                <span id="ipText">play.lushhaven.com</span>
-                <i class="fas fa-copy"></i>
-            </div>
-        </div>
-    </section>
-
-    <div class="stats-grid">
-        <div class="stat-card">
-            <i class="fas fa-signal"></i>
-            <div class="stat-info">
-                <span class="stat-val" style="color: var(--success)">Online</span>
-                <span class="stat-lbl">Server Status</span>
-            </div>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-cubes"></i>
-            <div class="stat-info">
-                <span class="stat-val">Skyblock</span>
-                <span class="stat-lbl">Current Mode</span>
-            </div>
-        </div>
+        <p>The ultimate Skyblock adventure starts here.</p>
+        <a href="https://lushhaven.tebex.io/" class="btn-main">Visit the Store</a>
     </div>
 </main>
-
-<script>
-    function copyIP() {
-        const ip = "play.lushhaven.com"; // Change to your actual IP
-        navigator.clipboard.writeText(ip);
-        const ipText = document.getElementById('ipText');
-        const original = ipText.innerText;
-        ipText.innerText = "Copied!";
-        setTimeout(() => { ipText.innerText = original; }, 2000);
-    }
-</script>
 
 </body>
 </html>
