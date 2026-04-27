@@ -24,21 +24,23 @@
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="badge">SEASON 1 NOW LIVE</div>
-        <h1>Welcome to <span>LushHaven</span></h1>
-        <p>A premium Minecraft survival network designed for community and progression. Join hundreds of players in an evolved SMP experience.</p>
-        
-        <div class="hero-btns">
-            <button class="btn-main" onclick="copyIP()">
-                <i class="fas fa-copy"></i> Copy Server IP
-            </button>
-            <a href="rules.html" class="btn-sub">View Regulations</a>
-        </div>
-        
-        <div class="server-status">
-            <div class="status-dot"></div>
-            <span class="ip-text">lushhaven.my.pebble.host</span>
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="badge">SEASON 1 NOW LIVE</div>
+            <h1>Welcome to <span>LushHaven</span></h1>
+            <p>A premium Minecraft survival network designed for community and progression. Join hundreds of players in an evolved SMP experience.</p>
+            
+            <div class="hero-btns">
+                <button class="btn-main" onclick="copyIP()">
+                    <i class="fas fa-copy"></i> Copy Server IP
+                </button>
+                <a href="rules.html" class="btn-sub">View Regulations</a>
+            </div>
+            
+            <div class="server-status">
+                <div class="status-dot"></div>
+                <span class="ip-text">lushhaven.my.pebble.host</span>
+            </div>
         </div>
     </div>
 </section>
@@ -48,11 +50,8 @@
         navigator.clipboard.writeText("lushhaven.my.pebble.host");
         const btn = document.querySelector('.btn-main');
         const originalText = btn.innerHTML;
-        
-        // Visual feedback on click
         btn.innerHTML = "<i class='fas fa-check'></i> Copied!";
         btn.style.background = "#2ecc71";
-        
         setTimeout(() => {
             btn.innerHTML = originalText;
             btn.style.background = "var(--accent)";
