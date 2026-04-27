@@ -2,45 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LushHaven | Mods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LushHaven | Rules</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
 <header>
     <div class="nav">
         <div class="logo"><span>LUSH</span>HAVEN</div>
-        <div class="links"><a href="index.html">Home</a><a href="rules.html">Rules</a><a href="mods.html" class="active">Allowed Mods</a><a href="https://lushhaven.tebex.io/">Store</a></div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="rules.html" class="active">Rules</a>
+            <a href="mods.html">Allowed Mods</a>
+            <a href="https://lushhaven.tebex.io/">Store</a>
+        </div>
     </div>
 </header>
+
 <div class="container">
-    <div class="rules-header"><h1>Allowed <span>Modifications</span></h1></div>
-    
-    <h2 class="tier-title status-green">Permitted</h2>
-    <div class="rule-grid">
-        <div class="rule-node status-green-bg" onclick="openPop('Optifine', 'Performance optimization.', 'ALLOWED')">Optifine/Sodium</div>
-        <div class="rule-node status-green-bg" onclick="openPop('Minimaps', 'Surface maps only. No caves/players.', 'ALLOWED')">Minimaps</div>
-        <div class="rule-node status-green-bg" onclick="openPop('PvP Clients', 'Lunar, Badlion, etc.', 'ALLOWED')">PvP Clients</div>
+    <div class="rules-header">
+        <h1>Server <span>Regulations</span></h1>
+        <p>Complete list of allowed and disallowed modifications. Click any card for the full ladder.</p>
     </div>
 
-    <h2 class="tier-title status-red">Disallowed</h2>
+    <h2 class="tier-title status-green">Permitted Modifications</h2>
     <div class="rule-grid">
-        <div class="rule-node status-red-bg" onclick="openPop('X-Ray', 'Seeing ores/chests.', '7d ➔ 30d ➔ PERM')">X-Ray</div>
-        <div class="rule-node status-red-bg" onclick="openPop('Auto-Clickers', 'Automation of clicking.', '7d ➔ 14d ➔ PERM')">Auto-Clickers</div>
-        <div class="rule-node status-red-bg" onclick="openPop('Hacks', 'Fly, Speed, KillAura.', 'Permanent Ban')">Hacked Clients</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Vivecraft', 'Minecraft VR modifications.', 'Permitted')">Vivecraft</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Performance', 'Optifine, Sodium, Lithium, and Starlight.', 'Permitted')">Optifine / Sodium</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Minimaps', 'Surface terrain only. Players, mobs, caves, entities, and radar must be DISABLED.', 'Permitted')">Minimaps & Maps</div>
+        <div class="rule-node status-green-bg" onclick="openPop('HUDs', 'Armor, Potion HUDs, Co-ordinate mods, and Saturation mods.', 'Permitted')">Armor/Potion HUD</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Schematics', 'Litematica/Schematica. You must NOT use printer.', 'Permitted')">Schematics</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Inventory Tweaks', 'Sorting mods. Auto Potting and Auto Armor is NOT allowed.', 'Permitted')">Inventory Tweaks</div>
+        <div class="rule-node status-green-bg" onclick="openPop('PvP Clients', 'Badlion, Lunar, and Cosmic. Must have no advantage.', 'Permitted')">PvP Clients</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Vanilla Clickers', 'Includes F3+T and built-in toggles. Disallowed for AFK/PvP.', 'Permitted')">Vanilla Auto-Clickers</div>
+    </div>
+
+    <h2 class="tier-title status-yellow">Non-Malicious Violations</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-yellow-bg" onclick="openPop('Macros/Keybinds', 'Includes hotkeys used for automation.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Macros & Keybinds</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Printer', 'Easy Place / Safe Place behavior. Only allowed on Creative.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Printer / Build Assist</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Freecam', 'Looking through walls via camera detaching.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Freecam</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Attack Keybind', 'Rebinding keys is fine unless used to AFK grind.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Attack Keybind (AFK)</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('External Weights', 'Using physical weights on keys to AFK grind.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Key Weights</div>
+    </div>
+
+    <h2 class="tier-title status-red">Malicious Violations</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-red-bg" onclick="openPop('X-Ray', 'Texture packs or mods used to see ores/chests.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">X-Ray</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Hacked Clients', 'KillAura, Speed, Reach, etc.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">Hacked Clients</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Fly / Boosts', 'Any flight or speed movement hacks.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">Fly Hacks / Boosts</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Radar / ESP', 'Seeing players or entities through walls.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">Radar / ESP</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Scripts', 'Includes auto-chatbots, even if used in an AFK client.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">Scripts / Chatbots</div>
+        <div class="rule-node status-red-bg" onclick="openPop('OQMineBot', 'Mining automation software.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">OQMineBot</div>
+        <div class="rule-node status-red-bg" onclick="openPop('External Clickers', 'Software outside Minecraft for clicking in PvP/AFK.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">External Clickers</div>
     </div>
 </div>
 
-<div id="m" class="modal"><div class="modal-content"><h2 id="mT"></h2><p id="mD" style="margin:20px 0; color:#888"></p><div id="mB" class="punishment-banner"><span class="banner-label">STATUS</span><span id="mS" class="banner-steps"></span></div><button class="btn-close" onclick="closePop()">Close</button></div></div>
+<div id="m" class="modal">
+    <div class="modal-content">
+        <h2 id="mT"></h2>
+        <p id="mD" style="margin: 20px 0; color: #888;"></p>
+        <div id="mB" class="punishment-banner">
+            <span class="banner-label">PUNISHMENT LADDER</span>
+            <span id="mS" class="banner-steps"></span>
+        </div>
+        <button class="btn-close" onclick="closePop()">Close</button>
+    </div>
+</div>
 
 <script>
-    function openPop(t,d,s){
-        document.getElementById('mT').innerText=t;
-        document.getElementById('mD').innerText=d;
-        document.getElementById('mS').innerText=s;
-        document.getElementById('m').style.display='flex';
+    function openPop(t, d, s) {
+        document.getElementById('mT').innerText = t;
+        document.getElementById('mD').innerText = d;
+        document.getElementById('mS').innerText = s;
+        
+        // Find which color to make the banner in the popup
+        const source = event.currentTarget;
+        const banner = document.getElementById('mB');
+        banner.className = "punishment-banner " + (source.classList.contains('status-green-bg') ? 'status-green-bg' : source.classList.contains('status-yellow-bg') ? 'status-yellow-bg' : 'status-red-bg');
+        
+        document.getElementById('m').style.display = 'flex';
     }
-    function closePop(){document.getElementById('m').style.display='none';}
+    function closePop() { document.getElementById('m').style.display = 'none'; }
+    window.onclick = (e) => { if (e.target == document.getElementById('m')) closePop(); }
 </script>
+
 </body>
 </html>
