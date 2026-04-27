@@ -14,19 +14,32 @@
     </div>
 </header>
 <div class="container">
-    <div class="rules-header"><h1>Client <span>Mods</span></h1></div>
-    <h2 class="tier-title status-green">Allowed</h2>
+    <div class="rules-header"><h1>Allowed <span>Modifications</span></h1></div>
+    
+    <h2 class="tier-title status-green">Permitted</h2>
     <div class="rule-grid">
-        <div class="rule-node status-green-bg" onclick="openPop('Performance', 'Optifine/Sodium.', 'PERMITTED')">Optifine/Sodium</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Optifine', 'Performance optimization.', 'ALLOWED')">Optifine/Sodium</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Minimaps', 'Surface maps only. No caves/players.', 'ALLOWED')">Minimaps</div>
+        <div class="rule-node status-green-bg" onclick="openPop('PvP Clients', 'Lunar, Badlion, etc.', 'ALLOWED')">PvP Clients</div>
     </div>
-    <h2 class="tier-title status-red">Banned</h2>
+
+    <h2 class="tier-title status-red">Disallowed</h2>
     <div class="rule-grid">
-        <div class="rule-node status-red-bg" onclick="openPop('Hacks', 'KillAura, Fly, etc.', '7d ➔ 14d ➔ PERM')">Hacked Clients</div>
+        <div class="rule-node status-red-bg" onclick="openPop('X-Ray', 'Seeing ores/chests.', '7d ➔ 30d ➔ PERM')">X-Ray</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Auto-Clickers', 'Automation of clicking.', '7d ➔ 14d ➔ PERM')">Auto-Clickers</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Hacks', 'Fly, Speed, KillAura.', 'Permanent Ban')">Hacked Clients</div>
     </div>
 </div>
+
 <div id="m" class="modal"><div class="modal-content"><h2 id="mT"></h2><p id="mD" style="margin:20px 0; color:#888"></p><div id="mB" class="punishment-banner"><span class="banner-label">STATUS</span><span id="mS" class="banner-steps"></span></div><button class="btn-close" onclick="closePop()">Close</button></div></div>
+
 <script>
-    function openPop(t,d,s){document.getElementById('mT').innerText=t;document.getElementById('mD').innerText=d;document.getElementById('mS').innerText=s;document.getElementById('m').style.display='flex';}
+    function openPop(t,d,s){
+        document.getElementById('mT').innerText=t;
+        document.getElementById('mD').innerText=d;
+        document.getElementById('mS').innerText=s;
+        document.getElementById('m').style.display='flex';
+    }
     function closePop(){document.getElementById('m').style.display='none';}
 </script>
 </body>
