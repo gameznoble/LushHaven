@@ -15,19 +15,36 @@
 </header>
 <div class="container">
     <div class="rules-header"><h1>Server <span>Regulations</span></h1></div>
-    <h2 class="tier-title status-green">Chat Rules</h2>
+    
+    <h2 class="tier-title status-green">Tier 1: Chat</h2>
     <div class="rule-grid">
         <div class="rule-node status-green-bg" onclick="openPop('Spamming', 'Character/Command/Chat spam.', 'Warn ➔ 15m Mute ➔ 1h Mute')">Spamming</div>
         <div class="rule-node status-green-bg" onclick="openPop('Language', 'English only in public chat.', 'Warn ➔ 15m Mute')">Foreign Language</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Politics', 'Avoid religious or political drama.', 'Warn ➔ 1h Mute')">Politics/Religion</div>
     </div>
-    <h2 class="tier-title status-red">Game Rules</h2>
+
+    <h2 class="tier-title status-yellow">Tier 2: Gameplay</h2>
     <div class="rule-grid">
-        <div class="rule-node status-red-bg" onclick="openPop('Griefing', 'Destroying builds.', '1d Ban ➔ 7d Ban ➔ Wipe')">Griefing</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Swearing', 'Direct swearing at players.', 'Warn ➔ 1h Mute ➔ 12h Mute')">Direct Swearing</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('IRL Trading', 'Trading for real money.', 'Permanent Ban')">IRL Trading</div>
+    </div>
+
+    <h2 class="tier-title status-red">Tier 3: Serious</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-red-bg" onclick="openPop('Griefing', 'Destroying builds or stealing items.', '1d Ban ➔ 7d Ban ➔ Wipe')">Griefing</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Hacking', 'Unfair advantages.', '7d Ban ➔ 30d Ban ➔ Permanent')">Hacking/Cheating</div>
     </div>
 </div>
-<div id="m" class="modal"><div class="modal-content"><h2 id="mT"></h2><p id="mD" style="margin:20px 0; color:#888"></p><div id="mB" class="punishment-banner"><span class="banner-label">PUNISHMENT</span><span id="mS" class="banner-steps"></span></div><button class="btn-close" onclick="closePop()">Close</button></div></div>
+
+<div id="m" class="modal"><div class="modal-content"><h2 id="mT"></h2><p id="mD" style="margin:20px 0; color:#888"></p><div id="mB" class="punishment-banner"><span class="banner-label">PUNISHMENT LADDER</span><span id="mS" class="banner-steps"></span></div><button class="btn-close" onclick="closePop()">Close</button></div></div>
+
 <script>
-    function openPop(t,d,s){document.getElementById('mT').innerText=t;document.getElementById('mD').innerText=d;document.getElementById('mS').innerText=s;document.getElementById('m').style.display='flex';}
+    function openPop(t,d,s){
+        document.getElementById('mT').innerText=t;
+        document.getElementById('mD').innerText=d;
+        document.getElementById('mS').innerText=s;
+        document.getElementById('m').style.display='flex';
+    }
     function closePop(){document.getElementById('m').style.display='none';}
 </script>
 </body>
