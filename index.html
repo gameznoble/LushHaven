@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LushHaven | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="home-bg">
+
+<div class="bg-animate"></div>
 
 <header>
     <div class="nav">
@@ -14,6 +17,7 @@
         <div class="links">
             <a href="index.html" class="active">Home</a>
             <a href="rules.html">Rules</a>
+            <a href="mods.html">Allowed Mods</a>
             <a href="https://lushhaven.tebex.io/">Store</a>
         </div>
     </div>
@@ -21,20 +25,38 @@
 
 <section class="hero">
     <div class="hero-content">
+        <div class="badge">SEASON 1 NOW LIVE</div>
         <h1>Welcome to <span>LushHaven</span></h1>
-        <p>A premium Minecraft survival network designed for community and progression.</p>
+        <p>A premium Minecraft survival network designed for community and progression. Join hundreds of players in an evolved SMP experience.</p>
+        
         <div class="hero-btns">
-            <button class="btn-main" onclick="copyIP()">Copy Server IP</button>
-            <a href="rules.html" class="btn-sub">View Rules</a>
+            <button class="btn-main" onclick="copyIP()">
+                <i class="fas fa-copy"></i> Copy Server IP
+            </button>
+            <a href="rules.html" class="btn-sub">View Regulations</a>
         </div>
-        <div class="server-ip">lushhaven.my.pebble.host</div>
+        
+        <div class="server-status">
+            <div class="status-dot"></div>
+            <span class="ip-text">lushhaven.my.pebble.host</span>
+        </div>
     </div>
 </section>
 
 <script>
     function copyIP() {
         navigator.clipboard.writeText("lushhaven.my.pebble.host");
-        alert("IP Copied! Join us on Minecraft.");
+        const btn = document.querySelector('.btn-main');
+        const originalText = btn.innerHTML;
+        
+        // Visual feedback on click
+        btn.innerHTML = "<i class='fas fa-check'></i> Copied!";
+        btn.style.background = "#2ecc71";
+        
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = "var(--accent)";
+        }, 2000);
     }
 </script>
 
