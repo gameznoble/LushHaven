@@ -8,6 +8,7 @@
     --success: #2ecc71;
     --warning: #f1c40f;
     --danger: #e74c3c;
+    --discord: #5865F2; /* Official Discord Blurple */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,22 +28,47 @@ header {
 .logo { font-weight: 800; font-size: 24px; color: #ffffff; letter-spacing: -1px; }
 .logo span { color: var(--accent); }
 
-.links { display: flex; align-items: center; }
-.links a { color: #888; text-decoration: none; margin-left: 20px; font-weight: 700; font-size: 13px; text-transform: uppercase; transition: 0.3s; }
+.links { display: flex; align-items: center; gap: 20px; } /* Added gap for better spacing */
+.links a { color: #888; text-decoration: none; font-weight: 700; font-size: 13px; text-transform: uppercase; transition: 0.3s; }
 .links a.active, .links a:hover { color: var(--accent); }
 
-/* Discord Button */
-.discord-btn {
-    background: #5865F2 !important;
+/* --- Discord Buttons --- */
+
+/* Use this class for the button in the Navbar */
+.discord-btn-nav {
+    background: var(--discord) !important;
     color: #fff !important;
-    padding: 10px 18px !important;
+    padding: 8px 16px !important;
     border-radius: 8px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     text-transform: none !important;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
 }
-.discord-btn:hover { background: #4752c4 !important; transform: translateY(-2px); }
+
+/* Use this class for a big button on the Homepage/Hero section */
+.discord-btn-hero {
+    background: var(--discord) !important;
+    color: #fff !important;
+    padding: 16px 32px !important;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.discord-btn-nav:hover, .discord-btn-hero:hover {
+    background: #4752c4 !important; /* Slightly darker blurple on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+}
 
 /* --- Containers & Rules --- */
 .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
