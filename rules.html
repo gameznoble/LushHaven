@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LushHaven | Official Rules</title>
+    <title>LushHaven | Rules</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -23,44 +23,52 @@
 
 <div class="container">
     <div class="rules-header">
-        <h1>Server <span>Regulations</span></h1>
-        <p>The definitive guide to LushHaven conduct and modifications.</p>
+        <h1>Server <span>Rules</span></h1>
+        <p>LushHaven Network Code of Conduct. Click any card to view the ladder.</p>
     </div>
 
-    <h2 class="tier-title status-green">Permitted (Safe to Use)</h2>
+    <h2 class="tier-title status-green">Tier One: Social & Chat</h2>
     <div class="rule-grid">
-        <div class="rule-node status-green-bg" onclick="openPop('Vivecraft', 'Minecraft VR modifications.', 'Permitted')">Vivecraft (VR)</div>
-        <div class="rule-node status-green-bg" onclick="openPop('Performance', 'Optifine, Sodium, Lithium, Starlight, and Shaders.', 'Permitted')">Optifine / Sodium</div>
-        <div class="rule-node status-green-bg" onclick="openPop('Toggle Sprint', 'Built-in or modded toggle sprint.', 'Permitted')">Toggle Sprint</div>
-        <div class="rule-node status-green-bg" onclick="openPop('Minimaps', 'Surface terrain only. Players, mobs, caves, entities, and radar must be DISABLED.', 'Permitted')">Minimaps & Maps</div>
-        <div class="rule-node status-green-bg" onclick="openPop('HUD Mods', 'Armor HUD, Potion HUD, Saturation, and Gamma/Brightness mods.', 'Permitted')">HUDs & Gamma</div>
-        <div class="rule-node status-green-bg" onclick="openPop('Schematics', 'Litematica/Schematica. You must NOT use printer.', 'Permitted')">Schematics</div>
-        <div class="rule-node status-green-bg" onclick="openPop('Inventory Tweaks', 'Sorting mods. Auto Potting/Auto Armor is BANNED.', 'Permitted')">Inventory Tweaks</div>
-        <div class="rule-node status-green-bg" onclick="openPop('PvP Clients', 'Badlion, Lunar, Cosmic, 5zig, and LabyMod.', 'Permitted')">PvP Clients</div>
-        <div class="rule-node status-green-bg" onclick="openPop('Vanilla Clickers', 'F3+T or built-in toggles. Banned for AFK/PvP.', 'Permitted')">Vanilla Auto-Clickers</div>
-        <div class="rule-node status-green-bg" onclick="openPop('Technical', 'Forge, Fabric, LiteLoader, and Co-ordinate mods.', 'Permitted')">Mod Loaders</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Spamming', 'Character, command, or chat spam.', 'Warn ➔ 1h Mute ➔ 24h Mute ➔ 24h Ban')">Spamming</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Excessive Swearing', 'Vulgarity or bypassing filters.', 'Warn ➔ 6h Mute ➔ 12h Mute ➔ 1d Ban')">Excessive Swearing</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Foreign Languages', 'Public chat must be in English.', 'Warn ➔ 12h Mute ➔ 24h Ban')">Foreign Languages</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Advertising', 'Promoting other servers or services.', 'Warn ➔ 12h Mute ➔ 24h Mute')">Advertising</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Politics & Religion', 'Sensitive discussions that cause drama.', 'Follow Spamming Ladder')">Politics / Religion</div>
     </div>
 
-    <h2 class="tier-title status-yellow">Tier 2: Non-Malicious Violations</h2>
+    <h2 class="tier-title status-yellow">Tier Two: Gameplay Standards</h2>
     <div class="rule-grid">
-        <div class="rule-node status-yellow-bg" onclick="openPop('Macros/Keybinds', 'Includes hotkeys. Disallowed for AFK usage.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Macros & Keybinds</div>
-        <div class="rule-node status-yellow-bg" onclick="openPop('Printer', 'Easy Place / Safe Place. Only allowed on Creative/Cannon.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Printer / Build Assist</div>
-        <div class="rule-node status-yellow-bg" onclick="openPop('Freecam', 'Detaching camera to look through walls.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Freecam</div>
-        <div class="rule-node status-yellow-bg" onclick="openPop('Attack Keybind', 'Rebinding attack is fine unless used for AFK grinding.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Attack Keybind (AFK)</div>
-        <div class="rule-node status-yellow-bg" onclick="openPop('External Weights', 'Using physical weights on keys to grind while AFK.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ Permanent')">Key Weights</div>
-        <div class="rule-node status-yellow-bg" onclick="openPop('Spamming', 'Character, Command, or Chat spam.', 'Warn ➔ 15m Mute ➔ 1h Mute ➔ 12h Mute')">Spamming</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Harassment', 'Targeted negativity or bullying.', 'Warn ➔ 24h Mute ➔ 24d Ban')">Harassment</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Griefing', 'Destroying builds or stealing items.', '24h Ban ➔ 48h Ban ➔ Perm Ban')">Griefing</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Scamming', 'Failure to deliver trades or AH fraud.', '12h Ban ➔ 24h Ban ➔ Perm Ban')">Scamming</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Threats', 'Verbal threats against players.', '12h Mute ➔ 24h Mute ➔ Perm Mute')">Threats</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Disrespect', 'General toxicity toward players or staff.', '12h Mute ➔ 24h Mute ➔ 24h Ban')">Disrespect</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Non-Malicious Bug Abuse', 'Exploiting minor glitches.', 'Warn ➔ 12h Ban ➔ 24h Ban ➔ 48h Ban')">Minor Bug Abuse</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('AFK Grinding', 'Using auto-clickers or weights to farm.', '1h Ban ➔ 12h Ban ➔ 24h Ban ➔ 48h Ban')">AFK Grinding</div>
     </div>
 
-    <h2 class="tier-title status-red">Tier 3: Malicious Violations</h2>
+    <h2 class="tier-title status-red">Tier Three: Severe Offenses</h2>
     <div class="rule-grid">
-        <div class="rule-node status-red-bg" onclick="openPop('X-Ray', 'Texture packs or mods used to see ores/chests.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">X-Ray</div>
-        <div class="rule-node status-red-bg" onclick="openPop('Hacked Clients', 'Vape, Meteor, Future, etc. (KillAura, Reach, etc.)', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">Hacked Clients</div>
-        <div class="rule-node status-red-bg" onclick="openPop('Fly / Boosts', 'Any flight, speed, or movement hacks.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">Fly Hacks / Boosts</div>
-        <div class="rule-node status-red-bg" onclick="openPop('Radar / ESP', 'Seeing players/entities through walls.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">Radar / ESP</div>
-        <div class="rule-node status-red-bg" onclick="openPop('Scripts', 'Auto-chatbots or automation scripts.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">Scripts / Chatbots</div>
-        <div class="rule-node status-red-bg" onclick="openPop('OQMineBot', 'Mining automation software.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">OQMineBot</div>
-        <div class="rule-node status-red-bg" onclick="openPop('Auto-Clickers', 'External software (autoclickers) for PvP or AFK.', '7d ➔ 14d ➔ 30d ➔ Permanent ➔ Blacklist')">External Clickers</div>
-        <div class="rule-node status-red-bg" onclick="openPop('Griefing', 'Destroying builds or stealing from members.', '1d Ban ➔ 7d Ban ➔ Wipe')">Griefing / Stealing</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Discrimination', 'Hate speech based on identity.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Discrimination</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Self Harm', 'Encouraging self-harm or violence.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Encouraging Harm</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Malicious Exploits', 'Exploiting major game-breaking bugs.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Malicious Bug Abuse</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Malicious Mods', 'Hacked clients, X-ray, or flight.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Malicious Modifications</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Evasion', 'Avoiding active mutes or bans.', 'Perm IP Ban / Perm Mute')">Ban/Mute Evasion</div>
+    </div>
+
+    <h2 class="tier-title">Extras & Global Policy</h2>
+    <div class="rule-grid">
+        <div class="rule-node" style="border-bottom: 3px solid #fff;" onclick="openPop('Alt Limit', 'Limit is 3 per IP. Multi-users must verify.', 'Warn ➔ 30d Ban ➔ Perm Ban')">Alt Accounts</div>
+        <div class="rule-node" style="border-bottom: 3px solid #fff;" onclick="openPop('Usernames', 'Inappropriate or offensive names.', 'Ban (Appealable once changed)')">Usernames</div>
+        <a href="mods.html" class="rule-node" style="text-decoration: none; color: var(--accent); border: 1px dashed var(--accent);">View All Allowed Mods ➔</a>
+    </div>
+
+    <h2 class="tier-title" style="color: #ff4757;">Blacklist (Zero Tolerance)</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);">Doxing/DDoS/Blackmail</div>
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);">Personal Info Sharing</div>
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);">Malicious Links</div>
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);">Extreme Bug Abuse</div>
     </div>
 </div>
 
@@ -69,7 +77,7 @@
         <h2 id="mT"></h2>
         <p id="mD" style="margin: 20px 0; color: #888;"></p>
         <div id="mB" class="punishment-banner">
-            <span class="banner-label">PUNISHMENT LADDER / STATUS</span>
+            <span class="banner-label">PUNISHMENT LADDER</span>
             <span id="mS" class="banner-steps"></span>
         </div>
         <button class="btn-close" onclick="closePop()">Close</button>
@@ -81,13 +89,9 @@
         document.getElementById('mT').innerText = t;
         document.getElementById('mD').innerText = d;
         document.getElementById('mS').innerText = s;
-        
         const source = event.currentTarget;
         const banner = document.getElementById('mB');
-        banner.className = "punishment-banner " + 
-            (source.classList.contains('status-green-bg') ? 'status-green-bg' : 
-             source.classList.contains('status-yellow-bg') ? 'status-yellow-bg' : 'status-red-bg');
-        
+        banner.className = "punishment-banner " + (source.classList.contains('status-green-bg') ? 'status-green-bg' : source.classList.contains('status-yellow-bg') ? 'status-yellow-bg' : 'status-red-bg');
         document.getElementById('m').style.display = 'flex';
     }
     function closePop() { document.getElementById('m').style.display = 'none'; }
