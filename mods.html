@@ -11,7 +11,7 @@
 
 <header>
     <div class="nav">
-        <div class="logo">LUSH<span>HAVEN</span></div>
+        <div class="logo"><span>LUSH</span>HAVEN</div>
         <div class="links">
             <a href="index.html">Home</a>
             <a href="rules.html">Rules</a>
@@ -24,7 +24,7 @@
 <div class="container">
     <div class="rules-header">
         <h1>Client <span>Modifications</span></h1>
-        <p>If a mod is not listed, use at your own risk. Click any mod for specific restrictions.</p>
+        <p>If a mod is not listed, use at your own risk. Click any card for the punishment ladder.</p>
         <div class="search-wrapper">
             <i class="fas fa-search"></i>
             <input type="text" id="modSearch" placeholder="Search mods..." onkeyup="filterMods()">
@@ -36,34 +36,22 @@
         <div class="rule-node status-green-bg" onclick="openMod('Vivecraft', 'Minecraft VR modifications.', 'PERMITTED')">Vivecraft (VR)</div>
         <div class="rule-node status-green-bg" onclick="openMod('Performance', 'Optifine, Sodium, Lithium, and Starlight.', 'PERMITTED')">Optifine / Sodium</div>
         <div class="rule-node status-green-bg" onclick="openMod('Toggle Sprint', 'Built-in or modded toggle sprint.', 'PERMITTED')">Toggle Sprint</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Minimaps', 'Players, mobs, caves, entities and radar must be DISABLED. Surface terrain only.', 'PERMITTED')">Minimaps and Maps</div>
-        <div class="rule-node status-green-bg" onclick="openMod('HUD Mods', 'ArmorStatus, PotionHUD, Saturation, and Co-ordinate mods.', 'PERMITTED')">Armor/Potion HUDs</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Visuals', 'Gamma, Shaders, Cape Mods, and Client-side Chat mods.', 'PERMITTED')">Gamma & Visuals</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Schematics', 'Litematica/Schematica allowed. You must NOT use printer.', 'PERMITTED')">Schematics</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Inventory Tweaks', 'Sorting is allowed. Auto-Pot and Auto-Armor are BANNED.', 'SORTING ONLY')">Inventory Tweaks</div>
-        <div class="rule-node status-green-bg" onclick="openMod('PvP Clients', 'Badlion, Lunar, Cosmic, 5zig, and LabyMod. Must have no unfair advantage.', 'PERMITTED')">PvP Clients</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Mod Loaders', 'Forge, Fabric, LiteLoader. Using only allowed mods.', 'PERMITTED')">Mod Loaders</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Minimaps', 'Surface terrain only. Players, mobs, and caves must be DISABLED.', 'PERMITTED')">Minimaps and Maps</div>
+        <div class="rule-node status-green-bg" onclick="openMod('PvP Clients', 'Badlion, Lunar, Cosmic, 5zig, and LabyMod.', 'PERMITTED')">PvP Clients</div>
         <div class="rule-node status-green-bg" onclick="openMod('Vanilla Clickers', 'Includes F3+T and built-in toggles. Disallowed for AFK/PvP.', 'PERMITTED')">Vanilla Auto-Clickers</div>
-        <div class="rule-node status-green-bg" onclick="openMod('Utility', 'Image Uploading, Co-ordinate Mods, EiraIRC, and Saturation mods.', 'PERMITTED')">General Utility</div>
     </div>
 
     <h2 class="tier-title status-yellow">Disallowed (Non-Malicious)</h2>
     <div class="rule-grid">
         <div class="rule-node status-yellow-bg" onclick="openMod('Macros/Keybinds', 'Includes hotkeys. Disallowed for AFK usage.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Macros / Keybinds</div>
         <div class="rule-node status-yellow-bg" onclick="openMod('Printer', 'Easy Place / Safe Place behavior. Only allowed on Creative.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Printer / Build Assist</div>
-        <div class="rule-node status-yellow-bg" onclick="openMod('Attack Keybind', 'Rebinding attack is okay unless AFK grinding.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Attack Keybind</div>
-        <div class="rule-node status-yellow-bg" onclick="openMod('Freecam', 'Does not include /fc on specific gamemodes.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Freecam</div>
-        <div class="rule-node status-yellow-bg" onclick="openMod('Weight Grinding', 'Using physical weights to hold keys down to AFK.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Key Weights</div>
+        <div class="rule-node status-yellow-bg" onclick="openMod('Freecam', 'Looking through walls via camera detaching.', '1d ➔ 3d ➔ 7d ➔ 14d ➔ PERM')">Freecam</div>
     </div>
 
     <h2 class="tier-title status-red">Strictly Prohibited (Malicious)</h2>
     <div class="rule-grid">
         <div class="rule-node status-red-bg" onclick="openMod('Hacked Clients', 'Vape, Future, Meteor, Impact, etc.', '7d ➔ 14d ➔ 30d ➔ PERM')">Hacked Clients</div>
-        <div class="rule-node status-red-bg" onclick="openMod('X-Ray', 'Texture packs, mods, or cave-finders.', '7d ➔ 14d ➔ 30d ➔ PERM')">X-Ray / Cave-Finders</div>
-        <div class="rule-node status-red-bg" onclick="openMod('Movement', 'Fly, Speed, Step, Spider, or Boost modifications.', '7d ➔ 14d ➔ 30d ➔ PERM')">Fly Hacks / Boosts</div>
-        <div class="rule-node status-red-bg" onclick="openMod('Radar / ESP', 'Seeing players, chests, or entities through walls.', '7d ➔ 14d ➔ 30d ➔ PERM')">Radar / ESP</div>
-        <div class="rule-node status-red-bg" onclick="openMod('OQMineBot', 'Automated botting/mining clients.', '7d ➔ 14d ➔ 30d ➔ PERM')">OQMineBot</div>
-        <div class="rule-node status-red-bg" onclick="openMod('Scripts', 'Auto chatbots and automated gameplay scripts.', '7d ➔ 14d ➔ 30d ➔ PERM')">Scripts / Automation</div>
+        <div class="rule-node status-red-bg" onclick="openMod('X-Ray', 'Texture packs, mods, or cave-finders.', '7d ➔ 14d ➔ 30d ➔ PERM')">X-Ray</div>
         <div class="rule-node status-red-bg" onclick="openMod('Auto-Clickers', 'External software used for PvP or AFK grinding.', '7d ➔ 14d ➔ 30d ➔ PERM')">External Clickers</div>
     </div>
 </div>
@@ -86,9 +74,14 @@
         document.getElementById("modalTitle").innerText = t;
         document.getElementById("modalDesc").innerText = d;
         document.getElementById("modalStatus").innerText = s;
-        const colorClass = event.currentTarget.classList.contains('status-green-bg') ? 'status-green-bg' : 
-                           event.currentTarget.classList.contains('status-yellow-bg') ? 'status-yellow-bg' : 'status-red-bg';
-        document.getElementById("statusBox").className = "punishment-banner " + colorClass;
+        const sourceNode = event.currentTarget;
+        const statusBox = document.getElementById("statusBox");
+        
+        let colorClass = 'status-red-bg';
+        if (sourceNode.classList.contains('status-green-bg')) colorClass = 'status-green-bg';
+        if (sourceNode.classList.contains('status-yellow-bg')) colorClass = 'status-yellow-bg';
+        
+        statusBox.className = "punishment-banner " + colorClass;
         modal.style.display = "flex";
     }
     function closeModal() { modal.style.display = "none"; }
