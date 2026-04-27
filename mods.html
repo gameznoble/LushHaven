@@ -1,18 +1,83 @@
-<h2 class="tier-title status-green">Permitted / Quality of Life</h2>
-<div class="rule-grid">
-    <div class="rule-node status-green-bg" onclick="openMod('Performance', 'Optifine, Sodium, Lithium, Starlight.', 'PERMITTED', 'status-green-bg', 'STATUS')">Performance Mods</div>
-    <div class="rule-node status-green-bg" onclick="openMod('Inventory Tweaks', 'Sorting/Organizing is PERMITTED. Auto-Pot and Auto-Armor are BANNED.', 'SORTING ONLY', 'status-green-bg', 'STATUS')">Inventory Tweaks</div>
-    <div class="rule-node status-green-bg" onclick="openMod('Schematics', 'Litematica/Schematica allowed. Printer/Build-assist is BANNED.', 'PERMITTED', 'status-green-bg', 'STATUS')">Schematics</div>
-    <div class="rule-node status-green-bg" onclick="openMod('Mini-Maps', 'Must NOT show players, mobs, or caves. Surface only.', 'PERMITTED', 'status-green-bg', 'STATUS')">Mini-Maps</div>
-    <div class="rule-node status-green-bg" onclick="openMod('Shaders/Capes', 'Iris, Shaders, Cosmetics, and Capes.', 'PERMITTED', 'status-green-bg', 'STATUS')">Visual Mods</div>
-    <div class="rule-node status-green-bg" onclick="openMod('Replay Mod', 'Recording gameplay. Do not use to find hidden bases/items.', 'PERMITTED', 'status-green-bg', 'STATUS')">Replay Mod</div>
-    <div class="rule-node status-green-bg" onclick="openMod('Blur/Gamma', 'Brightness mods or motion blur.', 'PERMITTED', 'status-green-bg', 'STATUS')">Gamma & Visuals</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LushHaven | Mods</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">LUSH<span>HAVEN</span></div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="rules.html">Rules</a>
+            <a href="mods.html" class="active">Allowed Mods</a>
+            <a href="https://lushhaven.tebex.io/">Store</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="rules-header">
+        <h1>Client <span>Modifications</span></h1>
+        <p>If it is not here, it is "Use at your own risk."</p>
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="modSearch" placeholder="Search mods..." onkeyup="filterMods()">
+        </div>
+    </div>
+
+    <h2 class="tier-title status-green">Permitted / Quality of Life</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-green-bg" onclick="openMod('Performance', 'Sodium, Optifine, Lithium.', 'PERMITTED')">Performance Mods</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Inventory Tweaks', 'Sorting is ALLOWED. Auto-Armor/Auto-Pot is BANNED.', 'SORTING ONLY')">Inventory Tweaks</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Schematics', 'Litematica/Schematica allowed. No Printer.', 'PERMITTED')">Schematics</div>
+        <div class="rule-node status-green-bg" onclick="openMod('Visuals', 'Shaders, Capes, and Blur.', 'PERMITTED')">Visuals & Shaders</div>
+    </div>
+
+    <h2 class="tier-title status-red">Prohibited / Cheats</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-red-bg" onclick="openMod('Combat Hacks', 'KillAura, Reach, Auto-Clickers.', 'PERM BAN')">Combat Cheats</div>
+        <div class="rule-node status-red-bg" onclick="openMod('World Hacks', 'X-Ray, ESP, Freecam, Baritone.', '30d ➔ PERM')">World Cheats</div>
+        <div class="rule-node status-red-bg" onclick="openMod('Movement Hacks', 'Fly, Speed, Step, Spider.', '7d ➔ PERM')">Movement Cheats</div>
+    </div>
 </div>
 
-<h2 class="tier-title status-red">Strictly Prohibited (Cheats)</h2>
-<div class="rule-grid">
-    <div class="rule-node status-red-bg" onclick="openMod('Combat Hacks', 'KillAura, Reach, Auto-Clicker, Velocity, TriggerBot.', 'PERM BAN', 'status-red-bg', 'LADDER')">Combat Cheats</div>
-    <div class="rule-node status-red-bg" onclick="openMod('World Hacks', 'X-Ray, ESP, Tracers, Freecam, Chest-ESP.', '30d ➔ PERM', 'status-red-bg', 'LADDER')">World Cheats</div>
-    <div class="rule-node status-red-bg" onclick="openMod('Movement Hacks', 'Fly, Speed, Spider, Jesus, Step, Timer.', '7d ➔ PERM', 'status-red-bg', 'LADDER')">Movement Cheats</div>
-    <div class="rule-node status-red-bg" onclick="openMod('Auto-Walk', 'Baritone or any automated pathfinding.', '7d ➔ PERM', 'status-red-bg', 'LADDER')">Baritone / Pathing</div>
+<div id="modModal" class="modal">
+    <div class="modal-content">
+        <h2 id="modalTitle">Mod Name</h2>
+        <p id="modalDesc" style="margin: 15px 0; color: #888;"></p>
+        <div id="statusBox" class="punishment-banner">
+            <span class="banner-label">STATUS</span>
+            <span id="modalStatus" class="banner-steps">Steps</span>
+        </div>
+        <button class="btn-close" onclick="closeModal()">Close</button>
+    </div>
 </div>
+
+<script>
+    const modal = document.getElementById("modModal");
+    function openMod(t, d, s) {
+        document.getElementById("modalTitle").innerText = t;
+        document.getElementById("modalDesc").innerText = d;
+        document.getElementById("modalStatus").innerText = s;
+        const colorClass = event.currentTarget.classList.contains('status-green-bg') ? 'status-green-bg' : 'status-red-bg';
+        document.getElementById("statusBox").className = "punishment-banner " + colorClass;
+        modal.style.display = "flex";
+    }
+    function closeModal() { modal.style.display = "none"; }
+    function filterMods() {
+        let input = document.getElementById('modSearch').value.toLowerCase();
+        let nodes = document.getElementsByClassName('rule-node');
+        for (let i = 0; i < nodes.length; i++) {
+            nodes[i].style.display = nodes[i].innerText.toLowerCase().includes(input) ? "block" : "none";
+        }
+    }
+    window.onclick = (e) => { if (e.target == modal) closeModal(); }
+</script>
+</body>
+</html>
