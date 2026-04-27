@@ -2,45 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LushHaven | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LushHaven | Official Rules</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
 <header>
     <div class="nav">
         <div class="logo"><span>LUSH</span>HAVEN</div>
         <div class="links">
-            <a href="index.html" class="active">Home</a>
-            <a href="rules.html">Rules</a>
+            <a href="index.html">Home</a>
+            <a href="rules.html" class="active">Rules</a>
             <a href="mods.html">Allowed Mods</a>
             <a href="https://lushhaven.tebex.io/">Store</a>
+            <a href="https://discord.gg/yourlink" class="discord-btn" target="_blank">
+                <i class="fab fa-discord"></i> Join Discord
+            </a>
         </div>
     </div>
 </header>
-<main class="main-wrapper">
-    <section class="hero-section">
-        <div class="badge">SEASON ONE IS LIVE</div>
-        <h1>Enter the <span>Haven.</span></h1>
-        <p>Experience the ultimate Skyblock adventure with a custom economy, balanced gameplay, and a community that actually matters.</p>
-        <div class="hero-btns">
-            <a href="rules.html" class="btn-main">Visit Rules</a>
-            <button class="btn-ip" onclick="copyIP()">
-                <i class="fas fa-copy"></i>
-                <span id="ipDisplay">play.lushhaven.com</span>
-            </button>
+
+<div class="container">
+    <div class="rules-header">
+        <h1>Server <span>Rules</span></h1>
+        <p>LushHaven Network Code of Conduct. Click any card to view the punishment ladder.</p>
+    </div>
+
+    <h2 class="tier-title status-green">Tier One: Social & Chat</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-green-bg" onclick="openPop('Spamming', 'Character, command, or chat spam.', 'Warn ➔ 1h Mute ➔ 24h Mute ➔ 24h Ban')">Spamming</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Excessive Swearing', 'Vulgarity or bypassing filters.', 'Warn ➔ 6h Mute ➔ 12h Mute ➔ 1d Ban')">Excessive Swearing</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Foreign Languages', 'Public chat must be in English.', 'Warn ➔ 12h Mute ➔ 24h Ban')">Foreign Languages</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Advertising', 'Promoting other servers or services.', 'Warn ➔ 12h Mute ➔ 24h Mute')">Advertising</div>
+        <div class="rule-node status-green-bg" onclick="openPop('Politics & Religion', 'Sensitive discussions that cause drama.', 'Follow Spamming Ladder')">Politics / Religion</div>
+    </div>
+
+    <h2 class="tier-title status-yellow">Tier Two: Gameplay Standards</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-yellow-bg" onclick="openPop('Harassment', 'Targeted negativity or bullying.', 'Warn ➔ 24h Mute ➔ 24d Ban')">Harassment</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Griefing', 'Destroying builds or stealing items.', '24h Ban ➔ 48h Ban ➔ Perm Ban')">Griefing</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Scamming', 'Failure to deliver trades or AH fraud.', '12h Ban ➔ 24h Ban ➔ Perm Ban')">Scamming</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Threats', 'Verbal threats against players.', '12h Mute ➔ 24h Mute ➔ Perm Mute')">Threats</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Disrespect', 'General toxicity toward players or staff.', '12h Mute ➔ 24h Mute ➔ 24h Ban')">Disrespect</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Non-Malicious Bug Abuse', 'Exploiting minor glitches.', 'Warn ➔ 12h Ban ➔ 24h Ban ➔ 48h Ban')">Minor Bug Abuse</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('Non-Malicious Mods', 'Disallowed mods with no malicious intent.', 'Warn ➔ 12h Ban ➔ 24h Ban ➔ 48h Ban')">Disallowed Mods</div>
+        <div class="rule-node status-yellow-bg" onclick="openPop('AFK Grinding', 'Using auto-clickers or weights to farm.', '1h Ban ➔ 12h Ban ➔ 24h Ban ➔ 48h Ban')">AFK Grinding</div>
+    </div>
+
+    <h2 class="tier-title status-red">Tier Three: Severe Offenses</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-red-bg" onclick="openPop('Discrimination', 'Hate speech based on identity.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Discrimination</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Self Harm', 'Encouraging self-harm or violence.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Encouraging Harm</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Malicious Exploits', 'Exploiting major game-breaking bugs.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Malicious Bug Abuse</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Malicious Mods', 'Hacked clients, X-ray, or flight.', '7d Ban ➔ 14d Ban ➔ 30d Ban')">Malicious Modifications</div>
+        <div class="rule-node status-red-bg" onclick="openPop('Evasion', 'Avoiding active mutes or bans.', 'Perm IP Ban / Perm Mute')">Ban/Mute Evasion</div>
+    </div>
+
+    <h2 class="tier-title">Extras & Global Policy</h2>
+    <div class="rule-grid">
+        <div class="rule-node" style="border-bottom: 3px solid #fff;" onclick="openPop('Alt Limit', 'Limit is 3 per IP. Multi-users must verify via ticket.', 'Warn ➔ 30d Ban ➔ Perm Ban')">Alt Accounts</div>
+        <div class="rule-node" style="border-bottom: 3px solid #fff;" onclick="openPop('Usernames', 'Inappropriate or offensive names.', 'Ban (Appealable once changed)')">Usernames</div>
+        <a href="mods.html" class="rule-node" style="text-decoration: none; color: var(--accent); border: 1px dashed var(--accent);">View All Allowed Mods ➔</a>
+    </div>
+
+    <h2 class="tier-title" style="color: #ff4757;">Blacklist (Zero Tolerance)</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);" onclick="openPop('Blacklist', 'Doxing, DDoS, Blackmail, or Extreme Abuse.', 'Immediate Permanent Blacklist')">Major Offenses</div>
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);" onclick="openPop('Data Sharing', 'Sharing personal real-life info of others.', 'Immediate Permanent Blacklist')">Personal Info</div>
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);" onclick="openPop('Links', 'Sending IP loggers or malicious links.', 'Immediate Permanent Blacklist')">Malicious Links</div>
+    </div>
+</div>
+
+<div id="m" class="modal">
+    <div class="modal-content">
+        <h2 id="mT"></h2>
+        <p id="mD" style="margin: 20px 0; color: #888;"></p>
+        <div id="mB" class="punishment-banner">
+            <span class="banner-label">PUNISHMENT LADDER</span>
+            <span id="mS" class="banner-steps"></span>
         </div>
-    </section>
-</main>
+        <button class="btn-close" onclick="closePop()">Close</button>
+    </div>
+</div>
 
 <script>
-    function copyIP() {
-        const ip = "play.lushhaven.com";
-        navigator.clipboard.writeText(ip);
-        const display = document.getElementById('ipDisplay');
-        display.innerText = "Copied!";
-        setTimeout(() => { display.innerText = ip; }, 2000);
+    function openPop(t, d, s) {
+        document.getElementById('mT').innerText = t;
+        document.getElementById('mD').innerText = d;
+        document.getElementById('mS').innerText = s;
+        const source = event.currentTarget;
+        const banner = document.getElementById('mB');
+        
+        // Dynamic banner color based on card class
+        banner.className = "punishment-banner " + 
+            (source.classList.contains('status-green-bg') ? 'status-green-bg' : 
+             source.classList.contains('status-yellow-bg') ? 'status-yellow-bg' : 'status-red-bg');
+        
+        document.getElementById('m').style.display = 'flex';
     }
+    function closePop() { document.getElementById('m').style.display = 'none'; }
+    window.onclick = (e) => { if (e.target == document.getElementById('m')) closePop(); }
 </script>
+
 </body>
 </html>
