@@ -1,27 +1,94 @@
-<h2 class="tier-title status-green">Tier 1: Chat & Respect</h2>
-<div class="rule-grid">
-    <div class="rule-node status-green-bg" onclick="openModal('Toxicity', 'Harassing players, flame wars, or excessive negativity.', 'Warn ➔ 1h Mute ➔ 1d Ban')">General Toxicity</div>
-    <div class="rule-node status-green-bg" onclick="openModal('Filter Bypass', 'Using symbols or misspelling to bypass the chat filter.', 'Warn ➔ 2h Mute ➔ 12h Mute')">Filter Bypass</div>
-    <div class="rule-node status-green-bg" onclick="openModal('Begging', 'Asking staff or players for free items, ranks, or money.', 'Warn ➔ Kick ➔ 1h Mute')">Begging / Asking</div>
-    <div class="rule-node status-green-bg" onclick="openModal('Mini-Modding', 'Acting like staff to tell others what to do.', 'Warn ➔ Kick')">Mini-Modding</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LushHaven | Rules</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">LUSH<span>HAVEN</span></div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="rules.html" class="active">Rules</a>
+            <a href="mods.html">Allowed Mods</a>
+            <a href="https://lushhaven.tebex.io/">Store</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="rules-header">
+        <h1>Server <span>Regulations</span></h1>
+        <p>Comprehensive guidelines. Click any card to view detailed punishment ladders.</p>
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="ruleSearch" placeholder="Search rules..." onkeyup="filterRules()">
+        </div>
+    </div>
+
+    <h2 class="tier-title status-green">Tier 1: Community</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-green-bg" onclick="openModal('Spamming', 'Flooding chat with messages, symbols, or nonsense.', 'Warn ➔ 1h Mute ➔ 12h Mute ➔ 1d Ban')">Spamming</div>
+        <div class="rule-node status-green-bg" onclick="openModal('Toxicity', 'Being rude, starting drama, or targeted harassment.', 'Warn ➔ 6h Mute ➔ 1d Mute ➔ 3d Ban')">General Toxicity</div>
+        <div class="rule-node status-green-bg" onclick="openModal('Advertising', 'Posting other server IPs or Discord links.', 'Immediate Permanent Ban')">Advertising</div>
+        <div class="rule-node status-green-bg" onclick="openModal('Staff Impersonation', 'Pretending to be staff or using fake [Admin] tags.', '1d Ban ➔ 7d Ban ➔ Perm Ban')">Staff Impersonation</div>
+    </div>
+
+    <h2 class="tier-title status-yellow">Tier 2: Gameplay & Economy</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-yellow-bg" onclick="openModal('AFK Farming', 'Using macros, weights, or autoclickers to farm while away.', 'Warn ➔ 12h Ban ➔ 3d Ban ➔ 7d Ban')">AFK Farming</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Alt Boosting', 'Using extra accounts to bypass limits or rewards.', 'Alt Wipe ➔ 7d Ban ➔ Perm Ban')">Alt Boosting</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Scamming', 'Deceiving players in trades or the AH.', '7d Ban ➔ Perm Ban + Wipe')">Player Scamming</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Island Trapping', 'Using /is warp to trap or kill players.', '3d Ban ➔ 7d Ban ➔ Wipe')">Island Trapping</div>
+        <div class="rule-node status-yellow-bg" onclick="openModal('Lag Machines', 'Redstone loops designed to lag the server TPS.', 'Island Wipe ➔ Perm Ban')">Lag Machines</div>
+    </div>
+
+    <h2 class="tier-title status-red">Tier 3: Blacklist</h2>
+    <div class="rule-grid">
+        <div class="rule-node status-red-bg" onclick="openModal('Hacking', 'KillAura, Fly, Speed, or any cheat client.', '7d Ban ➔ 30d Ban ➔ Perm Ban')">Hacked Clients</div>
+        <div class="rule-node status-red-bg" onclick="openModal('Exploiting', 'Using bugs to dupe items or bypass mechanics.', 'Immediate Permanent Ban')">Duping & Exploits</div>
+        <div class="rule-node status-red-bg" onclick="openModal('RMT', 'Selling items/cash for real world money.', 'Immediate Blacklist')">Real Money Trading</div>
+        <div class="rule-node status-red-bg" onclick="openModal('Chargebacks', 'Refunding store purchases.', 'Automatic Blacklist')">Store Chargebacks</div>
+    </div>
 </div>
 
-<h2 class="tier-title status-yellow">Tier 2: Skyblock & Economy</h2>
-<div class="rule-grid">
-    <div class="rule-node status-yellow-bg" onclick="openModal('Alt Boosting', 'Using secondary accounts to farm rewards or skip limits.', 'Alt Wipe ➔ 7d Ban')">Alt Boosting</div>
-    <div class="rule-node status-yellow-bg" onclick="openModal('Scamming', 'Lying in trades or manipulating the Auction House.', '7d Ban ➔ Perm Ban')">Scamming</div>
-    <div class="rule-node status-yellow-bg" onclick="openModal('AFK Bypass', 'Anti-AFK machines, pools, or macros to stay logged in.', 'Kick ➔ 1d Ban ➔ 3d Ban')">AFK Bypassing</div>
-    <div class="rule-node status-yellow-bg" onclick="openModal('Island Trapping', 'Using /is warp to trap or kill players.', '3d Ban ➔ 7d Ban')">Island Trapping</div>
-    <div class="rule-node status-yellow-bg" onclick="openModal('Griefing', 'Intentional destruction of island builds by members.', '3d Ban ➔ Wipe')">Co-op Griefing</div>
-    <div class="rule-node status-yellow-bg" onclick="openModal('Lag Machines', 'Large redstone loops meant to lower server TPS.', 'Wipe ➔ Perm Ban')">Lag Machines</div>
-    <div class="rule-node status-yellow-bg" onclick="openModal('Cobble-Bots', 'Using scripts to mine cobblestone while away.', '7d Ban ➔ Reset')">Cobble Scripting</div>
+<div id="ruleModal" class="modal">
+    <div class="modal-content">
+        <h2 id="modalTitle">Rule Name</h2>
+        <p id="modalDesc" style="margin: 15px 0; color: #888;"></p>
+        <div id="pContainer" class="punishment-banner">
+            <span class="banner-label">PUNISHMENT LADDER</span>
+            <span id="modalPunishment" class="banner-steps">Steps</span>
+        </div>
+        <button class="btn-close" onclick="closeModal()">Close</button>
+    </div>
 </div>
 
-<h2 class="tier-title status-red">Tier 3: Zero Tolerance</h2>
-<div class="rule-grid">
-    <div class="rule-node status-red-bg" onclick="openModal('Exploiting', 'Using bugs to dupe items or bypass buy/sell limits.', 'Immediate Permanent Ban')">Duping & Exploits</div>
-    <div class="rule-node status-red-bg" onclick="openModal('RMT', 'Selling items/cash for real life money.', 'Permanent Blacklist')">Real Money Trading</div>
-    <div class="rule-node status-red-bg" onclick="openModal('Doxing', 'Leaking or threatening to leak real life information.', 'Permanent Blacklist')">Doxing / IRL Info</div>
-    <div class="rule-node status-red-bg" onclick="openModal('Hate Speech', 'Racism, homophobia, or extreme discrimination.', '30d Ban ➔ Perm')">Hate Speech</div>
-    <div class="rule-node status-red-bg" onclick="openModal('Chargebacks', 'Refunding a donation via PayPal/Stripe.', 'Automatic Blacklist')">Store Chargebacks</div>
-</div>
+<script>
+    const modal = document.getElementById("ruleModal");
+    function openModal(t, d, p) {
+        document.getElementById("modalTitle").innerText = t;
+        document.getElementById("modalDesc").innerText = d;
+        document.getElementById("modalPunishment").innerText = p;
+        const colorClass = event.currentTarget.classList.contains('status-green-bg') ? 'status-green-bg' : 
+                           event.currentTarget.classList.contains('status-yellow-bg') ? 'status-yellow-bg' : 'status-red-bg';
+        document.getElementById("pContainer").className = "punishment-banner " + colorClass;
+        modal.style.display = "flex";
+    }
+    function closeModal() { modal.style.display = "none"; }
+    function filterRules() {
+        let input = document.getElementById('ruleSearch').value.toLowerCase();
+        let nodes = document.getElementsByClassName('rule-node');
+        for (let i = 0; i < nodes.length; i++) {
+            nodes[i].style.display = nodes[i].innerText.toLowerCase().includes(input) ? "block" : "none";
+        }
+    }
+    window.onclick = (e) => { if (e.target == modal) closeModal(); }
+</script>
+</body>
+</html>
