@@ -48,8 +48,8 @@
         <div class="rule-node" onclick="openModal('Scamming', 'Dishonest trading or misleading auction listings.', '12h Ban ➔ 1d Ban ➔ Perm Ban', 't2-bg')">Scamming</div>
         <div class="rule-node" onclick="openModal('Threats', 'Aggression toward players or staff members.', '12h Mute ➔ 24h Mute ➔ Perma Mute', 't2-bg')">Threats</div>
         <div class="rule-node" onclick="openModal('Disrespect', 'General disrespect toward the community or staff.', '12h Mute ➔ 24h Mute ➔ 1d Ban', 't2-bg')">Disrespect</div>
-        <div class="rule-node" onclick="openModal('AFK Farming', 'Using autoclickers, macros, or machines to bypass AFK timers to farm items or XP.', 'Warning ➔ 12h Ban ➔ 1d Ban ➔ 2d Ban', 't2-bg')">AFK Farming</div>
-        <div class="rule-node" onclick="openModal('Non-Malicious Abuse', 'Using minor bugs or disallowed modifications without intent to harm the economy or server.', 'Warn ➔ 12h Ban ➔ 1d Ban ➔ 2d Ban', 't2-bg')">Minor Bug/Mod Abuse</div>
+        <div class="rule-node" onclick="openModal('AFK Farming', 'Using autoclickers, macros, or automated machines to farm items, currency, or XP while away.', 'Warning ➔ 12h Ban ➔ 1d Ban ➔ 2d Ban', 't2-bg')">AFK Farming</div>
+        <div class="rule-node" onclick="openModal('Non-Malicious Abuse', 'Using minor bugs or disallowed modifications without intent to harm the economy.', 'Warn ➔ 12h Ban ➔ 1d Ban ➔ 2d Ban', 't2-bg')">Minor Bug/Mod Abuse</div>
     </div>
 
     <h2 class="tier-title t3-text">Tier Three: Severe</h2>
@@ -62,7 +62,7 @@
 
     <h2 class="tier-title blacklist-text">Global Blacklist & Extras</h2>
     <div class="rule-grid">
-        <div class="rule-node" onclick="openModal('Alt Account Limits', 'Limit is 3 per household. Players on the same IP must verify with staff.', 'Warn ➔ 30d Ban ➔ Perm Ban', 't1-bg')">Alt Limit</div>
+        <div class="rule-node" onclick="openModal('Alt Account Limits', 'Limit is 3 per household. Beyond this requires staff verification.', 'Warn ➔ 30d Ban ➔ Perm Ban', 't1-bg')">Alt Limit</div>
         <div class="rule-node" onclick="openModal('Inappropriate Username', 'Using offensive or disallowed names.', 'Ban (Appealable once name is changed)', 't1-bg')">Usernames</div>
         <div class="rule-node danger" onclick="openModal('Blacklist Offenses', 'Doxing, DDOSing, Blackmail, Sharing personal info, Malicious Links, or Extreme Bug Abuse.', 'Immediate Permanent Removal (No Appeal)', 'blacklist-bg')">Blacklist Actions</div>
     </div>
@@ -96,18 +96,12 @@
 
     function closeModal() { modal.style.display = "none"; }
 
-    // SEARCH LOGIC
     function filterRules() {
         let input = document.getElementById('ruleSearch').value.toLowerCase();
         let nodes = document.getElementsByClassName('rule-node');
-        
         for (let i = 0; i < nodes.length; i++) {
             let ruleName = nodes[i].innerText.toLowerCase();
-            if (ruleName.includes(input)) {
-                nodes[i].style.display = "block";
-            } else {
-                nodes[i].style.display = "none";
-            }
+            nodes[i].style.display = ruleName.includes(input) ? "block" : "none";
         }
     }
 
