@@ -121,3 +121,34 @@ header {
 .mod-grid .rule-node { text-align: left; padding: 15px 20px; }
 
 @media (max-width: 800px) { .mod-layout { grid-template-columns: 1fr; } }
+/* Color the actual boxes in the grid */
+.status-green-bg { 
+    background: rgba(46, 204, 113, 0.1) !important; 
+    border: 1px solid #2ecc71 !important; 
+    color: #2ecc71; 
+}
+.status-green-bg:hover { background: rgba(46, 204, 113, 0.2) !important; }
+
+.status-yellow-bg { 
+    background: rgba(241, 196, 15, 0.1) !important; 
+    border: 1px solid #f1c40f !important; 
+    color: #f1c40f; 
+}
+.status-yellow-bg:hover { background: rgba(241, 196, 15, 0.2) !important; }
+
+.status-red-bg { 
+    background: rgba(231, 76, 60, 0.1) !important; 
+    border: 1px solid #e74c3c !important; 
+    color: #e74c3c; 
+}
+.status-red-bg:hover { background: rgba(231, 76, 60, 0.2) !important; }
+
+/* Modal Backgrounds - Solid Gradients */
+.modal-content .status-green-bg { background: linear-gradient(135deg, #27ae60 0%, #120e1a 100%) !important; color: #fff; }
+.modal-content .status-yellow-bg { background: linear-gradient(135deg, #f39c12 0%, #120e1a 100%) !important; color: #fff; }
+.modal-content .status-red-bg { background: linear-gradient(135deg, #c0392b 0%, #120e1a 100%) !important; color: #fff; }
+
+/* Tier titles matching colors */
+.status-green { color: #2ecc71; font-weight: 800; }
+.status-yellow { color: #f1c40f; font-weight: 800; }
+.status-red { color: #e74c3c; font-weight: 800; }
