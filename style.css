@@ -10,225 +10,189 @@
     --danger: #e74c3c;
 }
 
-/* --- Base Styles --- */
-body {
+/* --- Global Reset --- */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essential to prevent layout breaking */
+}
+
+body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 /* --- Navbar --- */
 header {
-    background: rgba(7, 5, 10, 0.9);
+    background: rgba(7, 5, 10, 0.95);
     border-bottom: 1px solid #1f1a29;
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 }
 
 .nav {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
+    padding: 18px 25px;
     align-items: center;
 }
 
-.logo { font-weight: 800; font-size: 22px; color: #fff; }
+.logo { font-weight: 800; font-size: 24px; color: #fff; letter-spacing: -1px; }
 .logo span { color: var(--accent); }
-.links a { color: #888; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 13px; text-transform: uppercase; transition: 0.3s; }
+
+.links a { 
+    color: #888; 
+    text-decoration: none; 
+    margin-left: 25px; 
+    font-weight: 600; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    transition: 0.3s; 
+}
 .links a.active, .links a:hover { color: var(--accent); }
 
-/* --- Homepage / Hero Centering --- */
-.hero-wrapper {
-    height: calc(100vh - 70px);
+/* --- Main Layout Wrapper --- */
+.main-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertical Center */
-    align-items: center;     /* Horizontal Center */
-    text-align: center;
-    padding: 0 20px;
-    box-sizing: border-box;
+    align-items: center;
 }
 
-.hero-content {
-    max-width: 700px;
+/* --- Hero Section --- */
+.hero-section {
+    text-align: center;
+    padding: 80px 0;
     width: 100%;
 }
 
-.hero-content h1 {
-    font-size: clamp(48px, 10vw, 80px);
-    margin: 0;
+.hero-section h1 {
+    font-size: clamp(45px, 10vw, 80px);
     font-weight: 800;
+    line-height: 1.1;
+    margin: 15px 0;
+    color: #fff;
 }
+.hero-section h1 span { color: var(--accent); }
 
-.hero-content h1 span { color: var(--accent); }
-
-.hero-content p {
+.hero-section p {
     color: #888;
     font-size: 1.1rem;
-    margin: 20px 0 40px;
-    line-height: 1.5;
+    max-width: 550px;
+    margin: 0 auto 35px;
 }
 
-.hero-btns {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-/* --- Modals --- */
-.modal {
-    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center;
-}
-
-.modal-content {
-    background: #181421; padding: 40px; border-radius: 20px; width: 90%; max-width: 500px;
-    border: 1px solid #2a2438; text-align: center; position: relative;
-}
-
-/* --- Search UI --- */
-.search-wrapper {
-    position: relative;
-    max-width: 500px;
-    margin: 30px auto;
-}
-
-.search-wrapper i {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+.badge {
+    display: inline-block;
+    background: rgba(167, 59, 179, 0.1);
+    border: 1px solid var(--accent);
     color: var(--accent);
-    opacity: 0.7;
-}
-
-#ruleSearch, #modSearch {
-    width: 100%;
-    padding: 15px 15px 15px 50px;
-    background: #120e1a;
-    border: 1px solid #1f1a29;
+    padding: 6px 16px;
     border-radius: 50px;
-    color: #fff;
-    font-family: inherit;
-    outline: none;
-    transition: 0.3s;
-    box-sizing: border-box;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
-#ruleSearch:focus, #modSearch:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(167, 59, 179, 0.2); }
+.btn-main {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 16px 35px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-main:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(167, 59, 179, 0.4); }
 
-/* --- Colored Mod Grid --- */
-.container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
-.rule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
-.rule-node { background: var(--card); border: 1px solid #1f1a29; padding: 25px; text-align: center; border-radius: 12px; cursor: pointer; font-weight: 700; transition: 0.2s; }
+/* --- Stats Grid --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 650px;
+    margin-bottom: 80px;
+}
 
-/* Status Box Styles */
+.stat-card {
+    background: var(--card);
+    border: 1px solid #1f1a29;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stat-card i { color: var(--accent); font-size: 24px; margin-bottom: 12px; }
+.stat-val { font-weight: 800; font-size: 20px; color: #fff; }
+.stat-lbl { font-size: 11px; text-transform: uppercase; color: #555; letter-spacing: 1px; }
+
+/* --- News Section --- */
+.news-section { width: 100%; }
+.section-title { font-size: 26px; font-weight: 800; margin-bottom: 25px; text-align: left; }
+.section-title span { color: var(--accent); }
+
+.news-item {
+    background: var(--card);
+    border: 1px solid #1f1a29;
+    padding: 35px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+.news-item:hover { border-color: var(--accent); transform: scale(1.01); }
+
+.tag {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.news-info h3 { font-size: 22px; color: #fff; margin-bottom: 8px; }
+.news-info p { color: #888; font-size: 15px; max-width: 500px; }
+
+/* --- Mods Page Colors --- */
 .status-green-bg { background: rgba(46, 204, 113, 0.05) !important; border: 1px solid var(--success) !important; color: var(--success); }
 .status-yellow-bg { background: rgba(241, 196, 15, 0.05) !important; border: 1px solid var(--warning) !important; color: var(--warning); }
 .status-red-bg { background: rgba(231, 76, 60, 0.05) !important; border: 1px solid var(--danger) !important; color: var(--danger); }
 
-/* Hover effects for Colored Boxes */
-.status-green-bg:hover { background: rgba(46, 204, 113, 0.15) !important; transform: translateY(-3px); }
-.status-yellow-bg:hover { background: rgba(241, 196, 15, 0.15) !important; transform: translateY(-3px); }
-.status-red-bg:hover { background: rgba(231, 76, 60, 0.15) !important; transform: translateY(-3px); }
-
-/* Banner Styling for Modal Popups */
-.punishment-banner {
-    display: flex; flex-direction: column; padding: 20px; border-radius: 12px; margin: 20px 0;
-    text-align: center; border-left: 5px solid rgba(255, 255, 255, 0.2);
-}
-
-.modal-content .status-green-bg { background: linear-gradient(135deg, #27ae60 0%, #120e1a 100%) !important; color: #fff; }
-.modal-content .status-yellow-bg { background: linear-gradient(135deg, #f39c12 0%, #120e1a 100%) !important; color: #fff; }
-.modal-content .status-red-bg { background: linear-gradient(135deg, #c0392b 0%, #120e1a 100%) !important; color: #fff; }
-
-.status-green { color: var(--success); font-weight: 800; }
-.status-yellow { color: var(--warning); font-weight: 800; }
-.status-red { color: var(--danger); font-weight: 800; }
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .hero-btns { flex-direction: column; }
-    .hero-content h1 { font-size: 40px; }
-}
-/* --- Stats Bar --- */
-.stats-bar {
-    display: flex;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 20px 40px;
-    border-radius: 15px;
-    margin-top: 50px;
-    gap: 30px;
-    backdrop-filter: blur(5px);
-}
-
-.stat-item { text-align: center; }
-.stat-value { display: block; font-weight: 800; color: var(--accent); font-size: 1.2rem; }
-.stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #666; }
-.stat-divider { width: 1px; background: rgba(255, 255, 255, 0.1); }
-
-/* --- Announcements --- */
-.announcements-container {
-    margin-top: 80px;
+/* --- Animations & Background --- */
+.bg-animate {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1000px;
+    height: 100%;
+    background: radial-gradient(circle at 50% 20%, rgba(167, 59, 179, 0.08) 0%, transparent 65%);
+    z-index: -1;
 }
 
-.section-title {
-    text-align: left;
-    font-size: 24px;
-    margin-bottom: 30px;
-    font-weight: 800;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.news-card {
-    background: var(--card);
-    border: 1px solid #1f1a29;
-    padding: 30px;
-    border-radius: 16px;
-    text-align: left;
-    transition: 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.news-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
-}
-
-.news-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 800;
-    background: rgba(255,255,255,0.1);
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.news-tag.highlight { background: var(--accent); color: #fff; }
-
-.news-card h3 { margin: 0 0 10px 0; font-size: 18px; }
-.news-card p { font-size: 14px; color: #888; line-height: 1.6; margin-bottom: 20px; }
-.news-date { font-size: 11px; color: #444; font-weight: 600; }
-
-/* Responsive Fix for Stats */
-@media (max-width: 600px) {
-    .stats-bar { flex-direction: column; gap: 20px; }
-    .stat-divider { display: none; }
+/* --- Responsive Fixes --- */
+@media (max-width: 700px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .news-item { flex-direction: column; text-align: center; }
+    .news-item i { margin-top: 25px; font-size: 30px; }
+    .hero-section h1 { font-size: 45px; }
+    .nav { flex-direction: column; gap: 15px; }
+    .links a { margin: 0 10px; }
 }
