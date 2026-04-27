@@ -23,69 +23,67 @@
     </div>
 </header>
 
-<main class="hero-wrapper">
-    <div class="hero-content">
-        <div class="badge">BETA PHASE</div>
+<div class="main-wrapper">
+    
+    <section class="hero-section">
+        <div class="badge">UNDER DEVELOPMENT</div>
         <h1>Lush<span>Haven</span></h1>
-        <p>Experience a refined survival environment built for the community. Professional moderation, balanced gameplay, and custom features.</p>
-        
+        <p>A custom Minecraft survival project focused on community and fair play. Build your foundation with us.</p>
         <div class="hero-btns">
             <button class="btn-main" onclick="copyIP()">
-                <i class="fas fa-copy"></i> Copy IP: lushhaven.my.pebble.host
+                <i class="fas fa-copy"></i> lushhaven.my.pebble.host
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class="stats-bar">
-        <div class="stat-item">
-            <span class="stat-value">ONLINE</span>
-            <span class="stat-label">Server Status</span>
+    <section class="stats-grid">
+        <div class="stat-card">
+            <i class="fas fa-signal"></i>
+            <span class="stat-val">ONLINE</span>
+            <span class="stat-lbl">Status</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-            <span class="stat-value">1.20.x</span>
-            <span class="stat-label">Version</span>
+        <div class="stat-card">
+            <i class="fas fa-code-branch"></i>
+            <span class="stat-val">1.20.x</span>
+            <span class="stat-lbl">Version</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-            <span class="stat-value">SURVIVAL</span>
-            <span class="stat-label">Gamemode</span>
+        <div class="stat-card">
+            <i class="fas fa-swords"></i>
+            <span class="stat-val">SURVIVAL</span>
+            <span class="stat-lbl">Type</span>
         </div>
-    </div>
+    </section>
 
-    <div class="announcements-container">
-        <h2 class="section-title">Latest <span>Announcements</span></h2>
-        <div class="news-grid">
-            <div class="news-card">
-                <div class="news-tag">Update</div>
-                <h3>Rules Revision</h3>
-                <p>We have officially updated our regulations regarding AFK farming and client mods. Please review the new tiers.</p>
-                <span class="news-date">April 26, 2026</span>
+    <section class="news-section">
+        <h2 class="title-left">Latest <span>Updates</span></h2>
+        <div class="news-list">
+            <div class="news-item">
+                <div class="news-info">
+                    <span class="tag">NEW</span>
+                    <h3>Rules & Mods Update</h3>
+                    <p>We've finalized the allowed modifications list. Check the mods page for details.</p>
+                </div>
+                <span class="date">APR 26</span>
             </div>
-            <div class="news-card">
-                <div class="news-tag">Event</div>
-                <h3>Grand Opening</h3>
-                <p>LushHaven is officially entering its public beta phase. Join us today and help shape our future!</p>
-                <span class="news-date">April 20, 2026</span>
-            </div>
-            <div class="news-card">
-                <div class="news-tag highlight">Store</div>
-                <h3>Supporter Ranks</h3>
-                <p>Our community store is now live. Support the server and unlock exclusive cosmetic perks.</p>
-                <span class="news-date">April 15, 2026</span>
+            <div class="news-item">
+                <div class="news-info">
+                    <span class="tag">INFO</span>
+                    <h3>Server IP Finalized</h3>
+                    <p>The official connection address is now live. Use the copy button above!</p>
+                </div>
+                <span class="date">APR 24</span>
             </div>
         </div>
-    </div>
-</main>
+    </section>
+
+</div>
 
 <script>
     function copyIP() {
         navigator.clipboard.writeText("lushhaven.my.pebble.host");
         const btn = document.querySelector('.btn-main');
-        btn.innerHTML = "<i class='fas fa-check'></i> IP Copied!";
-        setTimeout(() => {
-            btn.innerHTML = "<i class='fas fa-copy'></i> Copy IP: lushhaven.my.pebble.host";
-        }, 2000);
+        btn.innerHTML = "<i class='fas fa-check'></i> Copied!";
+        setTimeout(() => { btn.innerHTML = "<i class='fas fa-copy'></i> lushhaven.my.pebble.host"; }, 2000);
     }
 </script>
 
