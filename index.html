@@ -1,3 +1,7 @@
+I've integrated the "About" content into your homepage. Instead of just pasting the raw HTML (which had some inline styles that might clash), I converted it into a clean section below the Hero. This keeps the design consistent with your existing style.css while maintaining that professional cosmic look.
+
+Updated index.html
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +45,53 @@
         </div>
     </div>
 </section>
+
+<div class="container" style="padding-top: 0;">
+    <div class="rules-header">
+        <h1>About <span>LushHaven</span></h1>
+        <p>Where the community finds its home.</p>
+    </div>
+
+    <div class="rule-node" style="cursor: default; text-align: left; margin-bottom: 30px; border-bottom: 3px solid var(--accent);">
+        <h2 style="color: var(--accent); margin-bottom: 15px;">🌸 OUR MISSION</h2>
+        <p style="font-weight: 400; color: #bbb;">LushHaven was founded with a single goal in mind: <strong>to create a premium, community-first Minecraft experience.</strong> We believe a server should be more than just a place to play—it should feel like a home in the stars. Whether you're a builder or a competitor, we provide a balanced, smooth, and visually stunning experience for everyone.</p>
+    </div>
+
+    <div class="rule-grid">
+        <div class="rule-node" style="cursor: default; text-align: left;">
+            <strong style="color: var(--accent); display: block; margin-bottom: 5px;">🚀 High Performance</strong>
+            <span style="font-size: 14px; color: #888; font-weight: 400;">Enterprise-grade hardware ensures smooth gameplay with stable TPS.</span>
+        </div>
+        <div class="rule-node" style="cursor: default; text-align: left;">
+            <strong style="color: var(--accent); display: block; margin-bottom: 5px;">⚖️ Fair Play</strong>
+            <span style="font-size: 14px; color: #888; font-weight: 400;">Ranks are cosmetic-focused to keep gameplay balanced and competitive.</span>
+        </div>
+        <div class="rule-node" style="cursor: default; text-align: left;">
+            <strong style="color: var(--accent); display: block; margin-bottom: 5px;">🎨 Unique Aesthetic</strong>
+            <span style="font-size: 14px; color: #888; font-weight: 400;">Custom hubs, glowing UI, and immersive cosmic design across the network.</span>
+        </div>
+        <div class="rule-node" style="cursor: default; text-align: left;">
+            <strong style="color: var(--accent); display: block; margin-bottom: 5px;">🤝 Community Driven</strong>
+            <span style="font-size: 14px; color: #888; font-weight: 400;">Updates are shaped directly by player feedback through Discord.</span>
+        </div>
+    </div>
+
+    <div class="rule-node" style="margin-top: 30px; cursor: default; background: rgba(167, 59, 179, 0.05); border: 1px solid var(--accent);">
+        <h3 style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">✨ Your Support Matters ✨</h3>
+        <p style="font-size: 14px; color: #888; margin-bottom: 20px; font-weight: 400;">Every donation is reinvested directly into the network:</p>
+        <div class="rule-grid" style="grid-template-columns: 1fr 1fr; border: none;">
+            <div style="font-size: 14px; color: #bbb; text-align: left;">• Server Hosting</div>
+            <div style="font-size: 14px; color: #bbb; text-align: left;">• Custom Plugin Development</div>
+            <div style="font-size: 14px; color: #bbb; text-align: left;">• DDoS Protection</div>
+            <div style="font-size: 14px; color: #bbb; text-align: left;">• Marketing & Growth</div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px; padding-bottom: 60px;">
+        <p style="color: #888; font-style: italic;">Thank you for being part of the galaxy.</p>
+        <p style="font-weight: 800; color: #fff; margin-top: 5px;">— The LushHaven Team</p>
+    </div>
+</div>
 
 <script>
     function copyIP() {
