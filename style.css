@@ -270,3 +270,33 @@ header {
 .banner-label { font-size: 10px; font-weight: 900; opacity: 0.6; display: block; }
 .banner-steps { font-weight: 700; color: #fff; }
 .btn-close { background: var(--accent); color: #fff; border: none; padding: 12px 30px; border-radius: 8px; font-weight: 800; cursor: pointer; }
+/* Store Page Specific Enhancements */
+.rule-grid .rule-node {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.rule-grid .rule-node:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent) !important;
+}
+
+.rule-grid .discord-btn-hero {
+    margin-top: auto; /* Pushes the button to the bottom if text lengths vary */
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Bullet points reset for the store list */
+.rule-node ul {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.rule-node li {
+    margin-bottom: 8px;
+    list-style: none;
+}
