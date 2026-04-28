@@ -27,26 +27,26 @@
 <div class="container" style="margin-top: 120px;">
     <div class="rules-header">
         <h1>Server <span>Ranks</span></h1>
-        <p>Select a rank to view full details and rewards.</p>
+        <p>Enhance your journey with exclusive perks and status.</p>
     </div>
 
     <div class="rule-grid">
-        <div class="rule-node" onclick="openModal('explorerModal')" style="border-bottom: 3px solid #bb0707;">
+        <div class="rule-node" onclick="openModal('explorerModal')" style="border-color: #bb0707;">
             <h2 style="color: #bb0707;">EXPLORER</h2>
             <div class="price">$5.00</div>
-            <button class="discord-btn-hero" style="background: #bb0707; width: 100%;">View Perks</button>
+            <button class="view-btn" style="background: #bb0707;">View Perks</button>
         </div>
 
-        <div class="rule-node" onclick="openModal('trailblazerModal')" style="border-bottom: 3px solid #FFA500;">
+        <div class="rule-node" onclick="openModal('trailblazerModal')" style="border-color: #FFA500;">
             <h2 style="color: #FFA500;">TRAILBLAZER</h2>
             <div class="price">$10.00</div>
-            <button class="discord-btn-hero" style="background: #FFA500; width: 100%;">View Perks</button>
+            <button class="view-btn" style="background: #FFA500;">View Perks</button>
         </div>
 
-        <div class="rule-node" onclick="openModal('travelerModal')" style="border-bottom: 3px solid #00ced1;">
+        <div class="rule-node" onclick="openModal('travelerModal')" style="border-color: #00ced1;">
             <h2 style="color: #00ced1;">TRAVELER</h2>
             <div class="price">$15.00</div>
-            <button class="discord-btn-hero" style="background: #00ced1; width: 100%;">View Perks</button>
+            <button class="view-btn" style="background: #00ced1;">View Perks</button>
         </div>
     </div>
 </div>
@@ -55,86 +55,94 @@
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <div id="modalBody"></div>
-        <div class="modal-footer" style="text-align: center; padding: 30px; background: #111; border-top: 1px solid #222;">
-             <a id="buyBtn" href="#" class="discord-btn-hero" style="padding: 15px 60px; font-size: 20px; text-decoration: none;">Purchase Rank</a>
+        <div class="modal-footer">
+             <a id="buyBtn" href="#" class="purchase-btn">Purchase on Tebex</a>
         </div>
     </div>
 </div>
 
 <div style="display:none;">
     <div id="explorerModal">
-        <div style="padding:40px; background-color:#ffe4e1; border:3px solid #bb0707;">
-            <div style="text-align:center; padding-bottom:20px; border-bottom:3px solid #ef0b9b;">
-                <h1 style="color:#bb0707; font-size:32px; text-transform:uppercase;">Explorer Rank</h1>
-                <p style="color:#d40632; font-style:italic;">Entry-level rank for every adventurer!</p>
-            </div>
-            <div style="background:#1a1a1a; padding:18px; margin:25px 0; text-align:center; border:2px solid #ef0b9b;">
-                <span style="font-family:'Courier New'; color:#fff; font-size:20px;">&nbsp;<span style="color:#55FF55;">[</span><span style="color:#FFFF55;">❀˖&deg;&nbsp;</span><span style="color:#5555FF;">Explorer</span><span style="color:#55FF55;">]</span> Notch &raquo; Check out my gear!&nbsp;</span>
-            </div>
-            <div style="background:#ffffff; padding:20px; border:2px solid #d40632; margin-bottom:25px;">
-                <h3 style="color:#bb0707;">⚔️ EXCLUSIVE "LUSH" GEAR</h3>
-                <ul style="list-style:none; padding:0; color:#1a1a1a;">
-                    <li><strong>Lush Armor Set:</strong> Wayfinder Iron (Prot II, Unbreaking II, Mending)</li>
-                    <li><strong>Lush Blade:</strong> Sharpness II, Looting II, Mending</li>
-                    <li><strong>Lush Tools:</strong> Efficiency II, Unbreaking II, Mending</li>
+        <div class="rank-header" style="border-color: #bb0707;">
+            <h1 style="color: #bb0707;">EXPLORER</h1>
+            <p>The perfect entry into LushHaven</p>
+        </div>
+        <div class="chat-preview">
+            <span>&nbsp;<span style="color:#55FF55;">[</span><span style="color:#FFFF55;">❀˖&deg;&nbsp;</span><span style="color:#5555FF;">Explorer</span><span style="color:#55FF55;">]</span> Notch &raquo; Check out my gear!&nbsp;</span>
+        </div>
+        <div class="perk-container">
+            <div class="perk-box">
+                <h4>⚔️ EXCLUSIVE GEAR</h4>
+                <ul>
+                    <li>Wayfinder Iron Armor</li>
+                    <li>Enchanted Lush Blade</li>
+                    <li>Full Iron Tool Kit</li>
                 </ul>
             </div>
-            <div style="background:#ffffff; padding:25px; border:2px solid #bb0707;">
-                <h3 style="color:#bb0707; text-align:center;">✨ Premium Explorer Status ✨</h3>
-                <table width="100%" style="color:#1a1a1a; margin-top:15px;">
-                    <tr><td>🔥 Smelting: 35% Faster</td><td>🏠 Homes: 10x Set-Homes</td></tr>
-                    <tr><td>🌈 Chat: Color formatting</td><td>🏷️ Identity: /nick access</td></tr>
-                    <tr><td>🍎 Utility: /feed access</td><td>📱 Social: Discord Rank</td></tr>
-                </table>
+            <div class="perk-box">
+                <h4>✨ KEY ABILITIES</h4>
+                <ul>
+                    <li>10x Set-Homes</li>
+                    <li>3x Private Vaults</li>
+                    <li>35% Faster Smelting</li>
+                </ul>
             </div>
         </div>
     </div>
 
     <div id="trailblazerModal">
-        <div style="padding:40px; background-color:#fff9c4; border:3px solid #FFA500;">
-            <div style="text-align:center; padding-bottom:20px; border-bottom:3px solid #32CD32;">
-                <h1 style="color:#e69500; font-size:32px; text-transform:uppercase;">Trailblazer Rank</h1>
-                <p style="color:#558b2f; font-style:italic;">Includes everything from Explorer!</p>
-            </div>
-            <div style="background:#1a1a1a; padding:18px; margin:25px 0; text-align:center; border:2px solid #32CD32;">
-                <span style="font-family:'Courier New'; color:#fff; font-size:20px;">&nbsp;<span style="color:#FFA500;">[</span><span style="color:#FFFF55;">&deg;❀.ೃ࿔*&nbsp;</span><span style="color:#FF4500;">TrailBlazer</span><span style="color:#FFA500;">]</span> Notch &raquo; The journey begins.&nbsp;</span>
-            </div>
-            <div style="background:#ffffff; padding:20px; border:2px solid #32CD32; margin-bottom:25px;">
-                <h3 style="color:#e69500;">⚔️ EXCLUSIVE "TRAILBLAZER" GEAR</h3>
-                <ul style="list-style:none; padding:0; color:#1a1a1a;">
-                    <li><strong>Trailblazer Set:</strong> Emerald Diamond (Prot III, Mending)</li>
-                    <li><strong>Sun-Streaking Slicer:</strong> Sharpness III, Looting III</li>
-                    <li><strong>Horizon Bow:</strong> Power IV, Flame, Infinity</li>
+        <div class="rank-header" style="border-color: #FFA500;">
+            <h1 style="color: #FFA500;">TRAILBLAZER</h1>
+            <p>Includes all Explorer perks!</p>
+        </div>
+        <div class="chat-preview" style="border-color: #32CD32;">
+            <span>&nbsp;<span style="color:#FFA500;">[</span><span style="color:#FFFF55;">&deg;❀.ೃ࿔*&nbsp;</span><span style="color:#FF4500;">TrailBlazer</span><span style="color:#FFA500;">]</span> Notch &raquo; The journey begins.&nbsp;</span>
+        </div>
+        <div class="perk-container">
+            <div class="perk-box">
+                <h4>💎 REINFORCED GEAR</h4>
+                <ul>
+                    <li>Emerald Diamond Armor</li>
+                    <li>Sun-Streaking Slicer</li>
+                    <li>Horizon Infinity Bow</li>
                 </ul>
             </div>
-            <table width="100%" style="color:#1a1a1a; padding:25px; background:#fff; border:2px solid #FFA500;">
-                <tr><td>✈️ Travel: Infinite /fly</td><td>🛠️ Maintenance: /repair</td></tr>
-                <tr><td>🎁 Loot: 2x Monthly Kits</td><td>📈 Economy: 10% Money Boost</td></tr>
-            </table>
+            <div class="perk-box">
+                <h4>🚀 ELITE STATUS</h4>
+                <ul>
+                    <li>Permanent /fly Access</li>
+                    <li>5x Private Vaults</li>
+                    <li>10% Money Boost</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <div id="travelerModal">
-        <div style="padding:40px; background-color:#e0f7f7; border:3px solid #00ced1;">
-            <div style="text-align:center; padding-bottom:20px; border-bottom:3px solid #4169e1;">
-                <h1 style="color:#00ced1; font-size:32px; text-transform:uppercase;">Traveler Rank</h1>
-                <p style="color:#4169e1; font-style:italic;">Includes everything from Trailblazer!</p>
-            </div>
-            <div style="background:#1a1a1a; padding:18px; margin:25px 0; text-align:center; border:2px solid #4169e1;">
-                <span style="font-family:'Courier New'; color:#fff; font-size:20px;">&nbsp;<span style="color:#55FFFF;">[</span><span style="color:#ffffff;">・✿&nbsp;</span><span style="color:#FFFF55;">Traveler</span><span style="color:#55FFFF;">]</span> Notch &raquo; The world is mine.&nbsp;</span>
-            </div>
-            <div style="background:#ffffff; padding:20px; border:2px solid #00ced1; margin-bottom:25px;">
-                <h3 style="color:#00ced1;">⚔️ ULTIMATE "ABYSSAL" GEAR</h3>
-                <ul style="list-style:none; padding:0; color:#1a1a1a;">
-                    <li><strong>Abyssal Armor:</strong> Silence Netherite (Prot IV, Mending)</li>
-                    <li><strong>Abyssal Edge:</strong> Sharp V, Fire Aspect II</li>
-                    <li><strong>Abyssal Tools:</strong> Eff V, Fortune III, Mending</li>
+        <div class="rank-header" style="border-color: #00ced1;">
+            <h1 style="color: #00ced1;">TRAVELER</h1>
+            <p>The ultimate LushHaven status!</p>
+        </div>
+        <div class="chat-preview" style="border-color: #4169e1;">
+            <span>&nbsp;<span style="color:#55FFFF;">[</span><span style="color:#ffffff;">・✿&nbsp;</span><span style="color:#FFFF55;">Traveler</span><span style="color:#55FFFF;">]</span> Notch &raquo; The world is mine.&nbsp;</span>
+        </div>
+        <div class="perk-container">
+            <div class="perk-box">
+                <h4>🌌 ABYSSAL GEAR</h4>
+                <ul>
+                    <li>Silence Netherite Armor</li>
+                    <li>Abyssal Edge (Sharp V)</li>
+                    <li>Efficiency V Tools</li>
                 </ul>
             </div>
-            <table width="100%" style="color:#1a1a1a; padding:25px; background:#fff; border:2px solid #00ced1;">
-                <tr><td>😇 God Mode: /god & /heal</td><td>📦 Storage: 15x /pv</td></tr>
-                <tr><td>⚡ Movement: /speed access</td><td>📈 Economy: 15% Money Boost</td></tr>
-            </table>
+            <div class="perk-box">
+                <h4>👑 GOD POWERS</h4>
+                <ul>
+                    <li>/god & /heal Access</li>
+                    <li>Unlimited Set-Homes</li>
+                    <li>RGB & Magic Chat</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -147,30 +155,7 @@
     };
 
     function openModal(rankId) {
-        const body = document.getElementById('modalBody');
-        body.innerHTML = document.getElementById(rankId).innerHTML;
-        
-        // --- THE "ANTI-OBNOXIOUS" DARK MODE OVERRIDE ---
-        // This scans the content we just loaded and forces it to be dark
-        const innerDivs = body.querySelectorAll('div, table');
-        innerDivs.forEach(el => {
-            // If the element has a light background-color, make it dark
-            if (el.style.backgroundColor && el.style.backgroundColor !== 'rgb(26, 26, 26)') {
-                el.style.backgroundColor = '#120e1a'; 
-            }
-            // If the text is dark, make it light
-            if (el.style.color === 'rgb(26, 79, 79)' || el.style.color === 'rgb(26, 26, 26)') {
-                el.style.color = '#e0e0e0';
-            }
-        });
-        
-        // Specifically fix the text lists and tables
-        body.querySelectorAll('ul, table, td, li, p').forEach(text => {
-            if (window.getComputedStyle(text).color === 'rgb(26, 26, 26)') {
-                text.style.setProperty('color', '#bbb', 'important');
-            }
-        });
-
+        document.getElementById('modalBody').innerHTML = document.getElementById(rankId).innerHTML;
         document.getElementById('buyBtn').href = packageLinks[rankId];
         document.getElementById('modalOverlay').style.display = 'flex';
         document.body.style.overflow = 'hidden';
