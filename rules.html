@@ -16,7 +16,7 @@
             <a href="index.html">Home</a>
             <a href="rules.html" class="active">Rules</a>
             <a href="mods.html">Allowed Mods</a>
-            <a href="https://lushhaven.tebex.io/">Store</a>
+            <a href="store.html">Store</a>
             <a href="https://discord.gg/uBe9tJNKxu" class="discord-btn-nav" target="_blank">
                 <i class="fab fa-discord"></i> Join
             </a>
@@ -27,7 +27,7 @@
 <div class="container">
     <div class="rules-header">
         <h1>Server <span>Rules</span></h1>
-        <p>LushHaven Network Code of Conduct. Click any card to view the ladder.</p>
+        <p style="color: #888; margin-top: 10px;">LushHaven Network Code of Conduct. Click any card to view the ladder.</p>
     </div>
 
     <h2 class="tier-title status-green">Tier One: Social & Chat</h2>
@@ -67,23 +67,26 @@
     </div>
 
     <h2 class="tier-title" style="color: #ff4757;">Blacklist (Zero Tolerance)</h2>
-    <div class="rule-grid">
-        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);">Doxing/DDoS/Blackmail</div>
-        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);">Personal Info Sharing</div>
-        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);">Malicious Links</div>
-        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.1);">Extreme Bug Abuse</div>
+    <div class="rule-grid" style="margin-bottom: 60px;">
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.05); cursor: default;">Doxing/DDoS/Blackmail</div>
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.05); cursor: default;">Personal Info Sharing</div>
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.05); cursor: default;">Malicious Links</div>
+        <div class="rule-node status-red-bg" style="background: rgba(255, 71, 87, 0.05); cursor: default;">Extreme Bug Abuse</div>
     </div>
 </div>
 
-<div id="m" class="modal">
-    <div class="modal-content">
-        <h2 id="mT"></h2>
-        <p id="mD" style="margin: 20px 0; color: #888;"></p>
-        <div id="mB" class="punishment-banner">
-            <span class="banner-label">PUNISHMENT LADDER</span>
-            <span id="mS" class="banner-steps"></span>
+<div id="m" class="modal-overlay" onclick="closePop()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="closePop()">&times;</span>
+        <div style="padding: 40px;">
+            <h2 id="mT" style="color: #fff; font-size: 2rem;"></h2>
+            <p id="mD" style="margin: 20px 0; color: #888; font-size: 1.1rem;"></p>
+            <div id="mB" class="punishment-banner">
+                <span style="display:block; font-size: 10px; letter-spacing: 2px; color: #666; margin-bottom: 5px;">PUNISHMENT LADDER</span>
+                <span id="mS" style="font-weight: 800; color: #fff;"></span>
+            </div>
+            <button class="discord-btn-hero" style="margin-top: 30px;" onclick="closePop()">I Understand</button>
         </div>
-        <button class="btn-close" onclick="closePop()">Close</button>
     </div>
 </div>
 
@@ -92,13 +95,31 @@
         document.getElementById('mT').innerText = t;
         document.getElementById('mD').innerText = d;
         document.getElementById('mS').innerText = s;
+        
         const source = event.currentTarget;
         const banner = document.getElementById('mB');
-        banner.className = "punishment-banner " + (source.classList.contains('status-green-bg') ? 'status-green-bg' : source.classList.contains('status-yellow-bg') ? 'status-yellow-bg' : 'status-red-bg');
+        
+        // Match the border color of the banner to the card clicked
+        let color = "var(--accent)";
+        if(source.classList.contains('status-green-bg')) color = "var(--success)";
+        if(source.classList.contains('status-yellow-bg')) color = "var(--warning)";
+        if(source.classList.contains('status-red-bg')) color = "var(--danger)";
+        
+        banner.style.borderLeftColor = color;
+        
         document.getElementById('m').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     }
-    function closePop() { document.getElementById('m').style.display = 'none'; }
-    window.onclick = (e) => { if (e.target == document.getElementById('m')) closePop(); }
+
+    function closePop() {
+        document.getElementById('m').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closePop();
+    });
 </script>
 
 </body>
