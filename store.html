@@ -24,32 +24,29 @@
     </div>
 </header>
 
-<div class="container" style="margin-top: 100px;">
+<div class="container" style="margin-top: 120px;">
     <div class="rules-header">
         <h1>Server <span>Ranks</span></h1>
-        <p>Click a rank to view all exclusive perks and rewards.</p>
+        <p>Select a rank to view full details and rewards.</p>
     </div>
 
     <div class="rule-grid">
-        <div class="rule-node rank-card" onclick="openModal('explorerModal')">
+        <div class="rule-node" onclick="openModal('explorerModal')" style="cursor: pointer; text-align: center; border: 2px solid #bb0707;">
             <h2 style="color: #bb0707;">EXPLORER</h2>
-            <div class="price">$5.00</div>
-            <p style="font-size: 13px; color: #888;">Entry-level adventure gear.</p>
-            <button class="discord-btn-hero" style="margin-top: 15px; width: 100%;">View Details</button>
+            <div style="font-size: 24px; font-weight: 800; margin: 10px 0; color: #fff;">$5.00</div>
+            <button class="discord-btn-hero" style="width: 100%; background: #bb0707; border: none;">View Perks</button>
         </div>
 
-        <div class="rule-node rank-card" onclick="openModal('trailblazerModal')" style="border: 1px solid #FFA500;">
+        <div class="rule-node" onclick="openModal('trailblazerModal')" style="cursor: pointer; text-align: center; border: 2px solid #FFA500;">
             <h2 style="color: #FFA500;">TRAILBLAZER</h2>
-            <div class="price">$10.00</div>
-            <p style="font-size: 13px; color: #888;">Advanced tools and flight.</p>
-            <button class="discord-btn-hero" style="margin-top: 15px; width: 100%; background: #FFA500;">View Details</button>
+            <div style="font-size: 24px; font-weight: 800; margin: 10px 0; color: #fff;">$10.00</div>
+            <button class="discord-btn-hero" style="width: 100%; background: #FFA500; border: none;">View Perks</button>
         </div>
 
-        <div class="rule-node rank-card" onclick="openModal('travelerModal')" style="border: 1px solid #00ced1;">
+        <div class="rule-node" onclick="openModal('travelerModal')" style="cursor: pointer; text-align: center; border: 2px solid #00ced1;">
             <h2 style="color: #00ced1;">TRAVELER</h2>
-            <div class="price">$15.00</div>
-            <p style="font-size: 13px; color: #888;">Ultimate status and god kits.</p>
-            <button class="discord-btn-hero" style="margin-top: 15px; width: 100%; background: #00ced1;">View Details</button>
+            <div style="font-size: 24px; font-weight: 800; margin: 10px 0; color: #fff;">$15.00</div>
+            <button class="discord-btn-hero" style="width: 100%; background: #00ced1; border: none;">View Perks</button>
         </div>
     </div>
 </div>
@@ -58,8 +55,8 @@
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <div id="modalBody"></div>
-        <div style="text-align: center; padding: 20px; background: #fff; border-radius: 0 0 10px 10px;">
-             <a id="buyBtn" href="#" class="discord-btn-hero" style="padding: 15px 40px; font-size: 18px; text-decoration: none;">Purchase on Tebex</a>
+        <div style="text-align: center; padding: 30px; background: #1a1a1a; border-top: 1px solid #333;">
+             <a id="buyBtn" href="#" class="discord-btn-hero" style="padding: 15px 60px; font-size: 20px; text-decoration: none; display: inline-block;">Purchase Rank</a>
         </div>
     </div>
 </div>
@@ -70,13 +67,153 @@
             <h1 style="color:#bb0707;font-size:32px;margin-bottom:5px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;">Explorer Rank</h1>
             <p style="color:#d40632;font-size:18px;margin-top:0;font-style:italic;">The perfect entry-level rank for every LushHaven adventurer!</p>
         </div>
+        <div style="background:#1a1a1a;padding:18px;margin:25px 0;text-align:center;border:2px solid #ef0b9b;">
+            <p style="color:#bbb;font-size:11px;margin-bottom:10px;text-transform:uppercase;letter-spacing:2px;">Chat Preview</p>
+            <span style="font-family:'Courier New', Courier, monospace;font-size:20px;font-weight:bold;">&nbsp;<span style="color:#55FF55;">[</span><span style="color:#FFFF55;">❀˖&deg;&nbsp;</span><span style="color:#5555FF;">Explorer</span><span style="color:#55FF55;">]</span> <span style="color:#5555FF;">Notch</span> <span style="color:#555555;">&nbsp;&raquo;&nbsp;</span> <span style="color:#ffffff;">Check out my new gear!</span>&nbsp;</span>
         </div>
-</div>
+        <div style="margin-bottom:25px;background:#ffffff;padding:20px;border:2px solid #d40632;">
+            <h3 style="color:#bb0707;margin-top:0;border-bottom:2px solid #ef0b9b;padding-bottom:8px;font-size:22px;">⚔️ EXCLUSIVE "LUSH" GEAR</h3>
+            <p style="font-size:15px;margin-bottom:15px;color:#1a1a1a;">Claim the complete <strong style="color:#d40632;">Red-to-Pink</strong> Explorer collection:</p>
+            <ul style="list-style-type:none;padding-left:0;font-size:14px;">
+                <li style="margin-bottom:8px;padding-left:10px;border-left:4px solid #AA0000;"><strong style="color:#AA0000;">Lush Armor Set:</strong> Wayfinder Trimmed Iron (Prot II, Unbreaking II, Mending)</li>
+                <li style="margin-bottom:8px;padding-left:10px;border-left:4px solid #00AA00;"><strong style="color:#00AA00;">Lush Blade:</strong> Sharpness II, Looting II, Unbreaking II, Mending</li>
+                <li style="margin-bottom:8px;padding-left:10px;border-left:4px solid #00AA00;"><strong style="color:#00AA00;">Lush Tools:</strong> Efficiency II, Unbreaking II, Mending</li>
+            </ul>
+        </div>
+        <div style="background:#ffffff;padding:25px;border:2px solid #bb0707;margin-bottom:25px;">
+            <h3 style="color:#bb0707;margin-top:0;text-align:center;text-transform:uppercase;letter-spacing:1px;">✨ Premium Explorer Status ✨</h3>
+            <hr style="border:0;border-top:1px solid #ef0b9b;margin-bottom:20px;">
+            <table style="font-size:14px;border-collapse:collapse;color:#1a1a1a;" width="100%">
+                <tbody>
+                    <tr>
+                        <td style="padding-bottom:12px;">🔥 <strong>Smelting:</strong> 35% Faster Speed</td>
+                        <td style="padding-bottom:12px;">🏠 <strong>Homes:</strong> 10x Set-Homes</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🌈 <strong>Chat:</strong> Color & Formatting in /msg</td>
+                        <td style="padding-bottom:12px;">🏷️ <strong>Identity:</strong> Colored /nick & /itemname</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🍎 <strong>Utility:</strong> /feed & /wb Access</td>
+                        <td style="padding-bottom:12px;">📱 <strong>Social:</strong> Explorer Discord Rank</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🌦️ <strong>Weather:</strong> /pweather & /ptime</td>
+                        <td style="padding-bottom:12px;">📦 <strong>Storage:</strong> 3x /pv + Custom Icons</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🐝 <strong>Fun:</strong> /beezooka & /kittycannon</td>
+                        <td style="padding-bottom:12px;">🔄 <strong>Recovery:</strong> /back Access</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align:center;color:#d40632;font-weight:bold;font-size:14px;">Start your adventure today with the Explorer Rank!</div>
+    </div>
+    </div>
 
 <div id="trailblazerModal" style="display:none;">
+    <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:#2f4f4f;line-height:1.6;max-width:800px;margin:0 auto;padding:20px;background-color:#fff9c4;border:3px solid #FFA500;">
+        <div style="text-align:center;padding-bottom:20px;border-bottom:3px solid #32CD32;">
+            <h1 style="color:#e69500;font-size:32px;margin-bottom:5px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;">Trailblazer Rank</h1>
+            <p style="color:#558b2f;font-size:18px;margin-top:0;font-style:italic;">Forge your path with the ultimate mid-tier adventurer status!</p>
+        </div>
+        <div style="text-align:center;margin-top:-10px;margin-bottom:20px;"><span style="background:#32CD32;color:#FFFFFF;padding:5px 15px;font-size:12px;font-weight:bold;text-transform:uppercase;">Includes everything from Explorer Rank!</span></div>
+        <div style="background:#1a1a1a;padding:18px;margin:15px 0 25px 0;text-align:center;border:2px solid #32CD32;">
+            <p style="color:#bbb;font-size:11px;margin-bottom:10px;text-transform:uppercase;letter-spacing:2px;">Chat Preview</p>
+            <span style="font-family:'Courier New', Courier, monospace;font-size:20px;font-weight:bold;">&nbsp;<span style="color:#FFA500;">[</span><span style="color:#FFFF55;">&deg;❀.ೃ࿔*&nbsp;</span><span style="color:#FF4500;">TrailBlazer</span><span style="color:#FFA500;">]</span> <span style="color:#ADFF2F;">Notch</span> <span style="color:#555555;">&nbsp;&raquo;&nbsp;</span> <span style="color:#ffffff;">The journey begins here.</span>&nbsp;</span>
+        </div>
+        <div style="margin-bottom:25px;background:#ffffff;padding:20px;border:2px solid #32CD32;">
+            <h3 style="color:#e69500;margin-top:0;border-bottom:2px solid #32CD32;padding-bottom:8px;font-size:22px;">⚔️ EXCLUSIVE "TRAILBLAZER" GEAR</h3>
+            <p style="font-size:15px;margin-bottom:15px;color:#1a1a1a;">Claim the reinforced <strong style="color:#32CD32;">Orange-to-Green</strong> Diamond set:</p>
+            <ul style="list-style-type:none;padding-left:0;font-size:14px;">
+                <li style="margin-bottom:12px;padding-left:10px;border-left:4px solid #ef6c00;"><strong style="color:#ef6c00;">Full Trailblazer Set:</strong> Emerald Sentry Trimmed Diamond (Prot III, Unbreaking III, Mending)</li>
+                <li style="margin-bottom:10px;padding-left:10px;border-left:4px solid #1b5e20;"><strong style="color:#1b5e20;">Sun-Streaking Slicer:</strong> Sharpness III, Looting III, Unbreaking III, Mending</li>
+                <li style="margin-bottom:10px;padding-left:10px;border-left:4px solid #1b5e20;"><strong style="color:#1b5e20;">Horizon Bow:</strong> Power IV, Flame, Punch II, Unbreaking III, Infinity</li>
+            </ul>
+        </div>
+        <div style="background:#ffffff;padding:25px;border:2px solid #FFA500;margin-bottom:25px;">
+            <h3 style="color:#bf360c;margin-top:0;text-align:center;text-transform:uppercase;letter-spacing:1px;">✨ Premium Trailblazer Status ✨</h3>
+            <hr style="border:0;border-top:1px solid #FFA500;margin-bottom:20px;">
+            <table style="font-size:14px;color:#1a1a1a;border-collapse:collapse;" width="100%">
+                <tbody>
+                    <tr>
+                        <td style="padding-bottom:12px;">🔥 <strong>Smelting:</strong> 45% Faster Speed</td>
+                        <td style="padding-bottom:12px;">✈️ <strong>Travel:</strong> Infinite /fly Access</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">💬 <strong>Chat:</strong> Full Formatting (Bold, Italic, etc)</td>
+                        <td style="padding-bottom:12px;">🏷️ <strong>Identity:</strong> Advanced Nick Formatting</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🛠️ <strong>Maintenance:</strong> /repair Access</td>
+                        <td style="padding-bottom:12px;">📱 <strong>Social:</strong> Trailblazer Discord Rank</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🎁 <strong>Loot:</strong> 2x Premium Kits Monthly</td>
+                        <td style="padding-bottom:12px;">💎 <strong>Storage:</strong> 5x /pv & /enderchest</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🏡 <strong>Navigation:</strong> 10 Homes</td>
+                        <td style="padding-bottom:12px;">📈 <strong>Economy:</strong> 10% Money Boost</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align:center;color:#558b2f;font-weight:bold;font-size:14px;">The journey begins with Trailblazer. Are you ready?</div>
+    </div>
     </div>
 
 <div id="travelerModal" style="display:none;">
+    <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:#2f4f4f;line-height:1.6;max-width:800px;margin:0 auto;padding:20px;background-color:#e0f7f7;border:3px solid #00ced1;">
+        <div style="text-align:center;padding-bottom:20px;border-bottom:3px solid #4169e1;">
+            <h1 style="color:#00ced1;font-size:32px;margin-bottom:5px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;">Traveler Rank</h1>
+            <p style="color:#4169e1;font-size:18px;margin-top:0;font-style:italic;">The pinnacle of exploration. Rule the lands, seas, and skies!</p>
+        </div>
+        <div style="text-align:center;margin-top:-10px;margin-bottom:20px;"><span style="background:#4169e1;color:#FFFFFF;padding:5px 15px;font-size:12px;font-weight:bold;text-transform:uppercase;">Includes everything from Trailblazer Rank!</span></div>
+        <div style="background:#1a1a1a;padding:18px;margin:15px 0 25px 0;text-align:center;border:2px solid #4169e1;">
+            <p style="color:#bbb;font-size:11px;margin-bottom:10px;text-transform:uppercase;letter-spacing:2px;">Chat Preview</p>
+            <span style="font-family:'Courier New', Courier, monospace;font-size:20px;font-weight:bold;">&nbsp;<span style="color:#55FFFF;">[</span><span style="color:#ffffff;">・✿&nbsp;</span><span style="color:#FFFF55;">Traveler</span><span style="color:#55FFFF;">]</span> <span style="color:#FFAA00;">Notch</span> <span style="color:#555555;">&nbsp;&raquo;&nbsp;</span> <span style="color:#ffffff;">The world is mine to explore.</span>&nbsp;</span>
+        </div>
+        <div style="margin-bottom:25px;background:#ffffff;padding:20px;border:2px solid #00ced1;">
+            <h3 style="color:#00ced1;margin-top:0;border-bottom:2px solid #4169e1;padding-bottom:8px;font-size:22px;">⚔️ ULTIMATE "ABYSSAL" GEAR</h3>
+            <p style="font-size:15px;margin-bottom:15px;color:#1a1a1a;">Claim the god-tier <strong style="color:#4169e1;">Aqua-to-Deep-Blue</strong> Netherite set:</p>
+            <ul style="list-style-type:none;padding-left:0;font-size:14px;">
+                <li style="margin-bottom:8px;padding-left:10px;border-left:4px solid #00ced1;"><strong style="color:#00ced1;">Full Abyssal Armor:</strong> Silence Trimmed Netherite (Prot IV, Unbreaking III, Mending)</li>
+                <li style="margin-bottom:8px;padding-left:10px;border-left:4px solid #4169e1;"><strong style="color:#4169e1;">Abyssal Edge:</strong> Sharp V, Loot III, Fire Aspect II, Unbreaking III</li>
+                <li style="margin-bottom:8px;padding-left:10px;border-left:4px solid #4169e1;"><strong style="color:#4169e1;">Abyssal Tools:</strong> Eff V, Fortune III, Unbreaking III, Mending</li>
+            </ul>
+        </div>
+        <div style="background:#ffffff;padding:25px;border:2px solid #00ced1;margin-bottom:25px;">
+            <h3 style="color:#00ced1;margin-top:0;text-align:center;text-transform:uppercase;letter-spacing:1px;">✨ Premium Traveler Status ✨</h3>
+            <hr style="border:0;border-top:1px solid #4169e1;margin-bottom:20px;">
+            <table style="font-size:14px;color:#1a1a1a;border-collapse:collapse;" width="100%">
+                <tbody>
+                    <tr>
+                        <td style="padding-bottom:12px;">🔥 <strong>Smelting:</strong> 50% Faster Speed</td>
+                        <td style="padding-bottom:12px;">⚡ <strong>Movement:</strong> /speed (Fly & Walk)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🌈 <strong>Chat:</strong> RGB & Magic Formatting</td>
+                        <td style="padding-bottom:12px;">🏠 <strong>Homes:</strong> Unlimited Set-Homes</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">🛠️ <strong>Repair:</strong> /fix all (Enchanted Items)</td>
+                        <td style="padding-bottom:12px;">👁️ <strong>Utility:</strong> /invsee Access</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">😇 <strong>God Mode:</strong> /god & /heal Access</td>
+                        <td style="padding-bottom:12px;">📦 <strong>Storage:</strong> 15x /pv Access</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:12px;">📱 <strong>Social:</strong> Traveler Discord Rank</td>
+                        <td style="padding-bottom:12px;">📈 <strong>Economy:</strong> 15% Money Boost</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align:center;color:#4169e1;font-weight:bold;font-size:14px;">The world is yours to command with the Traveler Rank.</div>
+    </div>
     </div>
 
 <script>
@@ -90,7 +227,7 @@
         document.getElementById('modalBody').innerHTML = document.getElementById(rankId).innerHTML;
         document.getElementById('buyBtn').href = packageLinks[rankId];
         document.getElementById('modalOverlay').style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Stop scrolling background
+        document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
