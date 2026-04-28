@@ -24,71 +24,80 @@
     </div>
 </header>
 
-<section class="hero" style="min-height: 40vh;">
-    <div class="hero-content">
-        <h1>Support the <span>Haven.</span></h1>
-        <p>Choose a rank to unlock premium features and support server growth.</p>
-    </div>
-</section>
-
-<div class="container">
+<div class="container" style="margin-top: 100px;">
     <div class="rules-header">
         <h1>Server <span>Ranks</span></h1>
-        <p>Enhance your experience with permanent perks.</p>
+        <p>Click a rank to view all exclusive perks and rewards.</p>
     </div>
 
-    <div class="rule-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-        
-        <div class="rule-node" style="cursor: default; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
-            <h2 style="color: var(--accent); margin-bottom: 10px;">LUSH</h2>
-            <div style="font-size: 24px; font-weight: 800; margin-bottom: 20px;">$5.00</div>
-            <ul style="list-style: none; padding: 0; color: #bbb; font-size: 14px; line-height: 2; margin-bottom: 25px;">
-                <li>• Bronze Chat Tag</li>
-                <li>• Access to /sethome (3)</li>
-                <li>• Priority Queue Join</li>
-                <li>• Custom Join Message</li>
-            </ul>
-            <a href="https://lushhaven.tebex.io/package/example1" class="discord-btn-hero" style="display: block; text-decoration: none; font-size: 14px;">
-                <i class="fas fa-shopping-cart"></i> Buy Now
-            </a>
+    <div class="rule-grid">
+        <div class="rule-node rank-card" onclick="openModal('explorerModal')">
+            <h2 style="color: #bb0707;">EXPLORER</h2>
+            <div class="price">$5.00</div>
+            <p style="font-size: 13px; color: #888;">Entry-level adventure gear.</p>
+            <button class="discord-btn-hero" style="margin-top: 15px; width: 100%;">View Details</button>
         </div>
 
-        <div class="rule-node" style="cursor: default; text-align: center; border: 2px solid var(--accent); background: rgba(167, 59, 179, 0.08);">
-            <div style="background: var(--accent); color: white; font-size: 10px; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; letter-spacing: 1px;">MOST POPULAR</div>
-            <h2 style="color: var(--accent); margin-bottom: 10px;">BLOOM</h2>
-            <div style="font-size: 24px; font-weight: 800; margin-bottom: 20px;">$15.00</div>
-            <ul style="list-style: none; padding: 0; color: #bbb; font-size: 14px; line-height: 2; margin-bottom: 25px;">
-                <li>• Silver Chat Tag</li>
-                <li>• Access to /fly in Hub</li>
-                <li>• Access to /sethome (10)</li>
-                <li>• Exclusive Particle Effects</li>
-            </ul>
-            <a href="https://lushhaven.tebex.io/package/example2" class="discord-btn-hero" style="display: block; text-decoration: none; font-size: 14px;">
-                <i class="fas fa-shopping-cart"></i> Buy Now
-            </a>
+        <div class="rule-node rank-card" onclick="openModal('trailblazerModal')" style="border: 1px solid #FFA500;">
+            <h2 style="color: #FFA500;">TRAILBLAZER</h2>
+            <div class="price">$10.00</div>
+            <p style="font-size: 13px; color: #888;">Advanced tools and flight.</p>
+            <button class="discord-btn-hero" style="margin-top: 15px; width: 100%; background: #FFA500;">View Details</button>
         </div>
 
-        <div class="rule-node" style="cursor: default; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
-            <h2 style="color: var(--accent); margin-bottom: 10px;">HAVEN</h2>
-            <div style="font-size: 24px; font-weight: 800; margin-bottom: 20px;">$30.00</div>
-            <ul style="list-style: none; padding: 0; color: #bbb; font-size: 14px; line-height: 2; margin-bottom: 25px;">
-                <li>• Gold Chat Tag</li>
-                <li>• Access to /fly Everywhere</li>
-                <li>• Unlimited Homes</li>
-                <li>• Monthly Key Crate</li>
-            </ul>
-            <a href="https://lushhaven.tebex.io/package/example3" class="discord-btn-hero" style="display: block; text-decoration: none; font-size: 14px;">
-                <i class="fas fa-shopping-cart"></i> Buy Now
-            </a>
+        <div class="rule-node rank-card" onclick="openModal('travelerModal')" style="border: 1px solid #00ced1;">
+            <h2 style="color: #00ced1;">TRAVELER</h2>
+            <div class="price">$15.00</div>
+            <p style="font-size: 13px; color: #888;">Ultimate status and god kits.</p>
+            <button class="discord-btn-hero" style="margin-top: 15px; width: 100%; background: #00ced1;">View Details</button>
         </div>
-
-    </div>
-
-    <div style="text-align: center; margin-top: 60px; padding-bottom: 60px;">
-        <p style="color: #888; font-style: italic;">All purchases are processed securely via Tebex.</p>
-        <p style="font-weight: 800; color: #fff; margin-top: 5px;">— The LushHaven Team</p>
     </div>
 </div>
+
+<div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div>
+        <div style="text-align: center; padding: 20px; background: #fff; border-radius: 0 0 10px 10px;">
+             <a id="buyBtn" href="#" class="discord-btn-hero" style="padding: 15px 40px; font-size: 18px; text-decoration: none;">Purchase on Tebex</a>
+        </div>
+    </div>
+</div>
+
+<div id="explorerModal" style="display:none;">
+    <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:#2f4f4f;line-height:1.6;max-width:800px;margin:0 auto;padding:20px;background-color:#ffe4e1;border:3px solid #bb0707;">
+        <div style="text-align:center;padding-bottom:20px;border-bottom:3px solid #ef0b9b;">
+            <h1 style="color:#bb0707;font-size:32px;margin-bottom:5px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;">Explorer Rank</h1>
+            <p style="color:#d40632;font-size:18px;margin-top:0;font-style:italic;">The perfect entry-level rank for every LushHaven adventurer!</p>
+        </div>
+        </div>
+</div>
+
+<div id="trailblazerModal" style="display:none;">
+    </div>
+
+<div id="travelerModal" style="display:none;">
+    </div>
+
+<script>
+    const packageLinks = {
+        'explorerModal': 'https://lushhaven.tebex.io/package/7416266',
+        'trailblazerModal': 'https://lushhaven.tebex.io/package/7416275',
+        'travelerModal': 'https://lushhaven.tebex.io/package/7416277'
+    };
+
+    function openModal(rankId) {
+        document.getElementById('modalBody').innerHTML = document.getElementById(rankId).innerHTML;
+        document.getElementById('buyBtn').href = packageLinks[rankId];
+        document.getElementById('modalOverlay').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Stop scrolling background
+    }
+
+    function closeModal() {
+        document.getElementById('modalOverlay').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+</script>
 
 </body>
 </html>
