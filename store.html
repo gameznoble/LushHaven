@@ -1,171 +1,236 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LushHaven | Store</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+/* --- Global Reset & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
-<header>
-    <div class="nav">
-        <div class="logo"><span>LUSH</span>HAVEN</div>
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="rules.html">Rules</a>
-            <a href="mods.html">Allowed Mods</a>
-            <a href="store.html" class="active">Store</a>
-            <a href="https://discord.gg/uBe9tJNKxu" class="discord-btn-nav" target="_blank">
-                <i class="fab fa-discord"></i> Join
-            </a>
-        </div>
-    </div>
-</header>
+:root {
+    --bg: #07050a;
+    --card: #120e1a;
+    --accent: #a73bb3;
+    --text: #e0e0e0;
+    --success: #2ecc71;
+    --warning: #f1c40f;
+    --danger: #e74c3c;
+    --discord-blurple: #5865F2;
+}
 
-<div class="container" style="margin-top: 120px;">
-    <div class="rules-header">
-        <h1>Server <span>Ranks</span></h1>
-        <p>Enhance your journey with exclusive perks and status.</p>
-    </div>
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
-    <div class="rule-grid">
-        <div class="rule-node" onclick="openModal('explorerModal')" style="border-color: #bb0707;">
-            <h2 style="color: #bb0707;">EXPLORER</h2>
-            <div class="price">$5.00</div>
-            <button class="view-btn" style="background: #bb0707;">View Perks</button>
-        </div>
+body { 
+    background-color: var(--bg); 
+    color: var(--text); 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-        <div class="rule-node" onclick="openModal('trailblazerModal')" style="border-color: #FFA500;">
-            <h2 style="color: #FFA500;">TRAILBLAZER</h2>
-            <div class="price">$10.00</div>
-            <button class="view-btn" style="background: #FFA500;">View Perks</button>
-        </div>
+/* --- Navigation --- */
+header {
+    background: rgba(7, 5, 10, 0.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #1f1a29;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
 
-        <div class="rule-node" onclick="openModal('travelerModal')" style="border-color: #00ced1;">
-            <h2 style="color: #00ced1;">TRAVELER</h2>
-            <div class="price">$15.00</div>
-            <button class="view-btn" style="background: #00ced1;">View Perks</button>
-        </div>
-    </div>
-</div>
+.nav { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 20px; 
+}
 
-<div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <div id="modalBody"></div>
-        <div class="modal-footer">
-             <a id="buyBtn" href="#" class="purchase-btn">Purchase on Tebex</a>
-        </div>
-    </div>
-</div>
+.logo { 
+    font-weight: 800; 
+    font-size: 24px; 
+    color: #ffffff; 
+    letter-spacing: -1px;
+}
 
-<div style="display:none;">
-    <div id="explorerModal">
-        <div class="rank-header" style="border-color: #bb0707;">
-            <h1 style="color: #bb0707;">EXPLORER</h1>
-            <p>The perfect entry into LushHaven</p>
-        </div>
-        <div class="chat-preview">
-            <span>&nbsp;<span style="color:#55FF55;">[</span><span style="color:#FFFF55;">❀˖&deg;&nbsp;</span><span style="color:#5555FF;">Explorer</span><span style="color:#55FF55;">]</span> Notch &raquo; Check out my gear!&nbsp;</span>
-        </div>
-        <div class="perk-container">
-            <div class="perk-box">
-                <h4>⚔️ EXCLUSIVE GEAR</h4>
-                <ul>
-                    <li>Wayfinder Iron Armor</li>
-                    <li>Enchanted Lush Blade</li>
-                    <li>Full Iron Tool Kit</li>
-                </ul>
-            </div>
-            <div class="perk-box">
-                <h4>✨ KEY ABILITIES</h4>
-                <ul>
-                    <li>10x Set-Homes</li>
-                    <li>3x Private Vaults</li>
-                    <li>35% Faster Smelting</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+.logo span { color: var(--accent); }
 
-    <div id="trailblazerModal">
-        <div class="rank-header" style="border-color: #FFA500;">
-            <h1 style="color: #FFA500;">TRAILBLAZER</h1>
-            <p>Includes all Explorer perks!</p>
-        </div>
-        <div class="chat-preview" style="border-color: #32CD32;">
-            <span>&nbsp;<span style="color:#FFA500;">[</span><span style="color:#FFFF55;">&deg;❀.ೃ࿔*&nbsp;</span><span style="color:#FF4500;">TrailBlazer</span><span style="color:#FFA500;">]</span> Notch &raquo; The journey begins.&nbsp;</span>
-        </div>
-        <div class="perk-container">
-            <div class="perk-box">
-                <h4>💎 REINFORCED GEAR</h4>
-                <ul>
-                    <li>Emerald Diamond Armor</li>
-                    <li>Sun-Streaking Slicer</li>
-                    <li>Horizon Infinity Bow</li>
-                </ul>
-            </div>
-            <div class="perk-box">
-                <h4>🚀 ELITE STATUS</h4>
-                <ul>
-                    <li>Permanent /fly Access</li>
-                    <li>5x Private Vaults</li>
-                    <li>10% Money Boost</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+.links { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
 
-    <div id="travelerModal">
-        <div class="rank-header" style="border-color: #00ced1;">
-            <h1 style="color: #00ced1;">TRAVELER</h1>
-            <p>The ultimate LushHaven status!</p>
-        </div>
-        <div class="chat-preview" style="border-color: #4169e1;">
-            <span>&nbsp;<span style="color:#55FFFF;">[</span><span style="color:#ffffff;">・✿&nbsp;</span><span style="color:#FFFF55;">Traveler</span><span style="color:#55FFFF;">]</span> Notch &raquo; The world is mine.&nbsp;</span>
-        </div>
-        <div class="perk-container">
-            <div class="perk-box">
-                <h4>🌌 ABYSSAL GEAR</h4>
-                <ul>
-                    <li>Silence Netherite Armor</li>
-                    <li>Abyssal Edge (Sharp V)</li>
-                    <li>Efficiency V Tools</li>
-                </ul>
-            </div>
-            <div class="perk-box">
-                <h4>👑 GOD POWERS</h4>
-                <ul>
-                    <li>/god & /heal Access</li>
-                    <li>Unlimited Set-Homes</li>
-                    <li>RGB & Magic Chat</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+.links a { 
+    color: #888; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    transition: 0.3s;
+}
 
-<script>
-    const packageLinks = {
-        'explorerModal': 'https://lushhaven.tebex.io/package/7416266',
-        'trailblazerModal': 'https://lushhaven.tebex.io/package/7416275',
-        'travelerModal': 'https://lushhaven.tebex.io/package/7416277'
-    };
+.links a.active, .links a:hover { color: var(--accent); }
 
-    function openModal(rankId) {
-        document.getElementById('modalBody').innerHTML = document.getElementById(rankId).innerHTML;
-        document.getElementById('buyBtn').href = packageLinks[rankId];
-        document.getElementById('modalOverlay').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
+/* --- Buttons --- */
+.discord-btn-nav {
+    background: var(--discord-blurple) !important;
+    color: #fff !important;
+    padding: 10px 20px !important;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
 
-    function closeModal() {
-        document.getElementById('modalOverlay').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-</script>
+.discord-btn-hero {
+    background: var(--discord-blurple);
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: 800;
+    transition: 0.3s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
 
-</body>
-</html>
+.discord-btn-nav:hover, .discord-btn-hero:hover {
+    background: #4752c4 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(88, 101, 242, 0.3);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: radial-gradient(circle at center, #1a1429 0%, #07050a 100%);
+}
+
+.hero-content h1 {
+    font-size: clamp(48px, 8vw, 80px);
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.ip-btn {
+    background: var(--card);
+    border: 1px solid #1f1a29;
+    color: #fff;
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* --- Rank Store Grid --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+
+.rule-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+}
+
+.rule-node { 
+    background: var(--card); 
+    border: 1px solid #1f1a29; 
+    padding: 30px; 
+    border-radius: 15px; 
+    transition: 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rule-node:hover { 
+    border-color: var(--accent); 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px rgba(167, 59, 179, 0.1);
+}
+
+.price {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 15px 0;
+    color: #fff;
+}
+
+/* --- THE MODAL (FIXED) --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95); /* Darker backdrop */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #0f0f0f !important; /* Force black background */
+    width: 100%;
+    max-width: 850px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 15px;
+    border: 1px solid #2a2438;
+}
+
+/* Force override all the white backgrounds in the rank HTML you pasted */
+.modal-content div, 
+.modal-content table {
+    background-color: transparent !important;
+}
+
+.modal-content [style*="background-color:#ffffff"], 
+.modal-content [style*="background-color:#ffe4e1"],
+.modal-content [style*="background-color:#fff9c4"],
+.modal-content [style*="background-color:#e0f7f7"] {
+    background-color: #161616 !important;
+    color: #eee !important;
+}
+
+/* Fix text colors inside the modal to be readable */
+.modal-content h1, .modal-content h3, .modal-content p, .modal-content td, .modal-content li {
+    /* We keep the colors you specifically chose for rank headers, but ensure general text is bright */
+}
+
+.modal-content table td {
+    color: #bbb !important; /* Makes the perks list readable */
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    color: #fff !important;
+    cursor: pointer;
+    z-index: 10001;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.close-modal:hover { opacity: 1; }
+
+/* Custom Scrollbar for Modal */
+.modal-content::-webkit-scrollbar { width: 8px; }
+.modal-content::-webkit-scrollbar-track { background: #07050a; }
+.modal-content::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
